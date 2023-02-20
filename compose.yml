@@ -1,0 +1,87 @@
+services:
+
+  cred:
+   #esta es la clave maestra, hay que usarla en secrets de cloud.google  c5dc1eb110160e888e5eeb9b06b85f79
+    build: .
+    command: bash -c "EDITOR='mate --wait' bin/rails credentials:edit"
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - HISTFILE=/usr/src/app/log/.bash_history
+    depends_on:
+      - db
+      - redis
+
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - HISTFILE=/usr/src/app/log/.bash_history 
+    depends_on:
+      - db
+      - redis
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=changeme
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  redis:
+    tty: true
+    stdin_open: true
+    image: redis
+    volumes:
+      - redis_data:/data
+
+  prod:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bin/rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - HISTFILE=/usr/src/app/log/.bash_history
+      - RAILS_ENV=production
+      - SECRET_KEY_BASE=c5dc1eb110160e888e5eeb9b06b85f79
+    depends_on:
+      - db
+      - redis
+
+
+  db:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=changeme
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  redis:
+    image: redis
+    volumes:
+      - redis_data:/data
+
+
+volumes:
+  pg_data:
+  redis_data:
+  bundle:
