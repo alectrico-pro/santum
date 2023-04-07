@@ -1,0 +1,7 @@
+dispatch:
+ - url: "www.alectrica.cl/*"
+   service: default
+
+
+
+ 

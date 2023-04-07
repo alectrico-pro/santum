@@ -1,5 +1,5 @@
-#ROM ruby:3.2.0-slim
-FROM ruby:3.0.5-slim
+FROM ruby:3.2.1-slim
+#FROM ruby:3.0.5-slim
  #para que sirva en appeng standard
 
 

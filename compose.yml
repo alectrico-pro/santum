@@ -32,6 +32,27 @@ services:
     depends_on:
       - db
       - redis
+
+  test:
+    build: .
+    command: bash -c "rspec"
+    volumes:
+      - .:/usr/src/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - HISTFILE=/usr/src/app/log/.bash_history
+      - RAILS_ENV=test
+    depends_on:
+      - db
+      - redis
+
+
+
+
   db:
     image: postgres:15
     ports:

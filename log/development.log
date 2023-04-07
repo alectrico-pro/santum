@@ -1987,3 +1987,7 @@ Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_na
 Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9BcnRpY2xlLzQ
 Turbo::StreamsChannel is transmitting the subscription confirmation
 Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9BcnRpY2xlLzQ
+Finished "/cable" [WebSocket] for 172.30.0.1 at 2023-02-20 22:43:17 +0000
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9BcnRpY2xlLzQ
+Finished "/cable" [WebSocket] for 172.30.0.1 at 2023-02-20 22:43:18 +0000
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9BcnRpY2xlLzQ

@@ -1,5 +1,5 @@
-#ROM ruby:3.2.0-slim
-FROM ruby:3.0.5-slim
+FROM ruby:3.2.1-slim
+#ROM ruby:3.0.5-slim
 
 
 RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
