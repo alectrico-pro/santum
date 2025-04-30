@@ -88,20 +88,6 @@ services:
       - redis
 
 
-  db:
-    image: postgres:15
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_PASSWORD=changeme
-    volumes:
-      - pg_data:/var/lib/postgresql/data
-  redis:
-    image: redis
-    volumes:
-      - redis_data:/data
-
-
 volumes:
   pg_data:
   redis_data:
