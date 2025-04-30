@@ -1,0 +1,13 @@
+<%= turbo_stream_from @reporte %>
+
+<p id="notice"><%= notice %></p>
+
+<%= render @reporte %>
+<%= render "reportes/comentarios", reporte: @reporte %>
+
+<div>
+  <%= link_to "Editar este reporte", edit_reporte_path(@reporte) %> |
+  <%= link_to "Volver a reportes", reportes_path %>
+
+  <%= button_to "Eliminar este reporte", reporte_path(@reporte), method: :delete %>
+</div>
