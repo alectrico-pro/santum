@@ -30,7 +30,7 @@ RUN bundle config frozen true \
  && bundle config without 'development test' \
  && bundle install
 
-COPY . .
+#COPY . .
 #ENTRYPOINT ["./entrypoint.sh"]
 #RUN bundle install --gemfile /usr/src/app/Gemfile
 #COPY Gemfile.lock /usr/src/app/Gemfile
