@@ -23,19 +23,19 @@ WORKDIR /usr/src/app
 #OPY ./Gemfile /usr/src/app/Gemfile
 
 COPY Gemfile* ./
-
-RUN bundle config frozen true \
- && bundle config jobs 4 \
- && bundle config deployment true \
- && bundle config without 'development test' \
- && bundle install
-
-#COPY . .
+#RUN bundle config unset frozen \
+# && bundle config unset deployment \
+# && bundle config frozen true \
+# && bundle config jobs 4 \
+# && bundle config deployment true \
+# && bundle config without 'development test' \
+# && bundle install
+COPY . .
 #ENTRYPOINT ["./entrypoint.sh"]
 #RUN bundle install --gemfile /usr/src/app/Gemfile
 #COPY Gemfile.lock /usr/src/app/Gemfile
 
-#RUN bundle install
+RUN bundle install
 EXPOSE 3000
 
 CMD ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]

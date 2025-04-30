@@ -1,0 +1,10 @@
+%h1 Bienvenido
+= link_to "Reportes", reportes_path 
+
+%h2 Stimulus Check
+
+%div data-controller="hello">
+  %input data-hello-target="name" type="text">
+  %button data-action="click->hello#greet">
+    Greet
+  %span data-hello-target="output">
