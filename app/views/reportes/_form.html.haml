@@ -1,21 +1,23 @@
 = form_with(model: reporte) do |form| 
   -if reporte.errors.any? 
     .error_explanation
-      %h2=pluralize(reporte.errors.count, "error")
+      %h2=pluralize(reporte.errors.count, "error(es)")
       %ul
         -reporte.errors.each do |error| 
           %li= error.full_message
   #field
     = form.label :nombre 
     = form.text_field :nombre 
+    %small Ingrese su nombre
 
   #field
     = form.label :fono
     = form.text_field :fono
+    %small Ingrese su número de WhatsApp
 
   #field
     = form.label :contenido 
     = form.rich_text_area :contenido 
-
+    %small Agregue fotos y descripciones
   #actions
     = form.submit 
