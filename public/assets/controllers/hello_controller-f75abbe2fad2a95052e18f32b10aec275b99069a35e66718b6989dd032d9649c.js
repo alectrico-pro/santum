@@ -13,4 +13,4 @@ export default class extends Controller {
     this.outputTarget.textContent =
       `Hola, ${this.nameTarget.value}!. ¿Qué problemas tenemos para hoy?  `
   }
-}
+};

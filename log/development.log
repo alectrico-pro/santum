@@ -18989,3 +18989,57 @@ Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 741
 
 
 DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/" for 172.18.0.1 at 2025-05-01 11:07:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 14.2ms | Allocations: 11526)
+  Rendered layout layouts/application.html.haml (Duration: 29.1ms | Allocations: 18685)
+Completed 200 OK in 72ms (Views: 31.3ms | ActiveRecord: 0.0ms | Allocations: 21570)
+
+
+Started GET "/" for 172.18.0.1 at 2025-05-01 11:08:30 +0000
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 0.3ms | Allocations: 98)
+  Rendered layout layouts/application.html.haml (Duration: 3.1ms | Allocations: 2239)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 2500)
+
+
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/" for 172.18.0.1 at 2025-05-01 11:08:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 15.3ms | Allocations: 11526)
+  Rendered layout layouts/application.html.haml (Duration: 30.9ms | Allocations: 18685)
+Completed 200 OK in 39ms (Views: 33.3ms | ActiveRecord: 0.0ms | Allocations: 21568)
+
+
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/" for 172.18.0.1 at 2025-05-01 11:11:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 12.7ms | Allocations: 11526)
+  Rendered layout layouts/application.html.haml (Duration: 23.9ms | Allocations: 18685)
+Completed 200 OK in 31ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 21568)
+
+
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/" for 172.18.0.1 at 2025-05-01 11:12:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 13.0ms | Allocations: 11526)
+  Rendered layout layouts/application.html.haml (Duration: 26.8ms | Allocations: 18685)
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 21568)
+
+

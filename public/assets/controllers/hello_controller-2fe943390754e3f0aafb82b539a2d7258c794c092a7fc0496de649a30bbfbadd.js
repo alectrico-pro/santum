@@ -11,6 +11,9 @@ export default class extends Controller {
   greet() {
     console.log('greet');
     this.outputTarget.textContent =
-      `Hola, ${this.nameTarget.value}!. ¿Qué problemas tenemos para hoy?  `
+      `Hola, ${this.nameTarget.value}!
+       úsame para resolver problemas
+       eléctricos en domicilios de
+       PROVIDENCIA. Chile.  `
   }
-}
+};
