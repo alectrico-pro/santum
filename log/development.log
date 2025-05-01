@@ -17759,3 +17759,577 @@ Processing by BienvenidoController#index as HTML
 Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 13370)
 
 
+Started GET "/reportes" for 172.18.0.1 at 2025-05-01 10:32:26 +0000
+Processing by ReportesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes"[0m
+  ↳ app/views/reportes/index.html.haml:5
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 15)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 9.2ms | Allocations: 4384)
+  Rendered layout layouts/application.html.haml (Duration: 12.3ms | Allocations: 6507)
+Completed 200 OK in 19ms (Views: 12.4ms | ActiveRecord: 1.3ms | Allocations: 8592)
+
+
+Started GET "/" for 172.18.0.1 at 2025-05-01 10:32:58 +0000
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 6.3ms | Allocations: 5926)
+  Rendered layout layouts/application.html.haml (Duration: 14.5ms | Allocations: 12641)
+Completed 200 OK in 17ms (Views: 15.8ms | Allocations: 13421)
+
+
+Started GET "/reportes" for 172.18.0.1 at 2025-05-01 10:33:00 +0000
+Processing by ReportesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+  [1m[36mReporte Load (2.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes"[0m
+  ↳ app/views/reportes/index.html.haml:5
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 15)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 62.5ms | Allocations: 9685)
+  Rendered layout layouts/application.html.haml (Duration: 64.2ms | Allocations: 10400)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 27.1ms | Allocations: 12485)
+
+
+Started GET "/reportes/new" for 172.18.0.1 at 2025-05-01 10:33:03 +0000
+Processing by ReportesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/new.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 31.5ms | Allocations: 9240)
+  Rendered reportes/new.html.haml within layouts/application (Duration: 40.4ms | Allocations: 12180)
+  Rendered layout layouts/application.html.haml (Duration: 42.8ms | Allocations: 12805)
+Completed 200 OK in 59ms (Views: 43.8ms | ActiveRecord: 0.0ms | Allocations: 14743)
+
+
+Started GET "/cable" for 172.18.0.1 at 2025-05-01 10:33:09 +0000
+Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-01 10:33:09 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE1
+Started POST "/rails/active_storage/direct_uploads" for 172.18.0.1 at 2025-05-01 10:33:24 +0000
+Processing by ActiveStorage::DirectUploadsController#create as JSON
+  Parameters: {"blob"=>{"filename"=>"ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png", "content_type"=>"image/png", "byte_size"=>8374, "checksum"=>"msC0aUQV2PKEGtSJxsRWqg=="}, "direct_upload"=>{"blob"=>{"filename"=>"ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png", "content_type"=>"image/png", "byte_size"=>8374, "checksum"=>"msC0aUQV2PKEGtSJxsRWqg=="}}}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (21.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "d8mulz8eidn5c7lliliuzkkzjc4u"], ["filename", "ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png"], ["content_type", "image/png"], ["metadata", nil], ["service_name", "local"], ["byte_size", 8374], ["checksum", "msC0aUQV2PKEGtSJxsRWqg=="], ["created_at", "2025-05-01 10:33:24.202288"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: d8mulz8eidn5c7lliliuzkkzjc4u (http://172.18.0.5:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhaRGh0ZFd4Nk9HVnBaRzQxWXpkc2JHbHNhWFY2YTJ0NmFtTTBkUVk2QmtWVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaE5qYjI1MFpXNTBYMnhsYm1kMGFHa0N0aUE2RFdOb1pXTnJjM1Z0U1NJZGJYTkRNR0ZWVVZZeVVFdEZSM1JUU25oelVsZHhaejA5QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMVQxMDozODoyNC4yMzdaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--486bbf8c24c64f204b756f8ea855cd876f6dd192)[0m
+Completed 200 OK in 61ms (Views: 0.7ms | ActiveRecord: 24.8ms | Allocations: 9961)
+
+
+Started PUT "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhaRGh0ZFd4Nk9HVnBaRzQxWXpkc2JHbHNhWFY2YTJ0NmFtTTBkUVk2QmtWVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaE5qYjI1MFpXNTBYMnhsYm1kMGFHa0N0aUE2RFdOb1pXTnJjM1Z0U1NJZGJYTkRNR0ZWVVZZeVVFdEZSM1JUU25oelVsZHhaejA5QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMVQxMDozODoyNC4yMzdaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--486bbf8c24c64f204b756f8ea855cd876f6dd192" for 172.18.0.1 at 2025-05-01 10:33:24 +0000
+Processing by ActiveStorage::DiskController#update as */*
+  Parameters: {"encoded_token"=>"[FILTERED]"}
+[36m  Disk Storage (0.5ms) [0m[32mUploaded file to key: d8mulz8eidn5c7lliliuzkkzjc4u (checksum: msC0aUQV2PKEGtSJxsRWqg==)[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 600)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png" for 172.18.0.1 at 2025-05-01 10:33:24 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422", "filename"=>"ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a"}
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: d8mulz8eidn5c7lliliuzkkzjc4u (http://172.18.0.5:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaRGh0ZFd4Nk9HVnBaRzQxWXpkc2JHbHNhWFY2YTJ0NmFtTTBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWFacGJteHBibVU3SUdacGJHVnVZVzFsUFNKMGFXTnJaWFJmYldGdUxUQTBZakF3TkdFM09XWmxaV0k0TXpOaU1qVTBOR0ZrWVRRd05tVTFZamhtWWpsak1HVTFOekptTTJReVlUZzVPR0V1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZDBhV05yWlhSZmJXRnVMVEEwWWpBd05HRTNPV1psWldJNE16TmlNalUwTkdGa1lUUXdObVUxWWpobVlqbGpNR1UxTnpKbU0yUXlZVGc1T0dFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMVQxMDozODoyNC40MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--83a1b99902f9cfeb71700aaff8568ab235ef36a5/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png)[0m
+Redirected to http://172.18.0.5:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaRGh0ZFd4Nk9HVnBaRzQxWXpkc2JHbHNhWFY2YTJ0NmFtTTBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWFacGJteHBibVU3SUdacGJHVnVZVzFsUFNKMGFXTnJaWFJmYldGdUxUQTBZakF3TkdFM09XWmxaV0k0TXpOaU1qVTBOR0ZrWVRRd05tVTFZamhtWWpsak1HVTFOekptTTJReVlUZzVPR0V1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZDBhV05yWlhSZmJXRnVMVEEwWWpBd05HRTNPV1psWldJNE16TmlNalUwTkdGa1lUUXdObVUxWWpobVlqbGpNR1UxTnpKbU0yUXlZVGc1T0dFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMVQxMDozODoyNC40MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--83a1b99902f9cfeb71700aaff8568ab235ef36a5/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png
+Completed 302 Found in 12ms (ActiveRecord: 2.5ms | Allocations: 2485)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhaRGh0ZFd4Nk9HVnBaRzQxWXpkc2JHbHNhWFY2YTJ0NmFtTTBkUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWFacGJteHBibVU3SUdacGJHVnVZVzFsUFNKMGFXTnJaWFJmYldGdUxUQTBZakF3TkdFM09XWmxaV0k0TXpOaU1qVTBOR0ZrWVRRd05tVTFZamhtWWpsak1HVTFOekptTTJReVlUZzVPR0V1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZDBhV05yWlhSZmJXRnVMVEEwWWpBd05HRTNPV1psWldJNE16TmlNalUwTkdGa1lUUXdObVUxWWpobVlqbGpNR1UxTnpKbU0yUXlZVGc1T0dFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMVQxMDozODoyNC40MDZaIiwicHVyIjoiYmxvYl9rZXkifX0=--83a1b99902f9cfeb71700aaff8568ab235ef36a5/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png" for 172.18.0.1 at 2025-05-01 10:33:24 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 173)
+
+
+Started POST "/reportes" for 172.18.0.1 at 2025-05-01 10:33:27 +0000
+Processing by ReportesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reporte"=>{"nombre"=>"kkkkk", "fono"=>"987654321", "contenido"=>"<div>llll<figure data-trix-attachment=\"{&quot;contentType&quot;:&quot;image/png&quot;,&quot;filename&quot;:&quot;ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png&quot;,&quot;filesize&quot;:8374,&quot;height&quot;:512,&quot;sgid&quot;:&quot;BAh7CEkiCGdpZAY6BkVUSSI6Z2lkOi8vcmFpbHNvbmRvY2tlci9BY3RpdmVTdG9yYWdlOjpCbG9iLzQ1P2V4cGlyZXNfaW4GOwBUSSIMcHVycG9zZQY7AFRJIg9hdHRhY2hhYmxlBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--872d5896aa8e82fc8fbfdaf877f14adc1d453ded&quot;,&quot;url&quot;:&quot;http://172.18.0.5:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png&quot;,&quot;width&quot;:512}\" data-trix-content-type=\"image/png\" data-trix-attributes=\"{&quot;presentation&quot;:&quot;gallery&quot;}\" class=\"attachment attachment--preview attachment--png\"><img src=\"http://172.18.0.5:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png\" width=\"512\" height=\"512\"><figcaption class=\"attachment__caption\"><span class=\"attachment__name\">ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png</span> <span class=\"attachment__size\">8.18 KB</span></figcaption></figure></div>"}, "commit"=>"Crear Reporte"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mReporte Create (2.3ms)[0m  [1m[32mINSERT INTO "reportes" ("nombre", "contenido", "created_at", "updated_at", "fono") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nombre", "kkkkk"], ["contenido", nil], ["created_at", "2025-05-01 10:33:27.034862"], ["updated_at", "2025-05-01 10:33:27.034862"], ["fono", 987654321]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActionText::RichText Create (2.0ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "contenido"], ["body", "<div>llll<action-text-attachment sgid=\"BAh7CEkiCGdpZAY6BkVUSSI6Z2lkOi8vcmFpbHNvbmRvY2tlci9BY3RpdmVTdG9yYWdlOjpCbG9iLzQ1P2V4cGlyZXNfaW4GOwBUSSIMcHVycG9zZQY7AFRJIg9hdHRhY2hhYmxlBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--872d5896aa8e82fc8fbfdaf877f14adc1d453ded\" content-type=\"image/png\" url=\"http://172.18.0.5:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png\" filename=\"ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png\" filesize=\"8374\" width=\"512\" height=\"512\" presentation=\"gallery\"></action-text-attachment></div>"], ["record_type", "Reporte"], ["record_id", 16], ["created_at", "2025-05-01 10:33:27.068355"], ["updated_at", "2025-05-01 10:33:27.068355"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Update (2.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true}"], ["id", 45]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (5.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "embeds"], ["record_type", "ActionText::RichText"], ["record_id", 17], ["blob_id", 45], ["created_at", "2025-05-01 10:33:27.088770"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mReporte Update (1.9ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1 WHERE "reportes"."id" = $2[0m  [["updated_at", "2025-05-01 10:33:27.098556"], ["id", 16]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActionText::RichText Update (1.8ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "updated_at" = $1 WHERE "action_text_rich_texts"."id" = $2[0m  [["updated_at", "2025-05-01 10:33:27.098090"], ["id", 17]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: efa1c673-a64e-4ce9-ae84-85947aaaf39c) to Async(default) with arguments: #<GlobalID:0x00007f366c4f86f8 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/45>>
+Redirected to http://172.18.0.5:3000/reportes/16
+Completed 302 Found in 83ms (ActiveRecord: 23.2ms | Allocations: 22993)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [efa1c673-a64e-4ce9-ae84-85947aaaf39c]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [efa1c673-a64e-4ce9-ae84-85947aaaf39c] Performing ActiveStorage::AnalyzeJob (Job ID: efa1c673-a64e-4ce9-ae84-85947aaaf39c) from Async(default) enqueued at 2025-05-01T10:33:27Z with arguments: #<GlobalID:0x00007f366c505e70 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/45>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [efa1c673-a64e-4ce9-ae84-85947aaaf39c] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: d8mulz8eidn5c7lliliuzkkzjc4u[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [efa1c673-a64e-4ce9-ae84-85947aaaf39c]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [efa1c673-a64e-4ce9-ae84-85947aaaf39c]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"width\":512,\"height\":512,\"analyzed\":true}"], ["id", 45]]
+Started GET "/reportes/16" for 172.18.0.1 at 2025-05-01 10:33:27 +0000
+[ActiveJob] [ActiveStorage::AnalyzeJob] [efa1c673-a64e-4ce9-ae84-85947aaaf39c]   [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [efa1c673-a64e-4ce9-ae84-85947aaaf39c] Performed ActiveStorage::AnalyzeJob (Job ID: efa1c673-a64e-4ce9-ae84-85947aaaf39c) from Async(default) in 42.06ms
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"16"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (1.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:17
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 3.5ms | Allocations: 1161)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 17.0ms | Allocations: 7076)
+  Rendered reportes/_reporte.html.haml (Duration: 40.4ms | Allocations: 17259)
+  [1m[36mComentario Load (1.6ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 15)
+  Rendered comentarios/_new.html.erb (Duration: 5.2ms | Allocations: 1767)
+  Rendered reportes/_comentarios.html.haml (Duration: 14.6ms | Allocations: 6165)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 63.6ms | Allocations: 28653)
+  Rendered layout layouts/application.html.haml (Duration: 64.8ms | Allocations: 29270)
+Completed 200 OK in 73ms (Views: 58.6ms | ActiveRecord: 8.1ms | Allocations: 30998)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUJHa0NBQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--30dca3ec705435f112e003e76ad11c6bd2498b3c/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png" for 172.18.0.1 at 2025-05-01 10:33:27 +0000
+Started GET "/cable" for 172.18.0.1 at 2025-05-01 10:33:27 +0000
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422", "variation_key"=>"[FILTERED]", "filename"=>"ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a"}
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (1.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 45], ["variation_digest", "wjqVtOuFppDd1oEBBMUc2TyD8vk="], ["LIMIT", 1]]
+[36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: d8mulz8eidn5c7lliliuzkkzjc4u[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::VariantRecord Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("blob_id", "variation_digest") VALUES ($1, $2) RETURNING "id"[0m  [["blob_id", 45], ["variation_digest", "wjqVtOuFppDd1oEBBMUc2TyD8vk="]]
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (14.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "7y1bsg7zx7hju0qg93ujk8se1zln"], ["filename", "ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 13956], ["checksum", "AYU6wcH+Vyw2egGc5n2UNQ=="], ["created_at", "2025-05-01 10:33:27.527145"]]
+  [1m[36mActiveStorage::Attachment Create (1.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "ActiveStorage::VariantRecord"], ["record_id", 15], ["blob_id", 46], ["created_at", "2025-05-01 10:33:27.546122"]]
+Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-01 10:33:27 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (0.4ms) [0m[32mUploaded file to key: 7y1bsg7zx7hju0qg93ujk8se1zln (checksum: AYU6wcH+Vyw2egGc5n2UNQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: c9747552-90ab-45e0-91ed-e5d88854e8e7) to Async(default) with arguments: #<GlobalID:0x00007f366c019df8 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/46>>
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: 7y1bsg7zx7hju0qg93ujk8se1zln (http://172.18.0.5:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOM2t4WW5Obk4zcDROMmhxZFRCeFp6a3pkV3ByT0hObE1YcHNiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWFacGJteHBibVU3SUdacGJHVnVZVzFsUFNKMGFXTnJaWFJmYldGdUxUQTBZakF3TkdFM09XWmxaV0k0TXpOaU1qVTBOR0ZrWVRRd05tVTFZamhtWWpsak1HVTFOekptTTJReVlUZzVPR0V1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZDBhV05yWlhSZmJXRnVMVEEwWWpBd05HRTNPV1psWldJNE16TmlNalUwTkdGa1lUUXdObVUxWWpobVlqbGpNR1UxTnpKbU0yUXlZVGc1T0dFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMVQxMDozODoyNy41NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--fb45fd367f67db986d14908b19941477bfb467b1/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png)[0m
+Redirected to http://172.18.0.5:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOM2t4WW5Obk4zcDROMmhxZFRCeFp6a3pkV3ByT0hObE1YcHNiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWFacGJteHBibVU3SUdacGJHVnVZVzFsUFNKMGFXTnJaWFJmYldGdUxUQTBZakF3TkdFM09XWmxaV0k0TXpOaU1qVTBOR0ZrWVRRd05tVTFZamhtWWpsak1HVTFOekptTTJReVlUZzVPR0V1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZDBhV05yWlhSZmJXRnVMVEEwWWpBd05HRTNPV1psWldJNE16TmlNalUwTkdGa1lUUXdObVUxWWpobVlqbGpNR1UxTnpKbU0yUXlZVGc1T0dFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMVQxMDozODoyNy41NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--fb45fd367f67db986d14908b19941477bfb467b1/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png
+Completed 302 Found in 200ms (ActiveRecord: 35.3ms | Allocations: 24336)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c9747552-90ab-45e0-91ed-e5d88854e8e7]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c9747552-90ab-45e0-91ed-e5d88854e8e7] Performing ActiveStorage::AnalyzeJob (Job ID: c9747552-90ab-45e0-91ed-e5d88854e8e7) from Async(default) enqueued at 2025-05-01T10:33:27Z with arguments: #<GlobalID:0x00007f366c02b288 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/46>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c9747552-90ab-45e0-91ed-e5d88854e8e7] [36m  Disk Storage (0.3ms) [0m[34mDownloaded file from key: 7y1bsg7zx7hju0qg93ujk8se1zln[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c9747552-90ab-45e0-91ed-e5d88854e8e7]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c9747552-90ab-45e0-91ed-e5d88854e8e7]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"width\":512,\"height\":512,\"analyzed\":true}"], ["id", 46]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c9747552-90ab-45e0-91ed-e5d88854e8e7]   [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [c9747552-90ab-45e0-91ed-e5d88854e8e7] Performed ActiveStorage::AnalyzeJob (Job ID: c9747552-90ab-45e0-91ed-e5d88854e8e7) from Async(default) in 32.15ms
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOM2t4WW5Obk4zcDROMmhxZFRCeFp6a3pkV3ByT0hObE1YcHNiZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQWFacGJteHBibVU3SUdacGJHVnVZVzFsUFNKMGFXTnJaWFJmYldGdUxUQTBZakF3TkdFM09XWmxaV0k0TXpOaU1qVTBOR0ZrWVRRd05tVTFZamhtWWpsak1HVTFOekptTTJReVlUZzVPR0V1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZDBhV05yWlhSZmJXRnVMVEEwWWpBd05HRTNPV1psWldJNE16TmlNalUwTkdGa1lUUXdObVUxWWpobVlqbGpNR1UxTnpKbU0yUXlZVGc1T0dFdWNHNW5CanNHVkRvUlkyOXVkR1Z1ZEY5MGVYQmxTU0lPYVcxaFoyVXZjRzVuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMVQxMDozODoyNy41NzBaIiwicHVyIjoiYmxvYl9rZXkifX0=--fb45fd367f67db986d14908b19941477bfb467b1/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png" for 172.18.0.1 at 2025-05-01 10:33:27 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 167)
+
+
+Started POST "/reportes/16/comentarios" for 172.18.0.1 at 2025-05-01 10:33:32 +0000
+Processing by ComentariosController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comentario"=>{"contenido"=>"jjjjj"}, "commit"=>"Crear Comentario", "reporte_id"=>"16"}
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/comentarios_controller.rb:11:in `set_reporte'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comentarios_controller.rb:5:in `create'
+  [1m[36mComentario Create (2.3ms)[0m  [1m[32mINSERT INTO "comentarios" ("reporte_id", "contenido", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["reporte_id", 16], ["contenido", "jjjjj"], ["created_at", "2025-05-01 10:33:32.409456"], ["updated_at", "2025-05-01 10:33:32.409456"]]
+  ↳ app/controllers/comentarios_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comentarios_controller.rb:5:in `create'
+[ActiveJob] Enqueued Turbo::Streams::ActionBroadcastJob (Job ID: 2906a7bd-6247-4e2e-aace-59a7147fa2c6) to Async(default) with arguments: "Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2", {:action=>:append, :target=>"comentarios", :targets=>nil, :locals=>{:comentario=>#<GlobalID:0x00007f366c2f0e00 @uri=#<URI::GID gid://railsondocker/Comentario/28>>}, :partial=>"comentarios/comentario"}
+Redirected to http://172.18.0.5:3000/reportes/16
+Completed 302 Found in 20ms (ActiveRecord: 6.4ms | Allocations: 4983)
+
+
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [2906a7bd-6247-4e2e-aace-59a7147fa2c6]   [1m[36mComentario Load (0.6ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [2906a7bd-6247-4e2e-aace-59a7147fa2c6] Performing Turbo::Streams::ActionBroadcastJob (Job ID: 2906a7bd-6247-4e2e-aace-59a7147fa2c6) from Async(default) enqueued at 2025-05-01T10:33:32Z with arguments: "Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2", {:action=>:append, :target=>"comentarios", :targets=>nil, :locals=>{:comentario=>#<GlobalID:0x00007f366c3b1e98 @uri=#<URI::GID gid://railsondocker/Comentario/28>>}, :partial=>"comentarios/comentario"}
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [2906a7bd-6247-4e2e-aace-59a7147fa2c6]   Rendered comentarios/_comentario.html.erb (Duration: 1.1ms | Allocations: 260)
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [2906a7bd-6247-4e2e-aace-59a7147fa2c6] [ActionCable] Broadcasting to Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2: "<turbo-stream action=\"append\" target=\"comentarios\"><template><div id=\"comentario_28\">\n  jjjjj\n  - <time datetime=\"2025-05-01T10:33:32Z\">1 de mayo de 2025 10:33</time>\n</div>\n</template></turbo-stream>"
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [2906a7bd-6247-4e2e-aace-59a7147fa2c6] Performed Turbo::Streams::ActionBroadcastJob (Job ID: 2906a7bd-6247-4e2e-aace-59a7147fa2c6) from Async(default) in 9.76ms
+Turbo::StreamsChannel transmitting "<turbo-stream action=\"append\" target=\"comentarios\"><template><div id=\"comentario_28\">\n  jjjjj\n  - <time datetime=\"2025-05-01T10:33:32Z\">1 de mayo de 2025 10:33</time>\n</div>\n</template></turbo-stream>" (via streamed from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2)
+Started GET "/reportes/16" for 172.18.0.1 at 2025-05-01 10:33:32 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"16"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (1.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:17
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.3ms | Allocations: 521)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 14.6ms | Allocations: 4176)
+  Rendered reportes/_reporte.html.haml (Duration: 26.2ms | Allocations: 6795)
+  [1m[36mComentario Load (1.5ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of comentarios/_comentario.html.erb [1 times] (Duration: 1.0ms | Allocations: 300)
+  Rendered comentarios/_new.html.erb (Duration: 1.3ms | Allocations: 504)
+  Rendered reportes/_comentarios.html.haml (Duration: 6.5ms | Allocations: 1852)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 34.5ms | Allocations: 9315)
+  Rendered layout layouts/application.html.haml (Duration: 35.6ms | Allocations: 9932)
+Completed 200 OK in 42ms (Views: 29.7ms | ActiveRecord: 8.4ms | Allocations: 10943)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6RTIi--77089146c939b9e5a73b8de8c49308fa5a2b582a830990d76eb5d6e175beb843"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Started POST "/reportes/16/comentarios" for 172.18.0.1 at 2025-05-01 10:33:37 +0000
+Processing by ComentariosController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comentario"=>{"contenido"=>"jjjjjj"}, "commit"=>"Crear Comentario", "reporte_id"=>"16"}
+  [1m[36mReporte Load (1.1ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/comentarios_controller.rb:11:in `set_reporte'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comentarios_controller.rb:5:in `create'
+  [1m[36mComentario Create (1.7ms)[0m  [1m[32mINSERT INTO "comentarios" ("reporte_id", "contenido", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["reporte_id", 16], ["contenido", "jjjjjj"], ["created_at", "2025-05-01 10:33:37.099912"], ["updated_at", "2025-05-01 10:33:37.099912"]]
+  ↳ app/controllers/comentarios_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comentarios_controller.rb:5:in `create'
+[ActiveJob] Enqueued Turbo::Streams::ActionBroadcastJob (Job ID: 7f86c860-ad6e-4740-ad10-518921d6bcb0) to Async(default) with arguments: "Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2", {:action=>:append, :target=>"comentarios", :targets=>nil, :locals=>{:comentario=>#<GlobalID:0x00007f36c14d6788 @uri=#<URI::GID gid://railsondocker/Comentario/29>>}, :partial=>"comentarios/comentario"}
+Redirected to http://172.18.0.5:3000/reportes/16
+Completed 302 Found in 18ms (ActiveRecord: 5.9ms | Allocations: 4156)
+
+
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [7f86c860-ad6e-4740-ad10-518921d6bcb0]   [1m[36mComentario Load (0.4ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [7f86c860-ad6e-4740-ad10-518921d6bcb0] Performing Turbo::Streams::ActionBroadcastJob (Job ID: 7f86c860-ad6e-4740-ad10-518921d6bcb0) from Async(default) enqueued at 2025-05-01T10:33:37Z with arguments: "Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2", {:action=>:append, :target=>"comentarios", :targets=>nil, :locals=>{:comentario=>#<GlobalID:0x00007f36c144c2b8 @uri=#<URI::GID gid://railsondocker/Comentario/29>>}, :partial=>"comentarios/comentario"}
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [7f86c860-ad6e-4740-ad10-518921d6bcb0]   Rendered comentarios/_comentario.html.erb (Duration: 0.5ms | Allocations: 107)
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [7f86c860-ad6e-4740-ad10-518921d6bcb0] [ActionCable] Broadcasting to Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2: "<turbo-stream action=\"append\" target=\"comentarios\"><template><div id=\"comentario_29\">\n  jjjjjj\n  - <time datetime=\"2025-05-01T10:33:37Z\">1 de mayo de 2025 10:33</time>\n</div>\n</template></turbo-stream>"
+[ActiveJob] [Turbo::Streams::ActionBroadcastJob] [7f86c860-ad6e-4740-ad10-518921d6bcb0] Performed Turbo::Streams::ActionBroadcastJob (Job ID: 7f86c860-ad6e-4740-ad10-518921d6bcb0) from Async(default) in 6.47ms
+Turbo::StreamsChannel transmitting "<turbo-stream action=\"append\" target=\"comentarios\"><template><div id=\"comentario_29\">\n  jjjjjj\n  - <time datetime=\"2025-05-01T10:33:37Z\">1 de mayo de 2025 10:33</time>\n</div>\n</template></turbo-stream>" (via streamed from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2)
+Started GET "/reportes/16" for 172.18.0.1 at 2025-05-01 10:33:37 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"16"}
+  [1m[36mReporte Load (1.4ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (1.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:17
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.8ms | Allocations: 518)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 12.0ms | Allocations: 4174)
+  Rendered reportes/_reporte.html.haml (Duration: 22.0ms | Allocations: 6793)
+  [1m[36mComentario Load (2.0ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of comentarios/_comentario.html.erb [2 times] (Duration: 1.0ms | Allocations: 248)
+  Rendered comentarios/_new.html.erb (Duration: 1.4ms | Allocations: 502)
+  Rendered reportes/_comentarios.html.haml (Duration: 7.9ms | Allocations: 1792)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 32.2ms | Allocations: 9253)
+  Rendered layout layouts/application.html.haml (Duration: 33.8ms | Allocations: 9870)
+Completed 200 OK in 40ms (Views: 27.9ms | ActiveRecord: 8.2ms | Allocations: 10879)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6RTIi--77089146c939b9e5a73b8de8c49308fa5a2b582a830990d76eb5d6e175beb843"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Started GET "/reportes" for 172.18.0.1 at 2025-05-01 10:33:43 +0000
+Processing by ReportesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+  [1m[36mReporte Load (1.0ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes"[0m
+  ↳ app/views/reportes/index.html.haml:5
+  [1m[36mComentario Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (2.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:17
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.3ms | Allocations: 518)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 10.7ms | Allocations: 4062)
+  Rendered collection of reportes/_reporte.html.haml [1 times] (Duration: 26.9ms | Allocations: 12666)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 30.8ms | Allocations: 13898)
+  Rendered layout layouts/application.html.haml (Duration: 31.9ms | Allocations: 14523)
+Completed 200 OK in 33ms (Views: 26.3ms | ActiveRecord: 6.2ms | Allocations: 14790)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6RTIi--77089146c939b9e5a73b8de8c49308fa5a2b582a830990d76eb5d6e175beb843"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Started GET "/reportes/16" for 172.18.0.1 at 2025-05-01 10:33:45 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mReporte Load (1.0ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (4.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  [1m[36mActiveStorage::Blob Load (7.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:17
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 2.1ms | Allocations: 520)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 24.2ms | Allocations: 4190)
+  Rendered reportes/_reporte.html.haml (Duration: 38.3ms | Allocations: 6983)
+  [1m[36mComentario Load (1.9ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of comentarios/_comentario.html.erb [2 times] (Duration: 1.1ms | Allocations: 248)
+  Rendered comentarios/_new.html.erb (Duration: 1.8ms | Allocations: 502)
+  Rendered reportes/_comentarios.html.haml (Duration: 8.9ms | Allocations: 1792)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 49.2ms | Allocations: 9440)
+  Rendered layout layouts/application.html.haml (Duration: 50.8ms | Allocations: 10057)
+Completed 200 OK in 55ms (Views: 36.6ms | ActiveRecord: 15.8ms | Allocations: 11063)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6RTIi--77089146c939b9e5a73b8de8c49308fa5a2b582a830990d76eb5d6e175beb843"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Started GET "/reportes/16/edit" for 172.18.0.1 at 2025-05-01 10:33:48 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  [1m[36mActionText::RichText Load (2.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:20
+  [1m[36mActiveStorage::Blob Load (6.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:20
+  Rendered reportes/_form.html.haml (Duration: 25.4ms | Allocations: 5357)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 32.8ms | Allocations: 8627)
+  Rendered layout layouts/application.html.haml (Duration: 34.5ms | Allocations: 9244)
+Completed 200 OK in 42ms (Views: 27.7ms | ActiveRecord: 9.8ms | Allocations: 10305)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6RTIi--77089146c939b9e5a73b8de8c49308fa5a2b582a830990d76eb5d6e175beb843"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Started PATCH "/reportes/16" for 172.18.0.1 at 2025-05-01 10:33:54 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reporte"=>{"nombre"=>"kkkkk", "fono"=>"987654321", "contenido"=>"<div>llll<figure data-trix-attachment=\"{&quot;contentType&quot;:&quot;image/png&quot;,&quot;filename&quot;:&quot;ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png&quot;,&quot;filesize&quot;:8374,&quot;height&quot;:512,&quot;previewable&quot;:true,&quot;sgid&quot;:&quot;BAh7CEkiCGdpZAY6BkVUSSI6Z2lkOi8vcmFpbHNvbmRvY2tlci9BY3RpdmVTdG9yYWdlOjpCbG9iLzQ1P2V4cGlyZXNfaW4GOwBUSSIMcHVycG9zZQY7AFRJIg9hdHRhY2hhYmxlBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--872d5896aa8e82fc8fbfdaf877f14adc1d453ded&quot;,&quot;url&quot;:&quot;http://172.18.0.5:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png&quot;,&quot;width&quot;:512}\" data-trix-content-type=\"image/png\" data-trix-attributes=\"{&quot;presentation&quot;:&quot;gallery&quot;}\" class=\"attachment attachment--preview attachment--png\"><img src=\"http://172.18.0.5:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png\" width=\"512\" height=\"512\"><figcaption class=\"attachment__caption\"><span class=\"attachment__name\">ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png</span> <span class=\"attachment__size\">8.18 KB</span></figcaption></figure></div>"}, "commit"=>"Actualizar Reporte", "id"=>"16"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  [1m[36mActionText::RichText Load (1.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 2.0ms | Allocations: 514)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 11.8ms | Allocations: 3917)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.6ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 11.1ms | Allocations: 3910)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.9ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 11.5ms | Allocations: 3944)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.4ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 9.9ms | Allocations: 3864)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 17], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 2.0ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 12.8ms | Allocations: 4077)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.6ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 11.7ms | Allocations: 4017)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.8ms | Allocations: 511)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 15.0ms | Allocations: 4128)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.3ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 11.1ms | Allocations: 4062)
+  [1m[36mActionText::RichText Update (2.0ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "body" = $1, "updated_at" = $2 WHERE "action_text_rich_texts"."id" = $3[0m  [["body", "<div>llll<action-text-attachment sgid=\"BAh7CEkiCGdpZAY6BkVUSSI6Z2lkOi8vcmFpbHNvbmRvY2tlci9BY3RpdmVTdG9yYWdlOjpCbG9iLzQ1P2V4cGlyZXNfaW4GOwBUSSIMcHVycG9zZQY7AFRJIg9hdHRhY2hhYmxlBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--872d5896aa8e82fc8fbfdaf877f14adc1d453ded\" content-type=\"image/png\" url=\"http://172.18.0.5:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a5433ac58631abf99b12b2f8297146b3b2c3c422/ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png\" filename=\"ticket_man-04b004a79feeb833b2544ada406e5b8fb9c0e572f3d2a898a.png\" filesize=\"8374\" width=\"512\" height=\"512\" previewable=\"true\" presentation=\"gallery\"></action-text-attachment></div>"], ["updated_at", "2025-05-01 10:33:54.888324"], ["id", 17]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 2.1ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 15.2ms | Allocations: 4522)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.7ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 10.0ms | Allocations: 4096)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.3ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 9.7ms | Allocations: 4176)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.4ms | Allocations: 509)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 10.7ms | Allocations: 4114)
+  [1m[36mReporte Update (1.6ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1 WHERE "reportes"."id" = $2[0m  [["updated_at", "2025-05-01 10:33:54.973482"], ["id", 16]]
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:40:in `block in update'
+Redirected to http://172.18.0.5:3000/reportes/16
+Completed 302 Found in 204ms (ActiveRecord: 15.2ms | Allocations: 65452)
+
+
+Started GET "/reportes/16" for 172.18.0.1 at 2025-05-01 10:33:55 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"16"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (2.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:17
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.8ms | Allocations: 518)
+  Rendered /usr/local/bundle/gems/actiontext-7.0.4.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 9.8ms | Allocations: 4173)
+  Rendered reportes/_reporte.html.haml (Duration: 22.0ms | Allocations: 6794)
+  [1m[36mComentario Load (1.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of comentarios/_comentario.html.erb [2 times] (Duration: 0.6ms | Allocations: 248)
+  Rendered comentarios/_new.html.erb (Duration: 1.4ms | Allocations: 502)
+  Rendered reportes/_comentarios.html.haml (Duration: 5.6ms | Allocations: 1792)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 29.7ms | Allocations: 9258)
+  Rendered layout layouts/application.html.haml (Duration: 31.9ms | Allocations: 9875)
+Completed 200 OK in 37ms (Views: 26.0ms | ActiveRecord: 7.8ms | Allocations: 10884)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Started DELETE "/reportes/16" for 172.18.0.1 at 2025-05-01 10:33:57 +0000
+Processing by ReportesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"16"}
+  [1m[36mReporte Load (1.1ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mComentario Load (1.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 16]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mComentario Destroy (2.8ms)[0m  [1m[31mDELETE FROM "comentarios" WHERE "comentarios"."id" = $1[0m  [["id", 28]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mComentario Destroy (1.9ms)[0m  [1m[31mDELETE FROM "comentarios" WHERE "comentarios"."id" = $1[0m  [["id", 29]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 17], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (1.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 29]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mActionText::RichText Destroy (1.4ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mReporte Destroy (1.3ms)[0m  [1m[31mDELETE FROM "reportes" WHERE "reportes"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+[ActionCable] Broadcasting to Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2: "<turbo-stream action=\"remove\" target=\"comentario_28\"></turbo-stream>"
+[ActionCable] Broadcasting to Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2: "<turbo-stream action=\"remove\" target=\"comentario_29\"></turbo-stream>"
+Turbo::StreamsChannel transmitting "<turbo-stream action=\"remove\" target=\"comentario_28\"></turbo-stream>" (via streamed from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2)
+Turbo::StreamsChannel transmitting "<turbo-stream action=\"remove\" target=\"comentario_29\"></turbo-stream>" (via streamed from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2)
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:52:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 17238018-3fdc-4892-83a1-f0ffd6154cca) to Async(default) with arguments: #<GlobalID:0x00007f36c2f2a648 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/45>>
+Redirected to http://172.18.0.5:3000/reportes
+Completed 302 Found in 56ms (ActiveRecord: 18.6ms | Allocations: 12242)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::Blob Load (3.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca] Performing ActiveStorage::PurgeJob (Job ID: 17238018-3fdc-4892-83a1-f0ffd6154cca) from Async(default) enqueued at 2025-05-01T10:33:57Z with arguments: #<GlobalID:0x00007f36c3236d50 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/45>>
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 45], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::VariantRecord Load (0.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 45]]
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 30]]
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::VariantRecord Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."id" = $1[0m  [["id", 15]]
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 45], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+Started GET "/reportes" for 172.18.0.1 at 2025-05-01 10:33:57 +0000
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::Blob Destroy (3.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 45]]
+Processing by ReportesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mTRANSACTION (10.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca] Enqueued ActiveStorage::PurgeJob (Job ID: cc937cf7-8379-4329-984a-4ab77754e0c5) to Async(default) with arguments: #<GlobalID:0x00007f36c125e0c8 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/46>>
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca] [36m  Disk Storage (0.3ms) [0m[31mDeleted file from key: d8mulz8eidn5c7lliliuzkkzjc4u[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca] [36m  Disk Storage (1.8ms) [0m[31mDeleted files by key prefix: variants/d8mulz8eidn5c7lliliuzkkzjc4u/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [17238018-3fdc-4892-83a1-f0ffd6154cca] Performed ActiveStorage::PurgeJob (Job ID: 17238018-3fdc-4892-83a1-f0ffd6154cca) from Async(default) in 63.35ms
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5] Performing ActiveStorage::PurgeJob (Job ID: cc937cf7-8379-4329-984a-4ab77754e0c5) from Async(default) enqueued at 2025-05-01T10:33:57Z with arguments: #<GlobalID:0x00007f36c12c5b38 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/46>>
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5]   [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5]   [1m[36mActiveStorage::Attachment Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 46], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5]   [1m[36mActiveStorage::VariantRecord Load (1.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 46]]
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5]   [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 46], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5]   [1m[36mActiveStorage::Blob Destroy (2.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 46]]
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5]   [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5] [36m  Disk Storage (0.9ms) [0m[31mDeleted file from key: 7y1bsg7zx7hju0qg93ujk8se1zln[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5] [36m  Disk Storage (1.3ms) [0m[31mDeleted files by key prefix: variants/7y1bsg7zx7hju0qg93ujk8se1zln/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [cc937cf7-8379-4329-984a-4ab77754e0c5] Performed ActiveStorage::PurgeJob (Job ID: cc937cf7-8379-4329-984a-4ab77754e0c5) from Async(default) in 45.58ms
+  [1m[36mReporte Load (2.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes"[0m
+  ↳ app/views/reportes/index.html.haml:5
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 76.0ms | Allocations: 16248)
+  Rendered layout layouts/application.html.haml (Duration: 78.9ms | Allocations: 16873)
+Completed 200 OK in 80ms (Views: 28.1ms | ActiveRecord: 51.5ms | Allocations: 17143)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6RTIi--77089146c939b9e5a73b8de8c49308fa5a2b582a830990d76eb5d6e175beb843"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE2
+Started GET "/reportes/16" for 172.18.0.1 at 2025-05-01 10:34:03 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mReporte Load (1.1ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+Redirected to http://172.18.0.5:3000/
+Filter chain halted as :set_reporte rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms | Allocations: 1419)
+
+
+Started GET "/" for 172.18.0.1 at 2025-05-01 10:34:03 +0000
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 0.4ms | Allocations: 98)
+  Rendered layout layouts/application.html.haml (Duration: 2.6ms | Allocations: 830)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 1089)
+
+
+Finished "/cable" [WebSocket] for 172.18.0.1 at 2025-05-01 10:34:05 +0000
+Started GET "/" for 172.18.0.1 at 2025-05-01 10:34:05 +0000
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 0.4ms | Allocations: 98)
+  Rendered layout layouts/application.html.haml (Duration: 2.5ms | Allocations: 830)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1083)
+
+
+Started GET "/" for 172.18.0.1 at 2025-05-01 10:34:17 +0000
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 0.4ms | Allocations: 98)
+  Rendered layout layouts/application.html.haml (Duration: 2.2ms | Allocations: 830)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1083)
+
+

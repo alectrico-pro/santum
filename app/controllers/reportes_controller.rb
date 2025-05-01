@@ -62,7 +62,7 @@ class ReportesController < ApplicationController
       begin
         @reporte = Reporte.find(params[:id])
       rescue
-        redirect_to root_path, notice: "No se encontró un reporte que se estaba buscando." 
+        redirect_to root_path 
       end
     end
 
