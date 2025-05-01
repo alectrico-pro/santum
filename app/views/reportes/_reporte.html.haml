@@ -1,4 +1,4 @@
-%div{ :id =>  dom_id( reporte), :class => 'scaffold_record'}
+.scaffold_record{ :id => dom_id( reporte)}
   %p
     %strong Nombre:
     = reporte.nombre 
@@ -16,4 +16,4 @@
     = reporte.contenido 
 
   %p
-    = link_to "Mostrar este reporte", reporte 
+    = link_to "Ver este reporte", reporte 
