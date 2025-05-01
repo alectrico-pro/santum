@@ -1,16 +1,22 @@
 FROM ruby:3.2.1-slim
 #ROM ruby:3.0.5-slim
 
+#Curl es usado por typhoeus
+
 
 RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
+    libcurl4-openssl-dev \
     build-essential \
     gnupg2 \
+    curl \
     less \
     git \
-    libpq-dev \
-    postgresql-client \
     libvips \
+    libpq-dev \
+    libyaml-dev \
+    postgresql-client \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 
 ENV LANG=C.UTF-8 \
   BUNDLE_JOBS=4 \

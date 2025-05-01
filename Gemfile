@@ -59,6 +59,14 @@ gem "rubocop-rails"
 
 gem "haml"
 
+#usado al convertir waba_cfg
+gem 'psych', '< 4.0'
+
+#usado para enviar mensajes en WABA::Transaccion
+#gem 'curl'
+#gem 'typhoeus', '~> 1.4'
+gem 'httparty'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "1.7.1", platforms: %i[ mri mingw x64_mingw ]
