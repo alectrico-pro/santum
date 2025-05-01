@@ -1,0 +1,21 @@
+= form_with(model: reporte) do |form| 
+  -if reporte.errors.any? 
+    .error_explanation
+      %h2=pluralize(reporte.errors.count, "error")
+      %ul
+        -reporte.errors.each do |error| 
+          %li= error.full_message
+  #field
+    = form.label :nombre 
+    = form.text_field :nombre 
+
+  #field
+    = form.label :fono
+    = form.text_field :fono
+
+  #field
+    = form.label :contenido 
+    = form.rich_text_area :contenido 
+
+  #actions
+    = form.submit 

@@ -1,0 +1,19 @@
+%div{ :id =>  dom_id( reporte), :class => 'scaffold_record'}
+  %p
+    %strong Nombre:
+    = reporte.nombre 
+    %strong Fono:
+    = reporte.fono
+
+  %p
+    Publicado en #{time_tag( reporte.created_at)}
+
+  %p
+    %strong= pluralize reporte.comentarios.count, "comentarios"
+
+  %p
+    %strong Contenido:
+    = reporte.contenido 
+
+  %p
+    = link_to "Mostrar este reporte", reporte 
