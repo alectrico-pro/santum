@@ -1,12 +1,20 @@
 %h1 Bienvenido
 = link_to "Electricista a Domicilio en Providencia. Chile.", reportes_path 
+%small
+  Siga este link para un llamado rápido de un electricista.
+  No es un sitio seguro, y es de uso colectivo.
+  Puede haber muchas personas interactuando.
+  Puede que le borren su solicitud.
+  Ud. puede borrar las de otros.
 
 %h2 ¿Cómo se llama UD.?
 
 %div{:"data-controller" => "hello" }
   %input{ :"data-hello-target" => "name", :type => "text"}
   %button{ :"data-action" => "click->hello#greet"}
-    Qué es esto
+    Hola
   %span{ :"data-hello-target" => "output"}
     
-
+= link_to "alectrico", "https://www.alectrico.cl/agendar"
+%small
+  alectrico.cl es un sitio SEGURO. 

@@ -59,7 +59,11 @@ class ReportesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_reporte
-      @reporte = Reporte.find(params[:id])
+      begin
+        @reporte = Reporte.find(params[:id])
+      rescue
+        redirect_to root_path, notice: "No se encontró un reporte que se estaba buscando." 
+      end
     end
 
     # Only allow a list of trusted parameters through.
