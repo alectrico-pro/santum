@@ -25,7 +25,7 @@ class ReportesController < ApplicationController
 
     respond_to do |format|
       if @reporte.save
-        format.html { redirect_to @reporte, notice: "El Reporte fue creado." }
+        format.html { redirect_to @reporte, notice: "El reporte ha sido creado." }
         format.json { render :show, status: :created, location: @reporte }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -64,6 +64,6 @@ class ReportesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reporte_params
-      params.require(:reporte).permit(:nombre, :contenido)
+      params.require(:reporte).permit(:nombre, :fono, :contenido)
     end
 end

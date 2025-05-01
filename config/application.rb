@@ -25,8 +25,6 @@ module Railsondocker
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-#   I18n.locale = :es
-
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -34,5 +32,13 @@ module Railsondocker
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    #
+    config.generators do |g|
+       g.template_engine :haml
+       # you can also specify a different test framework or ORM here
+        g.test_framework  :rspec
+        g.orm             :pg
+    end
+
   end
 end
