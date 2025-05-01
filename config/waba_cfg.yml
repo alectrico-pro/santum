@@ -1,0 +1,375 @@
+default: &default
+  imagen_enviar_confirmar_fono_url: https://www.alectrico.cl/img/farol.jpg 
+  imagen_recargar_url:              https://www.alectrico.cl/img/green_bat.jpg
+  imagen_visita_url:                https://www.alectrico.cl/img/master_picture.png
+  image_url_say_ofertar:            https://www.alectrico.cl/img/casa-led.png
+  image_url_say_bienvenido:         https://www.alectrico.cl/img/farol_blanco.jpg
+
+  #estps dos se usan en un solo caso waba
+  #say_exito, pero cambia la url de la imagen
+  #usada en "Se ha enviado exitosamente su oferta"
+  image_url_exito:                  https://www.alectrico.cl/img/wide-landing-panel-4.jpg
+
+
+  #se usa en "Qué bueno ya puede llamara"
+  imagen_exito_url:                 https://www.alectrico.cl/img/master_picture.png
+  imagen_fail_url:                  https://www.alectrico.cl/img/freno.jpg
+  imagen_url_feliz_navidad:         https://www.alectrico.cl/img/holiday-christmas-architecture.png
+  imagen_url_token_bat:             https://www.alectrico.cl/assets/token_bat.jpg
+  #
+
+  #Se usan wabas distinos para clientes y colaboradores
+  #En waba transaccion debe definirse qué waba usar en cada caso
+  #También hay que separar los wabas al recibirse en webhook
+  #fono 945644889
+  #aba_id:                          150477064807758
+  #hone_id:                         107728605282500
+  #atalogo_id:                      862452141913088
+  marca:                            "alectrico ®"
+  #Este es el waba de atencioń a clientes
+  display_phone_number_colaboradores:       <%= ENV['DISPLAY_PHONE_NUMBER_COLABORADORES']    ? ENV['DISPLAY_PHONE_NUMBER_COLABORADORES']  : '56945644889' %>
+  display_phone_number_clientes:            <%= ENV['DISPLAY_PHONE_NUMBER_CLIENTES']    ? ENV['DISPLAY_PHONE_NUMBER_CLIENTES'] : '56932000849' %>
+
+  waba_id_colaboradores:            <%= ENV['WABA_ID_COLABORADORES']    ? ENV['WABA_ID_COLABORADORES']    : 150477064807758 %>
+  phone_id_colaboradores:           <%= ENV['PHONE_ID_COLABORADORES']   ? ENV['PHONE_ID_COLABORADORES']   : 107728605282500 %>
+  catalog_id_colaboradores:         <%= ENV['CATALOG_ID_COLABORADORES'] ? ENV['CATALOG_ID_COLABORADORES'] : 862452141913088 %>
+
+  #fono 932000849
+  #waba_id:                          120509644476862
+  #phone_id:                         122131484313420
+  #catalogo_id:                      276060775243326
+
+  waba_id_clientes:                 <%= ENV['WABA_ID_CLIENTES']    ? ENV['WABA_ID_CLIENTES']    : 120509644476862 %>
+  phone_id_clientes:                <%= ENV['PHONE_ID_CLIENTES']   ? ENV['PHONE_ID_CLIENTES']   : 122131484313420 %>
+  catalog_id_clientes:              <%= ENV['CATALOG_ID_CLIENTES'] ? ENV['CATALOG_ID_CLIENTES'] : 276060775243326 %>
+  flow_id_reservar:                 <%= ENV['FLOW_ID_RESERVAR']    ? ENV['FLOW_ID_RESERVAR']    : 1376297763050023 %>
+  flow_id_reservar_para_cuba:       <%= ENV['FLOW_ID_RESERVAR_PARA_CUBA']    ? ENV['FLOW_ID_RESERVAR_PARA_CUBA']    : 1376297763050023 %>
+
+  flow_id_disyuntor:                <%= ENV['FLOW_ID_DISYUNTOR']   ? ENV['FLOW_ID_DISYUNTOR']  : 2275989649409948 %>
+
+  #wip
+  #fono 56945704605
+  #waba_id:                          115409841173645
+  #phone_id:                         0
+  #catalogo_id:                      0
+
+  waba_id_alec:                 <%= ENV['WABA_ID_ALEC']    ? ENV['WABA_ID_ALEC']    : 115409841173645 %>
+  phone_id_alec:                <%= ENV['PHONE_ID_ALEC']   ? ENV['PHONE_ID_ALEC']   : 0 %>
+  catalog_id_alec:              <%= ENV['CATALOG_ID_ALEC'] ? ENV['CATALOG_ID_ALEC'] : 0 %>
+
+
+  #
+  max_intentos:                     3
+ 
+  #Debe serválido hasta 2027-lo instalé en 2023
+  api_version:                      <%= ENV['API_WABA_VERSION'] ? ENV['API_WABA_VERSION'] : 'v18.0' %>
+
+  token_de_verificacion:            <%= ENV['TOKEN_DE_VERIFICACION_WABA'] ? ENV['TOKEN_DE_VERIFICACION_WABA']  : "1" %>
+
+  base_uri:                         https://graph.facebook.com
+  #phone_id:                         115409841173645
+  #phone_id es realmente waba_id del número 96200921
+  #
+  to:                               56945644889
+  error_id:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 10
+    - 100
+    - 190
+    - 200
+    - 200
+    - 368
+    - 506
+    - 80007
+    - 131052
+    - 131042
+    - 131043
+    - 130429
+    - 131045
+    - 131016
+    - 131047
+    - 131048
+    - 131000
+    - 131001
+    - 131002
+    - 131005
+    - 131006
+    - 131008
+    - 131009
+    - 131021
+    - 131031
+    - 131051
+    - 131055
+    - 132000
+    - 132001
+    - 132005
+    - 132007
+    - 132012
+    - 133000
+    - 133001
+    - 133002
+    - 133003
+    - 133004
+    - 133005
+    - 133006
+    - 133007
+    - 133008
+    - 133009
+  error_descripcion:
+    - 0       Excepción de la autenticación
+    - 1       API desconocida
+    - 2       Servicio de la API
+    - 3       Método de la API
+    - 4       Demasiadas llamadas a la API
+    - 10      Permiso de API denegado
+    - 100     Parámetro no válido
+    - 190     Caducó el token de acceso
+    - 200299 Permiso de API (diferentes valores según el permiso)
+    - 200 (subcódigo = 2494049) - Número de teléfono no permitido
+    - 368     Bloqueo temporal debido a infracciones de la política
+    - 506     Publicación duplicada
+    - 80007   Problemas de limitación de frecuencia
+    - 131052  Error de descarga del archivo multimedia
+    - 131042  Elegibilidad del negocio- problema con el pago
+    - 131043  Mensaje vencido
+    - 130429  Se alcanzó el límite de frecuencia
+    - 131045  Certificado no firmado
+    - 131016  Servicio sobrecargado
+    - 131047  Mensaje para volver a interactuar
+    - 131048  Se alcanzó el límite de frecuencia de spam
+    - 131000  Error genérico
+    - 131001  Mensaje demasiado largo
+    - 131002  Tipo de destinatario no válido
+    - 131005  Acceso denegado
+    - 131006  No se encontró el recurso
+    - 131008  Falta el parámetro necesario.
+    - 131009  Valor de parámetro no válido.
+    - 131021  Usuario incorrecto.
+    - 131031  Cuenta del remitente bloqueada
+    - 131051  Tipo de mensaje no admitido
+    - 131055  Método no permitido
+    - 132000  Conteo de parámetros de plantilla no coincidente
+    - 132001  La plantilla no existe
+    - 132005  Texto hidratado de plantilla demasiado largo
+    - 132007  Infracción de la política de caracteres de formato de plantilla
+    - 132012  No coincide el formato de parámetro de plantilla
+    - 133000  Eliminación incompleta
+    - 133001  Error de descifrado
+    - 133002  Error de descifrado de conjunto de copias de seguridad
+    - 133003  Error de descifrado de token de recuperación
+    - 133004  Servidor no disponible temporalmente
+    - 133005  El PIN de seguridad no coincide
+    - 133006  Token de recuperación incorrecto
+    - 133007  Cuenta bloqueada
+    - 133008  Demasiados intentos incorrectos de PIN
+    - 133009  Intento de PIN demasiado rápido
+  error_recomendacion:
+    - >-
+      0   Si no existe un subcódigo, el estado de inicio de sesión o el token de
+      acceso caducó, se revocó o no es válido. Si existe un subcódigo, consúltalo.
+      Posible solución- obtén un nuevo token de acceso.
+    - >-
+      1   Puede ser un problema temporal debido a que la API no está disponible.
+      Espera y reintenta la operación. Consulta el panel de estado de la API de
+      WhatsApp Business y asegúrate de que no haya errores de escritura en la
+      llamada a la API.
+    - >-
+      2   Problema temporal debido a que la API no está disponible. Espera y
+      reintenta la operación. Consulta el panel de estado de la API de WhatsApp
+      Business.
+    - >-
+      3   Problema de función o permisos. Consulta la referencia del punto de
+      conexión y asegúrate de incluir el permiso necesario en la llamada.
+    - >-
+      4   Problema temporal ocasionado por una limitación. Espera y reintenta la
+      operación; o bien, revisa la cantidad de solicitudes que enviaste a la API.
+    - >-
+      10  El permiso no se concedió o se eliminó. Obtén información sobre cómo
+      manejar los permisos que faltan.
+    - >-
+      100 Es posible que el parámetro no esté disponible o que esté mal escrito.
+      Posible solución- consulta la referencia del punto de conexión y asegúrate
+      de que el parámetro exista.
+    - >-
+      109 El token de acceso caducó. Posible solución- obtén un nuevo token de
+      acceso.
+    - >-
+      200 El permiso no se concedió o se eliminó. Obtén información sobre cómo
+      manejar permisos que faltan.
+    - >-
+      200 No tienes permiso para registrar este número de teléfono en la API de la
+      nube.
+    - >-
+      368 Espera y reintenta la operación. Obtén más información sobre nuestro
+      cumplimiento de políticas.
+    - >-
+      506 No se pueden hacer publicaciones duplicadas de manera consecutiva.
+      Posible solución- cambia el contenido de la publicación y vuelve a
+      intentarlo.
+    - 80007 Alcanzaste los límites de frecuencia de la plataforma.
+    - 131052 No se pudo descargar el archivo multimedia del remitente.
+    - >-
+      131042 El mensaje no se pudo enviar porque se produjeron uno o más errores
+      relacionados con el método de pago.Para corregir este error, asegúrate de
+      que tu cuenta de WhatsApp Business tenga configurados los siguientes
+      elementos- zona horaria, divisa y método de pago. Luego, comprueba si la
+      cuenta tiene solicitudes MessagingFor pendientes o rechazadas. Obtén más
+      información sobre cómo configurar la facturación.
+    - 131043 No se pudo enviar el mensaje durante su tiempo de vida (TTL).
+    - >-
+      130429 El mensaje no se pudo enviar porque se enviaron demasiados mensajes
+      desde este número de teléfono en un período corto.
+    - >-
+      131045 El mensaje no se pudo enviar porque se produjo un error relacionado
+      con el certificado.
+    - >-
+      131016 El servicio está sobrecargado. Espera y reintenta la operación.
+      Consulta el panel de estado de la plataforma de WhatsApp Business para
+      comprobar si hay problemas.
+    - >-
+      131047 El mensaje no se pudo enviar porque pasaron más de 24 horas desde la
+      última vez que el cliente respondió a este número. Posible solución- envía
+      un mensaje iniciado por el negocio mediante una plantilla de mensaje para
+      responder.
+    - >-
+      131048 No se pudo enviar porque hay restricciones acerca de la cantidad de
+      mensajes que pueden enviarse desde este número de teléfono. Esto se puede
+      deber a que demasiados mensajes anteriores se bloquearon o se marcaron como
+      spam. Comprueba el estado de calidad en el administrador de WhatsApp y
+      consulta el documento Límites de frecuencia en función de la calidad para
+      obtener más información.
+    - 131000 No se pudo enviar el mensaje debido a un error desconocido.
+    - 131001 La longitud del mensaje supera los 4.096 caracteres.
+    - 131002 El valor de recipient_type solo puede ser individual.
+    - >-
+      131005 El número ya está registrado en WhatsApp. Consulta Migración de un
+      número de teléfono.
+    - 131006 No se encontró el archivo o el recurso.
+    - >-
+      131008 Falta un parámetro necesario. Consulta la referencia del punto de
+      conexión para obtener más información sobre los requisitos de parámetros.
+    - >-
+      131009 El valor ingresado en un parámetro es del tipo incorrecto o existe
+      otro problema. Consulta la referencia del punto de conexión para obtener más
+      información sobre los requisitos de parámetros. También se devuelve este
+      error si el número de teléfono del destinatario no es un número de teléfono
+      de WhatsApp válido o si el número de teléfono del remitente no es un número
+      de teléfono de WhatsApp registrado.
+    - >-
+      131021 Recibirás este mensaje cuando te envíes un mensaje a tu propia
+      cuenta.
+    - >-
+      131031 Se bloqueó tu cuenta y no puedes enviar mensajes debido a una
+      infracción de la política de integridad. Para obtener información, consulta
+      Aplicación de la política de la plataforma de WhatsApp Business.
+    - 131051 Este tipo de mensaje no se admite actualmente.
+    - 131055 No se permite el uso del método que intentas utilizar.
+    - >-
+      132000 La cantidad de parámetros proporcionados no coincide con la cantidad
+      de parámetros prevista.
+    - >-
+      132001 La plantilla no existe en el idioma especificado o no se aprobó.
+      Asegúrate de que la plantilla haya sido aprobada y de que el nombre y el
+      idioma sean correctos. Más información.
+    - >-
+      132005 El texto traducido es demasiado largo. Asegúrate de que la plantilla
+      se haya traducido correctamente. Más información.
+    - >-
+      132007 Se incumplió la política de caracteres de formato. Obtén más
+      información sobre las normas para plantillas de mensajes.
+    - >-
+      132012 El formato de parámetro no coincide con el formato de la plantilla
+      creada. Asegúrate que la cantidad de respuestas del cliente que devuelve la
+      plantilla sea la cantidad que la plantilla necesita. Más información.
+    - >-
+      133000 Falló una operación de eliminación anterior. Reintenta la eliminación
+      antes de registrarte.
+    - >-
+      133001 No se pudo descifrar el conjunto de copias de seguridad debido a un
+      motivo desconocido.
+    - >-
+      133002 No se pudo descifrar el conjunto de copias de seguridad debido a que
+      el formato o la contraseña eran incorrectos.
+    - >-
+      133003 No se pudo descifrar el token de recuperación debido a que el formato
+      o la contraseña eran incorrectos.
+    - '133004 Actualmente, el servidor de registro no está disponible.'
+    - >-
+      133005 Se usó un PIN incorrecto. Asegúrate de usar el PIN correcto y vuelve
+      a intentarlo. Más información.
+    - 133006 El token de recuperación que se usó en la migración es obsoleto.
+    - 133007 El servidor de registro bloqueó la cuenta.
+    - >-
+      133008 Se realizaron demasiados intentos incorrectos para ingresar el PIN de
+      esta cuenta.
+    - 133009 La solicitud de registro se realizó demasiado rápido.
+
+
+alectrico: &alectrico
+  <<: *default
+  imagen_enviar_confirmar_fono_url: https://www.alectrico.cl/img/farol.jpg
+  imagen_recargar_url:              https://www.alectrico.cl/img/green_bat.jpg
+  imagen_visita_url:                https://www.alectrico.cl/img/master_picture.png
+  image_url_say_ofertar:            https://www.alectrico.cl/img/casa-led.png
+  image_url_say_bienvenido:         https://www.alectrico.cl/img/farol_blanco.jpg
+
+  #estps dos se usan en un solo caso waba
+  #say_exito, pero cambia la url de la imagen
+  #usada en "Se ha enviado exitosamente su oferta"
+  image_url_exito:                  https://www.alectrico.cl/img/wide-landing-panel-4.jpg
+
+
+  #se usa en "Qué bueno ya puede llamara"
+  imagen_exito_url:                 https://www.alectrico.cl/img/master_picture.png
+  imagen_fail_url:                  https://www.alectrico.cl/img/freno.jpg
+  imagen_url_feliz_navidad:         https://www.alectrico.cl/img/holiday-christmas-architecture.png
+  imagen_url_token_bat:             https://www.alectrico.cl/assets/token_bat-88197239ab01073207b1ec7143b2e9e5ae90c5c5d0e12a72df7250bef599fa24.jpg
+
+
+alectrica: &alectrica
+  <<: *default
+  imagen_enviar_confirmar_fono_url: https://www.alectrica.cl/img/farol.jpg
+  imagen_recargar_url:              https://www.alectrica.cl/img/green_bat.jpg
+  imagen_visita_url:                https://www.alectrica.cl/img/master_picture.png
+  image_url_say_ofertar:            https://www.alectrica.cl/img/casa-led.png
+  image_url_say_bienvenido:         https://www.alectrica.cl/img/farol_blanco.jpg
+
+  #estps dos se usan en un solo caso waba
+  #say_exito, pero cambia la url de la imagen
+  #usada en "Se ha enviado exitosamente su oferta"
+  image_url_exito:                  https://www.alectrica.cl/img/wide-landing-panel-4.jpg
+
+
+  #se usa en "Qué bueno ya puede llamara"
+  imagen_exito_url:                 https://www.alectrica.cl/img/master_picture.png
+  imagen_fail_url:                  https://www.alectrica.cl/img/freno.jpg
+  imagen_url_feliz_navidad:         https://www.alectrica.cl/img/holiday-christmas-architecture.png
+  imagen_url_token_bat:             https://www.alectrica.cl/assets/token_bat-88197239ab01073207b1ec7143b2e9e5ae90c5c5d0e12a72df7250bef599fa24.jpg
+
+
+alectricos: &alectricos
+  <<: *default
+  imagen_enviar_confirmar_fono_url: https://www.alectricos.cl/img/farol.jpg
+  imagen_recargar_url:              https://www.alectricos.cl/img/green_bat.jpg
+  imagen_visita_url:                https://www.alectricos.cl/img/master_picture.png
+  image_url_say_ofertar:            https://www.alectricos.cl/img/casa-led.png
+  image_url_say_bienvenido:         https://www.alectricos.cl/img/farol_blanco.jpg
+
+
+  #se usa en "Qué bueno ya puede llamara"
+  imagen_exito_url:                 https://www.alectricos.cl/img/master_picture.png
+  imagen_fail_url:                  https://www.alectricos.cl/img/freno.jpg
+  imagen_url_feliz_navidad:         https://www.alectricos.cl/img/holiday-christmas-architecture.png
+  imagen_url_token_bat:             https://www.alectricos.cl/assets/token_bat-88197239ab01073207b1ec7143b2e9e5ae90c5c5d0e12a72df7250bef599fa24.jpg
+
+
+
+live:
+  <<: *alectrico
+ 
+sandbox:
+  <<: *default

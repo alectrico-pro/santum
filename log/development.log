@@ -19043,3 +19043,45 @@ Processing by BienvenidoController#index as HTML
 Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.0ms | Allocations: 21568)
 
 
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/reportes" for 172.18.0.1 at 2025-05-01 11:13:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes"[0m
+  ↳ app/views/reportes/index.html.haml:5
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 32)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 19.0ms | Allocations: 10142)
+  Rendered layout layouts/application.html.haml (Duration: 26.5ms | Allocations: 17053)
+Completed 200 OK in 39ms (Views: 27.4ms | ActiveRecord: 1.9ms | Allocations: 22428)
+
+
+Started GET "/reportes/17" for 172.18.0.1 at 2025-05-01 11:13:42 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mReporte Load (0.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:63:in `set_reporte'
+Redirected to http://172.18.0.5:3000/
+Filter chain halted as :set_reporte rendered or redirected
+Completed 302 Found in 45ms (ActiveRecord: 11.3ms | Allocations: 4426)
+
+
+Started GET "/" for 172.18.0.1 at 2025-05-01 11:13:42 +0000
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 7.4ms | Allocations: 5960)
+  Rendered layout layouts/application.html.haml (Duration: 9.3ms | Allocations: 6785)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 7420)
+
+
+Started GET "/" for 172.18.0.1 at 2025-05-01 11:13:44 +0000
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 0.3ms | Allocations: 98)
+  Rendered layout layouts/application.html.haml (Duration: 1.5ms | Allocations: 831)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1087)
+
+
