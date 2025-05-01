@@ -1506,6 +1506,44 @@ class Waba::Transaccion
     end
   end
 
+  
+  def confirmar_fono( reporte) 
+
+    fono   = reporte.fono
+    fono   = C.fono_test if Rails.env.test?
+
+    linea.info "En Transaction confirmar_fono"
+
+    body= {
+        "messaging_product" => "whatsapp",
+        "to"                => fono,
+        "type"              => "template",
+        "template"          => {
+          "name"            => "otp",
+          "language"        => {
+            "code"          => "es"
+          },
+        "components"        => [
+          { "type"          => "header", "parameters" => [
+          { "type"          => "image",
+            "image"          => { "link": WabaCfg.imagen_enviar_confirmar_fono_url } } ] },
+          { "type"          => "body"  , "parameters" => [
+          { "type"          => "text",
+            "text"          => nombre      } ] }
+         ]}
+       }
+
+
+
+    if send body
+      return true
+    else
+      return false
+    end
+
+  end
+
+
 
   def enviar_confirmar_fono( presupuesto)
 
@@ -1545,6 +1583,8 @@ class Waba::Transaccion
     end
 
   end
+
+
 
 
   def say_datos_bancarios( presupuesto, to_fono)

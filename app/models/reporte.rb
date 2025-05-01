@@ -7,4 +7,7 @@ class Reporte < ApplicationRecord
 
   validates_presence_of :fono
   validates :fono, length: { in: 9..9}
+  def confirmar_fono
+    ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono
+  end
 end
