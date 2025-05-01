@@ -1,6 +1,8 @@
 
-rspec:
-	docker compose run rspec
+web:
+	docker compose run web
 
-precompile:
-	docker compose up precompile
+console:
+	docker compose run web bundle exec rails c
+
+
