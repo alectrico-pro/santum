@@ -1,9 +1,10 @@
-FROM ruby:3.2.1-slim
+FROM ruby:3.3.6-slim
+#FROM ruby:3.2.1-slim
 #ROM ruby:3.0.5-slim
 
 #Curl es usado por typhoeus
 
-
+#de rails seven
 RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
     libcurl4-openssl-dev \
     build-essential \

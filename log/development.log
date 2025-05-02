@@ -22635,3 +22635,502 @@ Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_na
 Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzQz
 Turbo::StreamsChannel is transmitting the subscription confirmation
 Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzQz
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/reportes/43" for 172.20.0.1 at 2025-05-02 10:10:40 +0000
+  
+ActiveRecord::NoDatabaseError (We could not find your database: railsondocker_development. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+)
+Caused by: PG::ConnectionBad (connection to server at "172.20.0.3", port 5432 failed: FATAL:  database "railsondocker_development" does not exist
+)
+
+Information for: ActiveRecord::NoDatabaseError (We could not find your database: railsondocker_development. Available database configurations can be found in config/database.yml.
+
+To resolve this error:
+
+- Did you not create the database, or did you delete it? To create the database, run:
+
+    bin/rails db:create
+
+- Has the database name changed? Verify that config/database.yml contains the correct database name.
+):
+  
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:63:in `rescue in new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:57:in `new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:939:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:951:in `reconnect'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:667:in `block in reconnect!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:666:in `reconnect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `block in verify!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:761:in `verify!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:779:in `connect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:985:in `block in with_raw_connection'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:984:in `with_raw_connection'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1142:in `quoted_scope'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1119:in `data_source_sql'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:55:in `block in create_table'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:418:in `with_connection'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:54:in `create_table'
+activerecord (8.0.2) lib/active_record/migration.rb:1431:in `initialize'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `new'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `open'
+activerecord (8.0.2) lib/active_record/migration.rb:763:in `block (2 levels) in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (8.0.2) lib/active_record/migration.rb:762:in `block in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `each'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:740:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.13) lib/rack/method_override.rb:28:in `call'
+rack (3.1.13) lib/rack/runtime.rb:24:in `call'
+activesupport (8.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.13) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+rack-mini-profiler (3.3.1) lib/mini_profiler.rb:334:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+
+Information for cause: PG::ConnectionBad (connection to server at "172.20.0.3", port 5432 failed: FATAL:  database "railsondocker_development" does not exist
+):
+  
+pg (1.5.9) lib/pg/connection.rb:709:in `async_connect_or_reset'
+pg (1.5.9) lib/pg/connection.rb:844:in `connect_to_hosts'
+pg (1.5.9) lib/pg/connection.rb:772:in `new'
+pg (1.5.9) lib/pg.rb:63:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:58:in `new_client'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:939:in `connect'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql_adapter.rb:951:in `reconnect'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:667:in `block in reconnect!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:666:in `reconnect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:771:in `block in verify!'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:761:in `verify!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:779:in `connect!'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:985:in `block in with_raw_connection'
+activesupport (8.0.2) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract_adapter.rb:984:in `with_raw_connection'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:128:in `quote_string'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/quoting.rb:76:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/quoting.rb:122:in `quote'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1142:in `quoted_scope'
+activerecord (8.0.2) lib/active_record/connection_adapters/postgresql/schema_statements.rb:1119:in `data_source_sql'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/schema_statements.rb:60:in `table_exists?'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:55:in `block in create_table'
+activerecord (8.0.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:418:in `with_connection'
+activerecord (8.0.2) lib/active_record/schema_migration.rb:54:in `create_table'
+activerecord (8.0.2) lib/active_record/migration.rb:1431:in `initialize'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `new'
+activerecord (8.0.2) lib/active_record/migration.rb:1279:in `open'
+activerecord (8.0.2) lib/active_record/migration.rb:763:in `block (2 levels) in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration/pending_migration_connection.rb:8:in `with_temporary_pool'
+activerecord (8.0.2) lib/active_record/migration.rb:762:in `block in pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `each'
+activerecord (8.0.2) lib/active_record/migration.rb:761:in `pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:740:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.13) lib/rack/method_override.rb:28:in `call'
+rack (3.1.13) lib/rack/runtime.rb:24:in `call'
+activesupport (8.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.13) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+rack-mini-profiler (3.3.1) lib/mini_profiler.rb:334:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+  [1m[35mSQL (20.2ms)[0m  [1m[35mSET search_path TO public[0m
+  [1m[35m (2995.5ms)[0m  [1m[35mCREATE DATABASE "railsondocker_development" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public[0m
+  [1m[35m (335.6ms)[0m  [1m[35mCREATE DATABASE "railsondocker_test" ENCODING = 'unicode'[0m
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/reportes/43" for 172.20.0.1 at 2025-05-02 10:12:05 +0000
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (31.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 5 pending migrations:
+
+db/migrate/20211216184102_create_active_storage_tables.active_storage.rb
+db/migrate/20211216184103_create_action_text_tables.action_text.rb
+db/migrate/20250430120309_create_reportes.rb
+db/migrate/20250430121032_create_comentarios.rb
+db/migrate/20250501065145_add_fono_to_reportes.rb
+
+
+):
+  
+activerecord (8.0.2) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.0.2) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.0.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (8.0.2) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.0.2) lib/active_record/migration.rb:657:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.2) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.1.13) lib/rack/method_override.rb:28:in `call'
+rack (3.1.13) lib/rack/runtime.rb:24:in `call'
+activesupport (8.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.0.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.13) lib/rack/sendfile.rb:114:in `call'
+actionpack (8.0.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+rack-mini-profiler (3.3.1) lib/mini_profiler.rb:334:in `call'
+railties (8.0.2) lib/rails/engine.rb:535:in `call'
+puma (6.6.0) lib/puma/configuration.rb:279:in `call'
+puma (6.6.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in `with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in `process_client'
+puma (6.6.0) lib/puma/server.rb:254:in `block in run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in `block in spawn_thread'
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2956651786463190690)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-02 10:12:21.614864', '2025-05-02 10:12:21.614868') RETURNING "key"[0m
+Migrating to CreateActiveStorageTables (20211216184102)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (58.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20211216184102') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActionTextTables (20211216184103)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20211216184103') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReportes (20250430120309)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "reportes" ("id" bigserial primary key, "nombre" character varying, "contenido" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250430120309') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComentarios (20250430121032)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "comentarios" ("id" bigserial primary key, "reporte_id" bigint NOT NULL, "contenido" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_ec75b7f0be"
+FOREIGN KEY ("reporte_id")
+  REFERENCES "reportes" ("id")
+)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE INDEX "index_comentarios_on_reporte_id" ON "comentarios" ("reporte_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250430121032') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddFonoToReportes (20250501065145)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "reportes" ADD "fono" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250501065145') RETURNING "version"[0m
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2956651786463190690)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/" for 172.20.0.1 at 2025-05-02 10:13:53 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BienvenidoController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering bienvenido/index.html.haml within layouts/application
+  Rendered bienvenido/index.html.haml within layouts/application (Duration: 24.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 37.8ms | GC: 0.0ms)
+Completed 200 OK in 114ms (Views: 57.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes" for 172.20.0.1 at 2025-05-02 10:13:59 +0000
+Processing by ReportesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+  [1m[36mReporte Load (30.5ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes"[0m
+  ↳ app/views/reportes/index.html.haml:5
+  Rendered collection of templates [0 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 99.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 100.5ms | GC: 0.0ms)
+Completed 200 OK in 272ms (Views: 66.3ms | ActiveRecord: 35.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/new" for 172.20.0.1 at 2025-05-02 10:14:01 +0000
+Processing by ReportesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/new.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 593.1ms | GC: 0.0ms)
+  Rendered reportes/new.html.haml within layouts/application (Duration: 608.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 609.8ms | GC: 0.0ms)
+Completed 200 OK in 645ms (Views: 606.7ms | ActiveRecord: 10.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/rails/active_storage/direct_uploads" for 172.20.0.1 at 2025-05-02 10:14:14 +0000
+Processing by ActiveStorage::DirectUploadsController#create as JSON
+  Parameters: {"blob"=>{"filename"=>"Captura de pantalla de 2024-09-22 22-10-06.png", "content_type"=>"image/png", "byte_size"=>21333, "checksum"=>"TNaB7BcVPIFIHlvz1GLqpQ=="}, "direct_upload"=>{"blob"=>{"filename"=>"Captura de pantalla de 2024-09-22 22-10-06.png", "content_type"=>"image/png", "byte_size"=>21333, "checksum"=>"TNaB7BcVPIFIHlvz1GLqpQ=="}}}
+  [1m[36mTRANSACTION (33.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (38.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "aml9tepb8cdbk6boqw1e222dw1ew"], ["filename", "Captura de pantalla de 2024-09-22 22-10-06.png"], ["content_type", "image/png"], ["metadata", nil], ["service_name", "local"], ["byte_size", 21333], ["checksum", "TNaB7BcVPIFIHlvz1GLqpQ=="], ["created_at", "2025-05-02 10:14:14.539208"]]
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: aml9tepb8cdbk6boqw1e222dw1ew (http://172.20.0.4:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhZVzFzT1hSbGNHSTRZMlJpYXpaaWIzRjNNV1V5TWpKa2R6Rmxkd1k2QmtWR09oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaE5qYjI1MFpXNTBYMnhsYm1kMGFHa0NWVk02RFdOb1pXTnJjM1Z0U1NJZFZFNWhRamRDWTFaUVNVWkpTR3gyZWpGSFRIRndVVDA5QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMlQxMDoxOToxNC43MTRaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--76f3f2383ae24358ae95fc6a892d16a4377c3f5d)[0m
+Completed 200 OK in 208ms (Views: 0.4ms | ActiveRecord: 59.3ms (1 query, 0 cached) | GC: 32.0ms)
+
+
+Started PUT "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhZVzFzT1hSbGNHSTRZMlJpYXpaaWIzRjNNV1V5TWpKa2R6Rmxkd1k2QmtWR09oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaE5qYjI1MFpXNTBYMnhsYm1kMGFHa0NWVk02RFdOb1pXTnJjM1Z0U1NJZFZFNWhRamRDWTFaUVNVWkpTR3gyZWpGSFRIRndVVDA5QmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dwc2IyTmhiQT09IiwiZXhwIjoiMjAyNS0wNS0wMlQxMDoxOToxNC43MTRaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--76f3f2383ae24358ae95fc6a892d16a4377c3f5d" for 172.20.0.1 at 2025-05-02 10:14:14 +0000
+Processing by ActiveStorage::DiskController#update as */*
+  Parameters: {"encoded_token"=>"[FILTERED]"}
+[36m  Disk Storage (58.4ms) [0m[32mUploaded file to key: aml9tepb8cdbk6boqw1e222dw1ew (checksum: TNaB7BcVPIFIHlvz1GLqpQ==)[0m
+Completed 204 No Content in 60ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png" for 172.20.0.1 at 2025-05-02 10:14:14 +0000
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e", "filename"=>"Captura de pantalla de 2024-09-22 22-10-06"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: aml9tepb8cdbk6boqw1e222dw1ew (http://172.20.0.4:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVzFzT1hSbGNHSTRZMlJpYXpaaWIzRjNNV1V5TWpKa2R6Rmxkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpoSUdSbElIQmhiblJoYkd4aElHUmxJREl3TWpRdE1Ea3RNaklnTWpJdE1UQXRNRFl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZERZWEIwZFhKaEpUSXdaR1VsTWpCd1lXNTBZV3hzWVNVeU1HUmxKVEl3TWpBeU5DMHdPUzB5TWlVeU1ESXlMVEV3TFRBMkxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyNS0wNS0wMlQxMDoxOToxNC45MjRaIiwicHVyIjoiYmxvYl9rZXkifX0=--62608615e15eea14b2299dd247e50442ef9acd12/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png)[0m
+Redirected to http://172.20.0.4:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVzFzT1hSbGNHSTRZMlJpYXpaaWIzRjNNV1V5TWpKa2R6Rmxkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpoSUdSbElIQmhiblJoYkd4aElHUmxJREl3TWpRdE1Ea3RNaklnTWpJdE1UQXRNRFl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZERZWEIwZFhKaEpUSXdaR1VsTWpCd1lXNTBZV3hzWVNVeU1HUmxKVEl3TWpBeU5DMHdPUzB5TWlVeU1ESXlMVEV3TFRBMkxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyNS0wNS0wMlQxMDoxOToxNC45MjRaIiwicHVyIjoiYmxvYl9rZXkifX0=--62608615e15eea14b2299dd247e50442ef9acd12/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVzFzT1hSbGNHSTRZMlJpYXpaaWIzRjNNV1V5TWpKa2R6Rmxkd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpoSUdSbElIQmhiblJoYkd4aElHUmxJREl3TWpRdE1Ea3RNaklnTWpJdE1UQXRNRFl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZERZWEIwZFhKaEpUSXdaR1VsTWpCd1lXNTBZV3hzWVNVeU1HUmxKVEl3TWpBeU5DMHdPUzB5TWlVeU1ESXlMVEV3TFRBMkxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyNS0wNS0wMlQxMDoxOToxNC45MjRaIiwicHVyIjoiYmxvYl9rZXkifX0=--62608615e15eea14b2299dd247e50442ef9acd12/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png" for 172.20.0.1 at 2025-05-02 10:14:14 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Captura de pantalla de 2024-09-22 22-10-06"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/reportes" for 172.20.0.1 at 2025-05-02 10:14:15 +0000
+Processing by ReportesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reporte"=>{"nombre"=>"", "fono"=>"", "contenido"=>"<div><figure data-trix-attachment=\"{&quot;contentType&quot;:&quot;image/png&quot;,&quot;filename&quot;:&quot;Captura de pantalla de 2024-09-22 22-10-06.png&quot;,&quot;filesize&quot;:21333,&quot;height&quot;:89,&quot;sgid&quot;:&quot;eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJamxuYVdRNkx5OXlZV2xzYzI5dVpHOWphMlZ5TDBGamRHbDJaVk4wYjNKaFoyVTZPa0pzYjJJdk1UOWxlSEJwY21WelgybHVCam9HUlZRPSIsImV4cCI6bnVsbCwicHVyIjoiYXR0YWNoYWJsZSJ9fQ==--14b342e424cc5c69075caa6f55163d68149ce8fc&quot;,&quot;url&quot;:&quot;http://172.20.0.4:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png&quot;,&quot;width&quot;:607}\" data-trix-content-type=\"image/png\" data-trix-attributes=\"{&quot;presentation&quot;:&quot;gallery&quot;}\" class=\"attachment attachment--preview attachment--png\"><img src=\"http://172.20.0.4:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png\" width=\"607\" height=\"89\"><figcaption class=\"attachment__caption\"><span class=\"attachment__name\">Captura de pantalla de 2024-09-22 22-10-06.png</span> <span class=\"attachment__size\">20.83 KB</span></figcaption></figure></div>"}, "commit"=>"Crear Reporte"}
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/new.html.haml within layouts/application
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:20
+  [1m[36mCACHE ActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:20
+  Rendered reportes/_form.html.haml (Duration: 75.5ms | GC: 0.6ms)
+  Rendered reportes/new.html.haml within layouts/application (Duration: 76.1ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.haml (Duration: 77.3ms | GC: 0.6ms)
+Completed 422 Unprocessable Content in 84ms (Views: 77.3ms | ActiveRecord: 0.5ms (2 queries, 1 cached) | GC: 1.4ms)
+
+
+Started POST "/reportes" for 172.20.0.1 at 2025-05-02 10:14:26 +0000
+Processing by ReportesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "reporte"=>{"nombre"=>"jjjj", "fono"=>"987654321", "contenido"=>"<div><figure data-trix-attachment=\"{&quot;contentType&quot;:&quot;image/png&quot;,&quot;filename&quot;:&quot;Captura de pantalla de 2024-09-22 22-10-06.png&quot;,&quot;filesize&quot;:21333,&quot;height&quot;:89,&quot;previewable&quot;:true,&quot;sgid&quot;:&quot;eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJamxuYVdRNkx5OXlZV2xzYzI5dVpHOWphMlZ5TDBGamRHbDJaVk4wYjNKaFoyVTZPa0pzYjJJdk1UOWxlSEJwY21WelgybHVCam9HUlZRPSIsImV4cCI6bnVsbCwicHVyIjoiYXR0YWNoYWJsZSJ9fQ==--14b342e424cc5c69075caa6f55163d68149ce8fc&quot;,&quot;url&quot;:&quot;http://172.20.0.4:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png&quot;,&quot;width&quot;:607}\" data-trix-content-type=\"image/png\" data-trix-attributes=\"{&quot;presentation&quot;:&quot;gallery&quot;}\" class=\"attachment attachment--preview attachment--png\"><img src=\"http://172.20.0.4:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png\" width=\"607\" height=\"89\"><figcaption class=\"attachment__caption\"><span class=\"attachment__name\">Captura de pantalla de 2024-09-22 22-10-06.png</span> <span class=\"attachment__size\">20.83 KB</span></figcaption></figure></div>"}, "commit"=>"Crear Reporte"}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mReporte Create (4.9ms)[0m  [1m[32mINSERT INTO "reportes" ("nombre", "contenido", "created_at", "updated_at", "fono") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["nombre", "jjjj"], ["contenido", nil], ["created_at", "2025-05-02 10:14:26.046511"], ["updated_at", "2025-05-02 10:14:26.046511"], ["fono", 987654321]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mCACHE ActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActionText::RichText Create (1.8ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "contenido"], ["body", "<div><action-text-attachment sgid=\"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJamxuYVdRNkx5OXlZV2xzYzI5dVpHOWphMlZ5TDBGamRHbDJaVk4wYjNKaFoyVTZPa0pzYjJJdk1UOWxlSEJwY21WelgybHVCam9HUlZRPSIsImV4cCI6bnVsbCwicHVyIjoiYXR0YWNoYWJsZSJ9fQ==--14b342e424cc5c69075caa6f55163d68149ce8fc\" content-type=\"image/png\" url=\"http://172.20.0.4:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png\" filename=\"Captura de pantalla de 2024-09-22 22-10-06.png\" filesize=\"21333\" width=\"607\" height=\"89\" previewable=\"true\" presentation=\"gallery\"></action-text-attachment></div>"], ["record_type", "Reporte"], ["record_id", 1], ["created_at", "2025-05-02 10:14:26.148439"], ["updated_at", "2025-05-02 10:14:26.148439"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mCACHE ActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Update (3.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true}"], ["id", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (2.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "embeds"], ["record_type", "ActionText::RichText"], ["record_id", 1], ["blob_id", 1], ["created_at", "2025-05-02 10:14:26.202613"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mReporte Update (1.3ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1 WHERE "reportes"."id" = $2[0m  [["updated_at", "2025-05-02 10:14:26.210889"], ["id", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActionText::RichText Update (1.2ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "updated_at" = $1 WHERE "action_text_rich_texts"."id" = $2[0m  [["updated_at", "2025-05-02 10:14:26.210134"], ["id", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9a7ab735-4116-462b-84ee-f8a1b2b0ad02) to Async(default) with arguments: #<GlobalID:0x00007f7fb5daea58 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02] Performing ActiveStorage::AnalyzeJob (Job ID: 9a7ab735-4116-462b-84ee-f8a1b2b0ad02) from Async(default) enqueued at 2025-05-02T10:14:26.530154250Z with arguments: #<GlobalID:0x00007f7fb65da330 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02] [36m  Disk Storage (0.3ms) [0m[34mDownloaded file from key: aml9tepb8cdbk6boqw1e222dw1ew[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mActiveStorage::Blob Update (5.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"width\":607,\"height\":89,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."id" = $1[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mActionText::RichText Update (0.5ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "updated_at" = $1 WHERE "action_text_rich_texts"."id" = $2[0m  [["updated_at", "2025-05-02 10:14:27.857271"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mReporte Update (0.6ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1 WHERE "reportes"."id" = $2[0m  [["updated_at", "2025-05-02 10:14:27.867349"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02]   [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9a7ab735-4116-462b-84ee-f8a1b2b0ad02] Performed ActiveStorage::AnalyzeJob (Job ID: 9a7ab735-4116-462b-84ee-f8a1b2b0ad02) from Async(default) in 1159.64ms
+Redirected to http://172.20.0.4:3000/reportes/1
+Completed 302 Found in 2922ms (ActiveRecord: 42.7ms (11 queries, 2 cached) | GC: 37.9ms)
+
+
+Started GET "/reportes/1" for 172.20.0.1 at 2025-05-02 10:14:28 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (3.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:17
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 45.6ms | GC: 0.0ms)
+  Rendered /usr/local/bundle/gems/actiontext-8.0.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 65.1ms | GC: 0.0ms)
+  Rendered reportes/_reporte.html.haml (Duration: 150.5ms | GC: 0.0ms)
+  [1m[36mComentario Load (2.7ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 1]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | GC: 0.0ms)
+  Rendered comentarios/_new.html.erb (Duration: 16.1ms | GC: 0.0ms)
+  Rendered reportes/_comentarios.html.haml (Duration: 35.6ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 310.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 312.7ms | GC: 1.1ms)
+Completed 200 OK in 332ms (Views: 305.6ms | ActiveRecord: 8.2ms (5 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJQUJHa0NBQU09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--2febafe8aa3ee8b615ec0ba50389649b2dac6cc2/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png" for 172.20.0.1 at 2025-05-02 10:14:29 +0000
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c22709575e108216e064a87730afb2eb75be680e", "variation_key"=>"[FILTERED]", "filename"=>"Captura de pantalla de 2024-09-22 22-10-06"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (1.5ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1 AND "active_storage_variant_records"."variation_digest" = $2 LIMIT $3[0m  [["blob_id", 1], ["variation_digest", "wjqVtOuFppDd1oEBBMUc2TyD8vk="], ["LIMIT", 1]]
+[36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: aml9tepb8cdbk6boqw1e222dw1ew[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::VariantRecord Create (8.7ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("blob_id", "variation_digest") VALUES ($1, $2) RETURNING "id"[0m  [["blob_id", 1], ["variation_digest", "wjqVtOuFppDd1oEBBMUc2TyD8vk="]]
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::VariantRecord"], ["name", "image"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (3.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "ttzykcdv1pfcywp15ys0gihf8j25"], ["filename", "Captura de pantalla de 2024-09-22 22-10-06.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 24985], ["checksum", "vAizsi7JjTxI8wEwXibQjA=="], ["created_at", "2025-05-02 10:14:29.742668"]]
+  [1m[36mActiveStorage::Attachment Create (1.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "image"], ["record_type", "ActiveStorage::VariantRecord"], ["record_id", 1], ["blob_id", 2], ["created_at", "2025-05-02 10:14:29.751540"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/cable" for 172.20.0.1 at 2025-05-02 10:14:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[36m  Disk Storage (114.6ms) [0m[32mUploaded file to key: ttzykcdv1pfcywp15ys0gihf8j25 (checksum: vAizsi7JjTxI8wEwXibQjA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ef1f2ce7-bb8a-4881-97dc-132198219a28) to Async(default) with arguments: #<GlobalID:0x00007f7fb5720290 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/2>>
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: ttzykcdv1pfcywp15ys0gihf8j25 (http://172.20.0.4:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkSFI2ZVd0alpIWXhjR1pqZVhkd01UVjVjekJuYVdobU9Hb3lOUVk2QmtWR09oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpoSUdSbElIQmhiblJoYkd4aElHUmxJREl3TWpRdE1Ea3RNaklnTWpJdE1UQXRNRFl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZERZWEIwZFhKaEpUSXdaR1VsTWpCd1lXNTBZV3hzWVNVeU1HUmxKVEl3TWpBeU5DMHdPUzB5TWlVeU1ESXlMVEV3TFRBMkxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyNS0wNS0wMlQxMDoxOToyOS44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--db03c7356243deddc5e2a6bb218652f6f5be440f/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png)[0m
+Redirected to http://172.20.0.4:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkSFI2ZVd0alpIWXhjR1pqZVhkd01UVjVjekJuYVdobU9Hb3lOUVk2QmtWR09oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpoSUdSbElIQmhiblJoYkd4aElHUmxJREl3TWpRdE1Ea3RNaklnTWpJdE1UQXRNRFl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZERZWEIwZFhKaEpUSXdaR1VsTWpCd1lXNTBZV3hzWVNVeU1HUmxKVEl3TWpBeU5DMHdPUzB5TWlVeU1ESXlMVEV3TFRBMkxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyNS0wNS0wMlQxMDoxOToyOS44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--db03c7356243deddc5e2a6bb218652f6f5be440f/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png
+Completed 302 Found in 356ms (ActiveRecord: 19.0ms (7 queries, 0 cached) | GC: 76.1ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28] Performing ActiveStorage::AnalyzeJob (Job ID: ef1f2ce7-bb8a-4881-97dc-132198219a28) from Async(default) enqueued at 2025-05-02T10:14:29.880528594Z with arguments: #<GlobalID:0x00007f7fb5771640 @uri=#<URI::GID gid://railsondocker/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: ttzykcdv1pfcywp15ys0gihf8j25[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28]   [1m[36mActiveStorage::Blob Update (3.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"width\":607,\"height\":89,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1[0m  [["blob_id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28]   [1m[36mActiveStorage::VariantRecord Load (0.5ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."id" = $1[0m  [["id", 1]]
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhkSFI2ZVd0alpIWXhjR1pqZVhkd01UVjVjekJuYVdobU9Hb3lOUVk2QmtWR09oQmthWE53YjNOcGRHbHZia2tpQVl4cGJteHBibVU3SUdacGJHVnVZVzFsUFNKRFlYQjBkWEpoSUdSbElIQmhiblJoYkd4aElHUmxJREl3TWpRdE1Ea3RNaklnTWpJdE1UQXRNRFl1Y0c1bklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZERZWEIwZFhKaEpUSXdaR1VsTWpCd1lXNTBZV3hzWVNVeU1HUmxKVEl3TWpBeU5DMHdPUzB5TWlVeU1ESXlMVEV3TFRBMkxuQnVad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRG1sdFlXZGxMM0J1WndZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyNS0wNS0wMlQxMDoxOToyOS44ODJaIiwicHVyIjoiYmxvYl9rZXkifX0=--db03c7356243deddc5e2a6bb218652f6f5be440f/Captura%20de%20pantalla%20de%202024-09-22%2022-10-06.png" for 172.20.0.1 at 2025-05-02 10:14:29 +0000
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"Captura de pantalla de 2024-09-22 22-10-06"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28]   [1m[36mTRANSACTION (9.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ef1f2ce7-bb8a-4881-97dc-132198219a28] Performed ActiveStorage::AnalyzeJob (Job ID: ef1f2ce7-bb8a-4881-97dc-132198219a28) from Async(default) in 33.78ms
+Started GET "/cable" [WebSocket] for 172.20.0.1 at 2025-05-02 10:14:30 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzE

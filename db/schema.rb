@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_05_01_065145) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_01_065145) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -52,27 +52,12 @@ ActiveRecord::Schema[7.0].define(version: 2025_05_01_065145) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comentarios", force: :cascade do |t|
     t.bigint "reporte_id", null: false
     t.text "contenido"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reporte_id"], name: "index_comentarios_on_reporte_id"
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.bigint "article_id", null: false
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "reportes", force: :cascade do |t|
@@ -86,5 +71,4 @@ ActiveRecord::Schema[7.0].define(version: 2025_05_01_065145) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comentarios", "reportes"
-  add_foreign_key "comments", "articles"
 end

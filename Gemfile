@@ -3,7 +3,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "~> 3.2.0"
+#uby "~> 3.2.0"
+ruby "~> 3.3.6"
+
 
 #para que enganche con appeng standard ruby 3.0
 #ruby "~> 3.0"
