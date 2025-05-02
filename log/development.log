@@ -23310,3 +23310,6 @@ Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms (1 query, 0 cached) 
 
 Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6SSI=--768f8a39571872ef7708dbe10832b8f96ed13d862dea7c3723fda259c55620b3"}
 Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the full timezone rather than offset of the receiver in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
