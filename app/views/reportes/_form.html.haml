@@ -1,3 +1,4 @@
+-#%h2 ¿Cómo se llama UD.?
 = form_with(model: reporte) do |form| 
   -if reporte.errors.any? 
     .error_explanation
@@ -5,24 +6,30 @@
       %ul
         -reporte.errors.each do |error| 
           %li= error.full_message
-  #field
-    = form.label :nombre 
-    = form.text_field :nombre 
-    %small Ingrese su nombre
 
-  #field
-    = form.label :fono
-    = form.text_field :fono
-    %small Ingrese su número de WhatsApp
 
   #field
     = form.label :contenido 
     = form.rich_text_area :contenido 
-    %small Agregue fotos y descripciones, ninguna dirección
+    %small Describa brevemente. También puede agregar videos, fotos pero ninguna dirección.
     |
     %small Las imágenes desaparecen en minutos
+
+
+  #field
+    = form.label :fono
+    = form.text_field :fono
+    %small Cuando Ingrese el Reporte recibirá un aviso en este número. Puede cerrar
+      
 
   #actions
     -#<button class="button-49" role="button">Button 49</button>
 
     %button.button-49{:role => "button",:value=>"Reportar"} reportar 
+
+    -#%div{:"data-controller" => "hello" }
+      %input{ :"data-hello-target" => "name", :type => "text"}
+      %button{ :"data-action" => "click->hello#greet"}
+        Hola
+      %span{ :"data-hello-target" => "output"}
+
