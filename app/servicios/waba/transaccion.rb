@@ -179,10 +179,8 @@ class Waba::Transaccion
   end
 
   
-  def confirmar_fono( reporte) 
+  def confirmar_fono( fono, nombre) 
 
-    nombre = reporte.nombre
-    fono   = reporte.fono
     fono   = C.fono_test if Rails.env.test?
 
     linea.info "En Transaction confirmar_fono"
@@ -215,6 +213,46 @@ class Waba::Transaccion
     end
 
   end
+
+
+
+
+  #llama al template flow_reservar, aparece con una casa led 
+  #y un botón Confirmar Datos
+  #usar sin imágenes para tiempo de respuesta de 5segundos
+  #flow_reservar invoca a un flujo interconstruido
+  #
+  def say_flow_reservar( fono, nombre )
+    linea.info "En say_flow_reservar"
+    body = {
+        "messaging_product": "whatsapp",
+        "to": fono,
+        "type": "template",
+        "template": {
+          "name": "flow_reservar",
+          "language": {
+            "code": "es"
+          },
+        "components": [
+          { "type": "body" , "parameters": [ { "type": "text",  "text": nombre} ] },
+          { "type": "header", "parameters": [ { "type": "image",
+              "image": {  "link": WabaCfg.image_url_say_ofertar } } ] },
+          { "type": "button", "sub_type": "flow",  "index": "0" }
+         ]
+        }
+       }
+
+    linea.info "body"
+    linea.info body
+
+    if send body
+      return true
+    else
+      return false
+    end
+
+  end
+
 
 
 

@@ -9,10 +9,10 @@ class Reporte < ApplicationRecord
   validates :fono, length: { in: 9..9}
 
   after_save :confirmar_fono
- # after_save :reservar
+  after_save :reservar
 
   def confirmar_fono
-    ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono, self.nombre
+    ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono
   end
 
   def reservar
