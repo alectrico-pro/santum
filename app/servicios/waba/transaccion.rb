@@ -259,6 +259,7 @@ class Waba::Transaccion
     options = { headers: @headers, body: body.to_json }
     url     = "#{@base_uri}/#{@api_version}/#{@waba_id}/messages"
     request = ::HTTParty.post( url, options )
+    linea.info request.inspect
   end
 
 end
