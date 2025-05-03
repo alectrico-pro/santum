@@ -16,7 +16,7 @@ class Reporte < ApplicationRecord
   end
 
   def reservar
-    ::Waba::Transaccion.new(:colaborador).say_flow_reservar self.fono, self.nombre
+    ::Waba::Transaccion.new(:cliente).say_flow_reservar self.fono, self.nombre
   end
 
 end
