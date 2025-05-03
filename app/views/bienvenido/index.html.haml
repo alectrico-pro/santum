@@ -9,13 +9,10 @@
 
 %h2 ¿Cómo se llama UD.?
 
-<!-- HTML !-->
-<button class="button-49" role="button">Button 49</button>
-
 
 %div{:"data-controller" => "hello" }
   %input{ :"data-hello-target" => "name", :type => "text"}
-  %button.btn{ :"data-action" => "click->hello#greet"}
+  %button{ :"data-action" => "click->hello#greet"}
     Hola
   %span{ :"data-hello-target" => "output"}
     
