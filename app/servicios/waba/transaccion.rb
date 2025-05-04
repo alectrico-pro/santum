@@ -215,7 +215,7 @@ class Waba::Transaccion
   end
 
 
-
+  #{ "type": "text",  "text": nombre}
 
   #llama al template flow_reservar, aparece con una casa led 
   #y un botón Confirmar Datos
@@ -238,7 +238,7 @@ class Waba::Transaccion
             "code": "es"
           },
         "components": [
-          { "type": "body" , "parameters": [ { "type": "text",  "text": nombre} ] },
+          { "type": "body" , "parameters": [ ] },
           { "type": "header", "parameters": [ { "type": "image",
               "image": {  "link": WabaCfg.image_url_say_ofertar } } ] },
           { "type": "button", "sub_type": "flow",  "index": "0" }
