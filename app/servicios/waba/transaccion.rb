@@ -221,7 +221,11 @@ class Waba::Transaccion
   #y un botón Confirmar Datos
   #usar sin imágenes para tiempo de respuesta de 5segundos
   #flow_reservar invoca a un flujo interconstruido
-  #
+  #hay que llamar al template
+  #y este llama al flow reservar
+  #reservar_productos_version_70
+  #antes era flow_reservar
+  #ahora es reservar_productos_version_70
   def say_flow_reservar( fono, nombre )
     linea.info "En say_flow_reservar"
     body = {
@@ -229,7 +233,7 @@ class Waba::Transaccion
         "to": fono,
         "type": "template",
         "template": {
-          "name": "flow_reservar",
+          "name": "reservar_productos_version_70",
           "language": {
             "code": "es"
           },
