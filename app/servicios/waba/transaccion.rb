@@ -233,14 +233,12 @@ class Waba::Transaccion
         "to": fono,
         "type": "template",
         "template": {
-          "name": "reservar_productos_version_70",
+          "name": "disyuntor",
           "language": {
             "code": "es"
           },
         "components": [
           { "type": "body" , "parameters": [ ] },
-          { "type": "header", "parameters": [ { "type": "image",
-              "image": {  "link": WabaCfg.image_url_say_ofertar } } ] },
           { "type": "button", "sub_type": "flow",  "index": "0" }
          ]
         }
