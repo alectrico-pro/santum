@@ -1,0 +1,34 @@
+#
+token=EAAN6V6gyZCSMBO2VDWPMRN4tNVBzXHtX9tsvDtVZAawgZBagoaVACwFwd11eD5bwhgqMVAvNo1nrYZAa0tqiEKYZAJXXXt5IZBECZBuTuZA3xBcoaTSWhVA6bntPVOTjbZCCMUPTBofWDaYKbvCyi3DRvcCSpSMXBfPQTxhgba9xZADpM2KzzuHOXns7187hfIsRzRmZBqqMih4
+
+phone_id=122131484313420
+fono=56945644889
+waba_id=120509644476862
+fono="13462042204"
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+
+#curl -v -H "Content-Type: application/json" -i -X GET \
+#"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
+
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "saludo",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+    { "type": "image",
+     "image": {  "link": "https://alectrico.cl/assets/images/wp-20160621-7-1456x2592-800x1424.jpg" } } ] },
+    { "type": "body"  , "parameters": [
+    { "type": "text",
+      "text": "Hola."   } ] }
+   ] }
+ }
+EOF

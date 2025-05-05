@@ -1,0 +1,22 @@
+#
+
+token=EAAN6V6gyZCSMBO2VDWPMRN4tNVBzXHtX9tsvDtVZAawgZBagoaVACwFwd11eD5bwhgqMVAvNo1nrYZAa0tqiEKYZAJXXXt5IZBECZBuTuZA3xBcoaTSWhVA6bntPVOTjbZCCMUPTBofWDaYKbvCyi3DRvcCSpSMXBfPQTxhgba9xZADpM2KzzuHOXns7187hfIsRzRmZBqqMih4
+
+
+#ono=56945644889
+fono=56993951576
+waba_id_test="113481378034034"
+phone_id_test="109431835110338"
+
+nombre="pellejo"
+sintoma="corte"
+url_de_pago="https://www.alectrico.cl"
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+
+#curl -v -H "Content-Type: application/json" -i -X GET \
+#"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
+
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id_test/phone_numbers" -H "Authorization: Bearer $token" \
+
+

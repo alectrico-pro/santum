@@ -1,0 +1,27 @@
+#962000921
+waba_id_962="107728605282500"
+phone_id_962="115409841173645"
+#945644889
+waba_id_945="107728605282500"
+phone_id_945="150477064807758"
+
+fono="56945644889"
+
+#El resultado del alargador anotarlo aquí
+#
+#export META_TOKEN="EAAN6V6gyZCSMBO8SFYpTy8YiRZB4wsZBtXbhNfRYQaM3DaqkNmF5pzCj15pZCoy1GvWkgi68u4Sq5TrojrTFe90W3vrvdOZAw08Fzk7krFcpyjqYk8yns9v67MnwkQoa3LeEAm6mvDTfn45rL7KpfuIfl7ZBTXu3YuyOE6T184TrEIuqdqTJuVDm54n2M04RmLNpalk37q"
+
+export META_TOKEN="EAAN6V6gyZCSMBO6lyWvVxC2uY4pszuJ2UG7bBTCWQR3cfnl8iV8WoewDCaCsH9cb8W1Py6miTW9EMPXAPqmJDX3ZAlOemebjKVI8icsZBhmPvPybPt00OkdVIoZACtLl2OVUo7ioXlvzgswHnDYZBwzOGHlNDBKaUXTxjrbZBugPAmxZCknXHmkPKQO"
+
+echo '{"META_TOKEN": "'"$META_TOKEN"'"}'
+
+export token="EAAN6V6gyZCSMBO6lyWvVxC2uY4pszuJ2UG7bBTCWQR3cfnl8iV8WoewDCaCsH9cb8W1Py6miTW9EMPXAPqmJDX3ZAlOemebjKVI8icsZBhmPvPybPt00OkdVIoZACtLl2OVUo7ioXlvzgswHnDYZBwzOGHlNDBKaUXTxjrbZBugPAmxZCknXHmkPKQO"
+echo '{"token": "'"$token"'"}'
+
+
+  
+curl -i -X POST \
+"https://graph.facebook.com/v18.0/$waba_id_945/messages"\
+  -H '"Authorization: Bearer '"$META_TOKEN"''\
+  -H 'Content-Type: application/json' \
+  -d '{ "messaging_product": "whatsapp", "to": "56981370042", "type": "template", "template": { "name": "hello_world", "language": { "code": "en_US" } } }'

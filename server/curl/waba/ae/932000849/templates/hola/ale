@@ -1,0 +1,93 @@
+#hello_world
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+fono=56945644889
+#waba_id=120509644476862
+waba_id=122131484313420
+client_token=df87929c4686f654a361342033e3bd5f
+ae_id=978941832789283
+#fono=56983550859
+#fono=56962000921
+taba_id=109431835110338
+
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "hello_world",
+    "language": {
+      "code": "en_US"
+    },
+   }
+ }
+EOF
+
+
+#hola ale
+#fono=56945704605
+waba_id=115409841173645
+mensaje="Alx: The Best Oz"
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "hola",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+    { "type": "image",
+     "image": {  "link": "https://alectrico.cl/assets/images/wp-20160621-7-1456x2592-800x1424.jpg" } } ] },
+    { "type": "body"  , "parameters": [ 
+    { "type": "text",
+      "text": "$mensaje"      } ] }
+   ]}
+ }
+EOF
+
+
+
+
+#hola ale
+token='EAAN6V6gyZCSMBAA5YZCVyBSZCwV5zFdb7ZADbyFEd2y3iSVBfd8y7C6rZAt9Px1ljMCOEYb964khZCU22ZBitRh4vZCSD53cwljV0US76JLxqa3OS5xKdACgVZBQYKB4gA036pBDb0xt5mw48gmXzOoG4DJXGGrZBdqukpctn4X7SlnZAbNZC0suEsc30pR6uhPSpZBwZD'
+client_token=df87929c4686f654a361342033e3bd5f
+ae_id=978941832789283
+#fono=56983550859
+#fono=56962000921
+#fono=56945704605
+taba_id=109431835110338
+waba_id=115409841173645
+mensaje="Alx: The Best Oz"
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "hola",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+    { "type": "image",
+     "image": {  "link": "https://alectrico.cl/assets/images/wp-20160621-7-1456x2592-800x1424.jpg" } } ] },
+    { "type": "body"  , "parameters": [
+    { "type": "text",
+      "text": "$mensaje"      } ] }
+   ]}
+ }
+EOF
+
+
+

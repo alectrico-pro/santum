@@ -1,0 +1,27 @@
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v14.0/115409841173645/messages -H "Authorization: Bearer \
+EAAN6V6gyZCSMBAHmTLiZBJhMl3ppqZAA1xAXk3lVhTE1XROyoYhgeEzWZBtZBY7NGMDvfN9mkVsna0Gi174jNZC7JNll4UWM6TJ518nrRrAyh84cxk8CJV0z9mHnzUSoTmdK4SePXWQO7VrqsHKp2cEC0NV8AumgJf2XzQvuDZC4PLqY7LiJkDEZBQ2skIUFVREZD  \
+" \
+-d '{
+  "messaging_product": "whatsapp",
+  "to": "13462042204",
+  "type": "template",
+  "template": {
+    "name": "nuevo_servicio",
+    "language": {
+      "code": "es_AR"
+    },
+  "components": [ { "type": "header",  "parameters": [
+                                             { "type": "text",  "text": "PROVIDENCIA"  }
+                                                     ]  },
+                  { "type": "body",    "parameters": [
+                                             { "type": "text",  "text": "Esteban"  } ,
+                                             { "type": "text",  "text": "Deseo cambiar un interruptor."  },
+                                             { "type": "text",  "text": "PROVIDENCIA."  }           ]  } ,
+                  { "type": "button",
+                 "sub_type": "url",
+                   "index":"0",
+              "parameters": [  { "type": "text", "text": "tomar_presupuesto/aceptar_contrato_y_tomar_presupuesto/1736" } ] }
+                ]
+   } }'
+

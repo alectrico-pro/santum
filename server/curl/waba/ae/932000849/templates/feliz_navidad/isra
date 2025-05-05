@@ -1,0 +1,33 @@
+#hola ale
+#toen=EAAN6V6gyZCSMBAPQh6HOJZAQwJnSauCwRCGyWBS94Yxu077JhvZAorIY4xrtprVGjgO8GtbShLfc7BHIqiqynl3lNp4r8N5xvfKif369kmNZA4RpGRzVVBqDGVaFh89iJMdiTEZBmEW8xayvS1yycc9MJBA7Q4jKxmZAOWVDCnpRGM4mky2fGtuDZAM2gW12cR4MMWAJ8VaOhPVDaCBSS9kBkDLRG5H8NgZD
+client_token=df87929c4686f654a361342033e3bd5f
+ae_id=978941832789283
+#fono=56983550859
+#fono=56962000921
+#ono=56945704605
+#fono=56933058579
+#fono=13462042204
+fono=56950601595
+taba_id=109431835110338
+waba_id=115409841173645
+mensaje="Alx: The Best Oz"
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "feliz_navidad",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+    { "type": "image",
+     "image": {  "link": "https://www.alectrico.cl/img/holiday-christmas-architecture.png" } } ] },    
+   ]}
+ }
+EOF
+

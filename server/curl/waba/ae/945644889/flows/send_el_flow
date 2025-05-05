@@ -1,0 +1,54 @@
+#
+#phone_id=122131484313420
+#ono=56945644889
+#waba_id=120509644476862
+nombre="pellejo"
+fono="56993951576"
+#ono="56981370042"
+#fono="13462042204"
+
+#fono="13462042204"
+#fono="56940338055"
+#fono="13464827728"
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+phone_id="150477064807758"
+waba_id="107728605282500"
+flow_id="852705143103652"
+
+curl -X  POST \
+ "https://graph.facebook.com/v18.0/$phone_id/messages" \
+ -H "Authorization: Bearer $token" \
+ -H 'Content-Type: application/json' \
+ --data @/dev/stdin<<EOF
+{
+  "recipient_type": "individual",
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "interactive",
+  "interactive": {
+    "type": "flow",
+    "body": {
+      "text": "Hola Diana, soy tu tío Alex, este es un ejemplo de un llenado de formulario, al presionar Inscribirse debe mostrarse una planilla, pero hay advertencias de que algunos equipos deben ser actualizados para que funcione."
+    },
+    "action": {
+      "name": "flow",
+      "parameters": {
+        "mode": "published",
+        "flow_token": "AQAAAAACS5FpgQ_cAAAAAD0QI3s.",
+        "flow_cta": "Inscribirse!",
+        "flow_action": "navigate",
+        "flow_message_version": "3",
+        "flow_id": "$flow_id",
+        "flow_action_payload": {
+          "screen": "<SIGN_UP>",
+          "data": { 
+            "firstName": "Chicho",
+            "lastName": "El Cojo",
+            "email": "jjj@jj.cl"          
+          }        
+        }
+      }
+    }
+  }
+}
+EOF

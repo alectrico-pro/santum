@@ -1,0 +1,46 @@
+#Esto es lo que envía facebook cuando un usuario emite un mensaje en mi 
+#cuenta de whatsapp asociadaa a WABA 962000921
+#https://developers.facebook.com/docs/whatsapp/cloud-api/webhooks/payload-examples#text-messages
+PHONE_NUMBER="960009211"
+PHONE_NUMBER_ID="115409841173645"
+WHATSAPP_BUSINESS_ACCOUNT_ID="737782437638734"
+TIME_STAMP="FechaHora"
+MESSAGE_BODY="Hola"
+curl -v -H "Content-Type: application/json" -i POST \
+"localhost:3001/api/v1/electrico/presupuestos/waba_socket.json"  \
+-H "Authorization: Bearer \
+EAAN6V6gyZCSMBAHmTLiZBJhMl3ppqZAA1xAXk3lVhTE1XROyoYhgeEzWZBtZBY7NGMDvfN9mkVsna0Gi174jNZC7JNll4UWM6TJ518nrRrAyh84cxk8CJV0z9mHnzUSoTmdK4SePXWQO7VrqsHKp2cEC0NV8AumgJf2XzQvuDZC4PLqY7LiJkDEZBQ2skIUFVREZD"  \
+--data @/dev/stdin<<EOF
+{
+  "object": "whatsapp_business_account",
+  "entry": [{
+      "id": "$WHATSAPP_BUSINESS_ACCOUNT_ID",
+      "changes": [{
+          "value": {
+              "messaging_product": "whatsapp",
+              "metadata": {
+                  "display_phone_number": $PHONE_NUMBER,
+                  "phone_number_id": "$PHONE_NUMBER_ID"
+              },
+              "contacts": [{
+                  "profile": {
+                    "name": "NAME"
+                  },
+                  "wa_id": "$PHONE_NUMBER"
+                }],
+              "messages": [{
+                  "from": "$PHONE_NUMBER",
+                  "id": "wamid.ID",
+                  "timestamp": "$TIMESTAMP",
+                  "text": {
+                    "body": "$MESSAGE_BODY"
+                  },
+                  "type": "text"
+                }]
+          },
+          "field": "messages"
+        }]
+  }]
+}
+EOF
+

@@ -1,0 +1,94 @@
+#
+#Negocio es:  Alectrico
+#business_id="737782437638734"
+# PRoceso para poder enviar un mensaje usando waba
+# Con número de prueb
+# Cuenta comercial
+# 1055700415349334
+catalogo_932_id="276060775243326"
+# Cuenta WhatsApp Business
+# alectrico
+# de Propiedad de Alectrico
+#122131484313420
+#alectrico
+#932000849
+waba_id_932="120509644476862"
+phone_id_932="122131484313420"
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+id_test="109431835110338"
+#Cuenta 962000921
+#de propiedad de Alectrico
+#107728605282500
+#alectrico
+#
+#962000921
+waba_id_962="107728605282500"
+phone_id_962="115409841173645"
+#945644889
+waba_id_945="107728605282500"
+phone_id_945="150477064807758"
+
+marca="alectrico"
+
+
+
+#yo
+#fono="56981370042"
+#isa
+#fono="56940338057"
+#este
+#fono="56961537045"
+#jorge
+#fono="13462042204"
+#diana
+#fono="13464827728"
+
+#usar bashrc para el token
+#oken=EAAMOsdbL40gBO2ntixaFKtqA55aC99BZCPsKkW3ZAdRa0y2r2jWIFAVprIZARZA6tZB81IqEk4JkFiCuX1LZBoXOr417ts40ZAbuSFx7kwdY9wU4Hy2Li0LvouZA5LPfSOgTi3HV3cgOmgcmJl4c53Li1GCHJXvZBzn0eJhZCAIOTj3GC9Kz2OeclFhEx8fvGUNm5BR74NHAFv
+
+#fono=56993951576
+#
+fono=5355100569
+fono=56993951576
+fono=531953666
+#Envía interactivamente un producto
+#a cada vez
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id_932/messages" \
+-H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+{
+     "messaging_product": "whatsapp",
+       "recipient_type": "individual",
+       "to": "$fono",
+       "type": "interactive",
+       "interactive": {
+         "type": "product_list",
+         "header":{
+           "type": "text",
+           "text": "Servicios Premium"
+         },
+         "body": {
+           "text": "Nuestros servicios Premium se ofrecen solo por esta vía y se benefician de las características de seguridad que ofrece Whatsapp"
+         },
+         "footer": {
+           "text": "$marca"
+         },
+         "action": {
+           "catalog_id": "$catalogo_932_id",
+           "sections": [
+             {
+               "title": "Servicios Premium",
+               "product_items": [
+                 { "product_retailer_id": "gtin_parrilla_cerrada" }
+               ]
+             }
+           ]
+         }
+       }
+     }
+EOF
+
+# {:messaging_product=>"whatsapp", :recipient_type=>"individual", :to=>"56993951576", :type=>"interactive", :interactive=>{:type=>"product_list", :header=>{:type=>"text", :text=>"Whappy Hogar"}, :body=>{:text=>"Elija los Mejores Electrodomésticos para su Hogar. Mensajería solo en *Ciudad de La Habana*. Entrega Rápida."}, :footer=>{:text=>"alectrico ®"}, :action=>{:catalog_id=>"276060775243326", :sections=>[{:title=>"Easy Cooking", :product_items=>"[{\"product_retailer_id\":\"gtin_parrilla_abierta\"}]"}]}}}

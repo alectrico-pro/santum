@@ -1,0 +1,17 @@
+#Se debe solicitar un nuevo token en developer.facebook en applicación ae
+#Solo hay que actualizar la página y se tendrá un nuevo token
+#Seleccionar token de acceso de usuario
+#actualizar META_TOKEN en la app
+
+
+alec_token="EAAMOsdbL40gBOZBFA6uDDcadrU7XJ9ZAWTorHBvaFpJq6fEZBQVLVZAPYlXPqLFomvexfk7oCxb5oKWIjR5STKvSxBWytgZAl7cccGEYRBivSdZAYVPelYow0pr3SgtErZAqsnrrqowb6R0UauWS0DumakMridj4HB9BoHPXoGOGfj3XUDztknu1UY2dbz6dRkdrtJaIsndcizFbWclN85zyberB5ArfC8oXlM5#"
+api_version="v18.0"
+alec_id="860581905818440"
+alec_secret="11942570c5a528bfd9a624081ad0d9ee"
+
+url = "https://graph.facebook.com/$api_version/oauth/access_token?grant_type=fb_exchange_token&client_id=$alec_id&client_secret=$alec_secret&fb_exchange_token=$token"
+
+
+curl -v -H "Content-Type: application/json" GET  \
+"https://graph.facebook.com/$api_version/oauth/access_token?grant_type=fb_exchange_token&client_id=$alec_id&client_secret=$alec_secret&fb_exchange_token=$alec_token"
+

@@ -1,0 +1,19 @@
+#
+token=EAAN6V6gyZCSMBO2VDWPMRN4tNVBzXHtX9tsvDtVZAawgZBagoaVACwFwd11eD5bwhgqMVAvNo1nrYZAa0tqiEKYZAJXXXt5IZBECZBuTuZA3xBcoaTSWhVA6bntPVOTjbZCCMUPTBofWDaYKbvCyi3DRvcCSpSMXBfPQTxhgba9xZADpM2KzzuHOXns7187hfIsRzRmZBqqMih4
+#phone_id=122131484313420
+#ono=56945644889
+#waba_id=120509644476862
+nombre="pellejo"
+fono=56993951576
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+phone_id="150477064807758"
+waba_id="107728605282500"
+
+
+curl -i POST \
+  "https://graph.facebook.com/v18.0/$phone_id/whatsapp_business_encryption" \
+  -H "Authorization: Bearer $token" \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d "business_public_key=<-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApPgYB8wmCzDp5UO0QivS6j/MghAuLcGzKVdLlacNmi6rxb0XlTMWpsgHxbRCHy9qNFcsSYzNGOECz4HPgRYtWNoQJxXUXugoZ5DysuOsUN2qR4luwflWGKqr3ZMrN/bklQgvPVjA7q7xdOsctAWjgJUyvKRlL/7l0kMWzJDT4RFFj7VPZb0eRXx7lVxxUbkyaVSs9wb3Gd5rgWpAmOvT06oh0Va5UEhEGzewkXqkyhBqci9rDVa3YGiDSLw7JDvrtZY991KnrB1KgUvfwfL/cXqX/xNh6w7mqubbZWYsvToHz6E4srLCHKF9xK+uZTK7YlaoqC9RqWd33QRkpUg8bwIDAQAB-----END PUBLIC KEY----->"
+
+

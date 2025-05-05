@@ -1,0 +1,46 @@
+#Negocio es:  Alectrico
+#business_id="737782437638734"
+# Cuenta comercial
+# 1055700415349334
+#
+#932000849#
+waba_id_932="120509644476862"
+phone_id_932="122131484313420"
+
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+
+waba_id_test="113481378034034"
+phone_id_test="109431835110338"
+
+
+#945644889
+waba_id_945="107728605282500"
+phone_id_945="150477064807758"
+
+#---------------
+#access_token=EAAN6V6gyZCSMBO2VDWPMRN4tNVBzXHtX9tsvDtVZAawgZBagoaVACwFwd11eD5bwhgqMVAvNo1nrYZAa0tqiEKYZAJXXXt5IZBECZBuTuZA3xBcoaTSWhVA6bntPVOTjbZCCMUPTBofWDaYKbvCyi3DRvcCSpSMXBfPQTxhgba9xZADpM2KzzuHOXns7187hfIsRzRmZBqqMih4
+
+access_token=EAAN6V6gyZCSMBO6lyWvVxC2uY4pszuJ2UG7bBTCWQR3cfnl8iV8WoewDCaCsH9cb8W1Py6miTW9EMPXAPqmJDX3ZAlOemebjKVI8icsZBhmPvPybPt00OkdVIoZACtLl2OVUo7ioXlvzgswHnDYZBwzOGHlNDBKaUXTxjrbZBugPAmxZCknXHmkPKQO
+
+echo "\n Revisar la cuenta WABA y sus números "
+echo "--------------------------------------"
+curl -i -X GET "https://graph.facebook.com/v16.0/$waba_id_945/phone_numbers?access_token=$access_token"
+echo "\n--------------------------------------"
+
+
+echo "\n Revisar la cuenta WABA y sus números "
+echo "--------------------------------------"
+curl -i -X GET "https://graph.facebook.com/v16.0/$waba_id_932/phone_numbers?access_token=$access_token"
+echo "\n--------------------------------------"
+
+
+echo "\n Revisar la cuenta WABA y sus números "
+echo "--------------------------------------"
+curl -i -X GET "https://graph.facebook.com/v16.0/$waba_id_test/phone_numbers?access_token=$access_token"
+echo "\n--------------------------------------"
+
+
+
+

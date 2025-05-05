@@ -1,0 +1,14 @@
+#desregistrando el 962000921
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+id_962="115409841173645"
+waba_id_962="107728605282500"
+business_id="737782437638734"
+fono=56945644889
+nombre="pellejo"
+access_token="EAAN6V6gyZCSMBO437NhLKufV0oINdVYQKZAX8ZCRBCN9ZAjtnakcHBkAZAA1Io9MciNUn9TPdgAnaZCGoSNQppFDpscLcx4rUPQRXkkXuqHgNUc6RiNZBZBXpa6cu5myxd8nD3exl00D2CqYqRgMnsbvf7HDgtzREgCEBGvWQ0aHbZBfCTu4ucLFZCUTmx"
+
+curl -i -X POST "https://graph.facebook.com/v14.0/$id_962/deregister?access_token=$access_token"
+echo "\n-------------------------\n"
+{"success":true}\n-------------------------\n
+

@@ -1,0 +1,24 @@
+#hola isa curl
+
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v14.0/115409841173645/messages -H "Authorization: Bearer $token" \
+-d '{
+  "messaging_product": "whatsapp",
+  "to": "56940338057",
+  "type": "template",
+  "template": {
+    "name": "hola",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+    { "type": "image",
+     "image": {  "link": "https://alectrico.cl/assets/images/wp-20160621-7-1456x2592-800x1424.jpg" } } ] },
+    { "type": "body"  , "parameters": [ 
+    { "type": "text",
+      "text": "Guido: Then Best DeVoz"     } ] }
+   ]}
+ }'
+
+

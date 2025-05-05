@@ -1,0 +1,18 @@
+#
+
+curl -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/115409841173645/messages" -H "Authorization: Bearer \
+$token" \
+-d '{
+  "messaging_product": "whatsapp",
+  "to": "56983550859",
+  "type": "template",
+  "template": {
+    "name": "sample_issue_resolution",
+    "language": {
+      "code": "en_US"
+    },
+  "components": [
+ { "type": "body", "parameters": [ { "type": "text",  "text": "Se eliminó la solicitud 32, por eser una solicitud duplicada." } ] }
+ ]} }'
+

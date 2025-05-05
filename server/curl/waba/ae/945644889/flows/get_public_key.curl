@@ -1,0 +1,14 @@
+#
+token=EAAN6V6gyZCSMBO2VDWPMRN4tNVBzXHtX9tsvDtVZAawgZBagoaVACwFwd11eD5bwhgqMVAvNo1nrYZAa0tqiEKYZAJXXXt5IZBECZBuTuZA3xBcoaTSWhVA6bntPVOTjbZCCMUPTBofWDaYKbvCyi3DRvcCSpSMXBfPQTxhgba9xZADpM2KzzuHOXns7187hfIsRzRmZBqqMih4
+#phone_id=122131484313420
+#ono=56945644889
+#waba_id=120509644476862
+nombre="pellejo"
+fono=56993951576
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+phone_id="150477064807758"
+waba_id="107728605282500"
+
+curl -X GET \
+  "https://graph.facebook.com/v18.0/$phone_id/whatsapp_business_encryption" \
+  -H "Authorization: Bearer $token"

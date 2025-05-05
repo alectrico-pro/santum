@@ -1,0 +1,32 @@
+#Enviando un hello world
+waba_id="113481378034034"
+phone_id="109431835110338"
+#Fono debe estar verificado
+#fono="56962000921"
+
+#fono="56945644889"
+fono="56932000849"
+fono="56993951576"
+token=EAAN6V6gyZCSMBO2VDWPMRN4tNVBzXHtX9tsvDtVZAawgZBagoaVACwFwd11eD5bwhgqMVAvNo1nrYZAa0tqiEKYZAJXXXt5IZBECZBuTuZA3xBcoaTSWhVA6bntPVOTjbZCCMUPTBofWDaYKbvCyi3DRvcCSpSMXBfPQTxhgba9xZADpM2KzzuHOXns7187hfIsRzRmZBqqMih4
+
+
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+
+#curl -v -H "Content-Type: application/json" -i -X GET \
+#"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
+
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$phone_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "hello_world",
+    "language": {
+      "code": "en_US"
+    }
+   }
+ }
+EOF

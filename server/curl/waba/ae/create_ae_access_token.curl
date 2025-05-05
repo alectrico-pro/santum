@@ -1,0 +1,20 @@
+# Con número de prueba
+
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+twaba_id="113481378034034"
+id_962="115409841173645"
+id_test="109431835110338"
+waba_id="107728605282500"
+business_id="737782437638734"
+
+#La clave secretad de la app hay que buscarala
+#En configuraciond e negocio
+#Applications
+#ae
+#Configuración Básisa
+#Mostrar Clave Secreta
+curl -v -X GET "https://graph.facebook.com/oauth/access_token?client_id=$ae_id&client_secret=$ae_secret&grant_type=client_credentials"
+
+

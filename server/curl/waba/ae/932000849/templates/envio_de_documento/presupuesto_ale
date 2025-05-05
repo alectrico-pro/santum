@@ -1,0 +1,50 @@
+#ono=13462042204
+#fono=56983550859
+fono=56945704605
+nombre="Nené"
+
+#962000921
+waba_id_962="107728605282500"
+phone_id_962="115409841173645"
+#945644889
+waba_id_945="107728605282500"
+phone_id_945="150477064807758"
+
+fono="56945644889"
+
+#El resultado del alargador anotarlo aquí
+#
+export META_TOKEN="EAAN6V6gyZCSMBO8SFYpTy8YiRZB4wsZBtXbhNfRYQaM3DaqkNmF5pzCj15pZCoy1GvWkgi68u4Sq5TrojrTFe90W3vrvdOZAw08Fzk7krFcpyjqYk8yns9v67MnwkQoa3LeEAm6mvDTfn45rL7KpfuIfl7ZBTXu3YuyOE6T184TrEIuqdqTJuVDm54n2M04RmLNpalk37q"
+
+echo '{"META_TOKEN": "'"$META_TOKEN"'"}'
+
+#url="https://www.alectrico.cl/api/v1/electrico/presupuestos/2/download_factura"
+#url="https://www.alectrico.cl/api/v1/electrico/presupuestos/2/download_boleta"
+url="https://alectrico.cl/assets/files/Manual%20Usuario%20v1_01.pdf"
+#url="https://alectrico.cl/assets/images/wp-20160621-7-1456x2592-800x1424.jpg"
+titulo_de_documento="Su pasaje ya"
+colaborador="Adriana Espinosa"
+firma="Marketing"
+
+curl -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id_945/messages -H Authorization: Bearer $META_TOKEN" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "envio_de_documento",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [ { "type": "document",
+    "document": { "link": "$url",
+                  "filename": "presupuesto.pdf"              
+                  }}]},
+    { "type": "body"  , "parameters": [ { "type": "text", "text": "$nombre" },
+                                        { "type": "text", "text": "$titulo_de_documento" },
+			                { "type": "text", "text": "$colaborador" },
+                                        { "type": "text", "text": "$firma" }] }]}}
+EOF

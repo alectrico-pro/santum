@@ -1,0 +1,32 @@
+#
+token=EAAN6V6gyZCSMBO437NhLKufV0oINdVYQKZAX8ZCRBCN9ZAjtnakcHBkAZAA1Io9MciNUn9TPdgAnaZCGoSNQppFDpscLcx4rUPQRXkkXuqHgNUc6RiNZBZBXpa6cu5myxd8nD3exl00D2CqYqRgMnsbvf7HDgtzREgCEBGvWQ0aHbZBfCTu4ucLFZCUTmx
+phone_id=122131484313420
+fono=56945644889
+waba_id=120509644476862
+nombre="pellejo"
+
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+
+#curl -v -H "Content-Type: application/json" -i -X GET \
+#"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
+
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "token_bat",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+    { "type": "image",
+     "image": {  "link": "https://alectrico.cl/assets/images/wp-20160621-7-1456x2592-800x1424.jpg" } } ] },
+    { "type": "body"  , "parameters": [] }
+   ] }
+ }
+EOF

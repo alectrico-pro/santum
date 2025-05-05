@@ -1,0 +1,69 @@
+#holas con TWABA, es el WABA de prueba
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v13.0/109431835110338/messages -H "Authorization: Bearer \
+EAAN6V6gyZCSMBAHmTLiZBJhMl3ppqZAA1xAXk3lVhTE1XROyoYhgeEzWZBtZBY7NGMDvfN9mkVsna0Gi174jNZC7JNll4UWM6TJ518nrRrAyh84cxk8CJV0z9mHnzUSoTmdK4SePXWQO7VrqsHKp2cEC0NV8AumgJf2XzQvuDZC4PLqY7LiJkDEZBQ2skIUFVREZD \
+" \
+-d '{                                                      
+  "messaging_product": "whatsapp",                          
+  "to": "56940338057",                                      
+  "type": "template",                                      
+  "template": {                                            
+    "name": "hola",                                        
+    "language": {                                          
+      "code": "es_AR"                                      
+    },                                                     
+  "components": [ {                                        
+    "type": "body",                                        
+    "parameters": [ {                                      
+      "type": "text",                                      
+      "text": "customer"                                   
+     }                                                     
+     ]                                                     
+   } ] } }'
+
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v13.0/109431835110338/messages -H "Authorization: Bearer \
+EAAN6V6gyZCSMBAHmTLiZBJhMl3ppqZAA1xAXk3lVhTE1XROyoYhgeEzWZBtZBY7NGMDvfN9mkVsna0Gi174jNZC7JNll4UWM6TJ518nrRrAyh84cxk8CJV0z9mHnzUSoTmdK4SePXWQO7VrqsHKp2cEC0NV8AumgJf2XzQvuDZC4PLqY7LiJkDEZBQ2skIUFVREZD \
+" \
+-d '{
+  "messaging_product": "whatsapp",
+  "to": "56962000921",
+  "type": "template",
+  "template": {
+    "name": "hola",
+    "language": {
+      "code": "es_AR"
+    },
+  "components": [ {
+    "type": "body",
+    "parameters": [ {
+      "type": "text",
+      "text": "customer"
+     }
+     ]
+   } ] } }'
+               
+
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v13.0/109431835110338/messages -H "Authorization: Bearer \
+EAAN6V6gyZCSMBAHmTLiZBJhMl3ppqZAA1xAXk3lVhTE1XROyoYhgeEzWZBtZBY7NGMDvfN9mkVsna0Gi174jNZC7JNll4UWM6TJ518nrRrAyh84cxk8CJV0z9mHnzUSoTmdK4SePXWQO7VrqsHKp2cEC0NV8AumgJf2XzQvuDZC4PLqY7LiJkDEZBQ2skIUFVREZD \
+" \
+-d '{
+  "messaging_product": "whatsapp",
+  "to": "56962000921",
+  "type": "template",
+  "template": {
+    "name": "hola",
+    "language": {
+      "code": "es_ES"
+    },
+  "components": [ {
+    "type": "body",
+    "parameters": [ {
+      "type": "text",
+      "text": "customer"
+     }
+     ]
+   } ] } }'
+
+ 

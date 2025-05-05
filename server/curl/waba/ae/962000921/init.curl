@@ -1,0 +1,62 @@
+# PRoceso para poder enviar un mensaje usando waba
+# Con número de prueba
+
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+twaba_id="113481378034034"
+id_962="115409841173645"
+id_test="109431835110338"
+waba_id="107728605282500"
+business_id="737782437638734"
+access_token="EAAN6V6gyZCSMBAHmTLiZBJhMl3ppqZAA1xAXk3lVhTE1XROyoYhgeEzWZBtZBY7NGMDvfN9mkVsna0Gi174jNZC7JNll4UWM6TJ518nrRrAyh84cxk8CJV0z9mHnzUSoTmdK4SePXWQO7VrqsHKp2cEC0NV8AumgJf2XzQvuDZC4PLqY7LiJkDEZBQ2skIUFVREZD"
+
+access_token="EAAN6V6gyZCSMBAKsnPqRZA9tMZCJXQ31zFWEaL9AMxlZAPSC41to6r2yiJDf3Xls1ckxMAb6oOrZCJZBq03ZBvTUe8qT4W7IiDJO6MaZBZCA48Od8ZChZAkOdCDmL2TZAt8mmeTZCoHgzHop2iirKf2dTI4GZC6IrOmJjFF5MM9fzH6sKP13WWToxgDcq0tNPpOKmLTqgmXjraDxOFoTs8AuyOb42RJyiIlPWJ3eoZD"
+#------------------------------- se muestran los números la cuenta WABA
+#waba. Los número de producción. En mi caso, solo tengo uno.
+#Informativo
+curl -i -X GET "https://graph.facebook.com/v14.0/$waba_id/phone_numbers?access_token=$access_token"
+
+echo "\n------------------------ se muestran los números de la cuenta TWABA"
+#waba. Los número de producción. En mi caso, solo tengo uno.
+#Informativo
+curl -i -X GET "https://graph.facebook.com/v14.0/$twaba_id/phone_numbers?access_token=$access_token"
+echo "\n------------------------------------------------"
+#---------------------------------------------------------
+#se solicita un código sms
+echo "\n Se solicita un código sms --------------------"
+
+curl -X POST \
+ 'https://graph.facebook.com/v13.0/$id_962/request_code' \
+ -H 'Authorization: Bearer $access_token' \
+ -F 'code_method=SMS' \
+ -F 'locale=en_US'    \
+ -F 'language=en_US'  
+
+echo "------------------------------------------------\n"
+
+#crea el número en WABA
+#curl -X  POST \
+# 'https://graph.facebook.com/v14.0/$id_962' \
+# -H 'Authorization: Bearer $access_token' \
+# -d '{ "pin" : "610318" }'
+
+
+echo "Revisar la cuenta WABA y sus números "
+echo "--------------------------------------"
+curl -i -X GET "https://graph.facebook.com/v14.0/$waba_id/phone_numbers?access_token=$access_token"
+
+echo "--------------------------------------"
+
+echo "Revisar la cuenta TWABA y sus números "
+echo "--------------------------------------"
+curl -i -X GET "https://graph.facebook.com/v14.0/$twaba_id/phone_numbers?access_token=$access_token"
+echo "--------------------------------------"
+
+
+#crea el número en TWABA
+curl -X  POST \
+ 'https://graph.facebook.com/v14.0/$id_test' \
+ -H 'Authorization: Bearer $access_token' \
+ -d '{ "pin" : "610318" }'
+
+

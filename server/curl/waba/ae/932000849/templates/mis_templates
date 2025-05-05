@@ -1,0 +1,22 @@
+
+#mis templates
+#devuelve los templates que tiene cada uno
+token="EAAN6V6gyZCSMBO22b3MZBXQHJrZAAikQy0FKZCxz0yCFRFrkoaUobpJk6PIMHvddjXy2ypE0vc9qr8c8KjZCKZC8uc64AZAIbIDrPexwZB070waf3MBUQfui7JzD4eU8qFUuhCHttNaZC1CTb0i8q4a4DH24DZBRHaGvbTsFYOkSHPaCcx4FM0AmPd0zDS5t0Q06FzplxQazwAVZAV28mihNZAkZD"
+waba_id=115409841173645
+mensaje="Alx: The Best Oz"
+
+curl -v -H "Content-Type: application/json" -i -X GET \
+"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
+
+mensaje="Alx: The Best Oz"
+waba_id=122131484313420
+curl -v -H "Content-Type: application/json" -i -X GET \
+"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
+
+
+
+
+#curl -i -X GET 
+#  "https://graph.facebook.com/<latest-api-version/>/WHATSAPP-BUSINESS-ACCOUNT-ID
+#    ?fields=id,name,message_templates,phone_numbers
+ #   &access_token=ACCESS-TOKEN"

@@ -1,0 +1,42 @@
+#
+#token=EAAMOsdbL40gBO2ntixaFKtqA55aC99BZCPsKkW3ZAdRa0y2r2jWIFAVprIZARZA6tZB81IqEk4JkFiCuX1LZBoXOr417ts40ZAbuSFx7kwdY9wU4Hy2Li0LvouZA5LPfSOgTi3HV3cgOmgcmJl4c53Li1GCHJXvZBzn0eJhZCAIOTj3GC9Kz2OeclFhEx8fvGUNm5BR74NHAFv
+#phone_id=122131484313420
+#ono=56945644889
+#waba_id=120509644476862
+nombre="pellejo"
+fono="56993951576"
+#fono="56981370042"
+#fono="13462042204"
+#fono="56940338055"
+#fono="13464827728"
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+#fono="13462042204"
+phone_id="150477064807758"
+waba_id="107728605282500"
+flow_id="852705143103652"
+
+curl -X  POST \
+ "https://graph.facebook.com/v18.0/$phone_id/messages" \
+ -H "Authorization: Bearer $token" \
+ -H 'Content-Type: application/json' \
+ --data @/dev/stdin<<EOF
+{
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "name": "send_flow",
+  "language": "en_US",
+  "category": "MARKETING",
+  "components": [
+    {
+      "type": "BUTTONS",
+      "buttons": [
+        {
+          "type": "FLOW",
+          "flow_id": "<flow-id>",
+          "flow_action": "navigate"
+        }
+      ]
+    }
+  ]
+}
+EOF

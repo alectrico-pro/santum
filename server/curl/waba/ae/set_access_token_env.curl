@@ -1,0 +1,6 @@
+#El resultado del alargador anotarlo aquí
+#
+export META_TOKEN="EAAN6V6gyZCSMBO8SFYpTy8YiRZB4wsZBtXbhNfRYQaM3DaqkNmF5pzCj15pZCoy1GvWkgi68u4Sq5TrojrTFe90W3vrvdOZAw08Fzk7krFcpyjqYk8yns9v67MnwkQoa3LeEAm6mvDTfn45rL7KpfuIfl7ZBTXu3YuyOE6T184TrEIuqdqTJuVDm54n2M04RmLNpalk37q"
+
+echo {"META_TOKEN": ""$META_TOKEN""}
+

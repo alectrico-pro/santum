@@ -1,0 +1,44 @@
+#
+
+#export token="EAAN6V6gyZCSMBO8SFYpTy8YiRZB4wsZBtXbhNfRYQaM3DaqkNmF5pzCj15pZCoy1GvWkgi68u4Sq5TrojrTFe90W3vrvdOZAw08Fzk7krFcpyjqYk8yns9v67MnwkQoa3LeEAm6mvDTfn45rL7KpfuIfl7ZBTXu3YuyOE6T184TrEIuqdqTJuVDm54n2M04RmLNpalk37q"
+
+#revisar ./bashrc para cambiar el token
+#a veces el mensaje dice la cuenta 120... no existe
+#lo que pasa es que no estás usando el token apropiado
+#Podría ser el de otra cuenta waba  o uno expirado:
+echo '{"META_TOKEN": "'"$token"'"}'
+
+
+(publico
+  (waba_name alectrico.ai)
+  (waba_id 220392254484102)
+  (catalog_id 1083397222859538 )
+  (business_id 860581905818440)
+  (business_name alec )
+  (type colaborador)
+  (phone_number_id 115409841173645 ))
+
+phone_id=?
+fono=?
+waba_id=220392254484102
+
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+
+#curl -v -H "Content-Type: application/json" -i -X GET \
+#"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
+
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$phone_number_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "hello_world",
+    "language": {
+      "code": "en_US"
+    }
+   }
+ }
+EOF

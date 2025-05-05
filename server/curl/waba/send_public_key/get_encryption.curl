@@ -1,0 +1,10 @@
+#Envía una clave pública
+
+phone_id=122131484313420
+
+waba_id=120509644476862
+
+curl -X GET \
+  "https://graph.facebook.com/v20.0/$waba_id/whatsapp_business_encryption" \
+  -H "Authorization: Bearer $token"
+

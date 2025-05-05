@@ -1,0 +1,32 @@
+#envia un saludo
+phone_id=122131484313420
+fono=56993951576
+waba_id=120509644476862
+nombre="Fifi"
+token="EAAN6V6gyZCSMBO7JFe0xfyOFi1M6ZBN5JZA35OToK2DatJqy4jf1VJBpDXHvMEyiiSZCjpVdFPsSeS0b2H4ee2YZBZCBIU5rajt9602fijJgfgumv5znHoeZAcVIce8EUwoYLO4TIlwA2Kuoz1u0iDCBoz2qPCaK3d4sGTBv2khTyZCVZAnMfhYvZBPrlBA1SrO2kxRzMZCiSKs"
+
+sintoma="corte"
+url_de_pago="https://www.alectrico.cl"
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "saludo",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+    { "type": "image",
+     "image": {  "link": "https://alectrico.cl/assets/images/wp-20160621-7-1456x2592-800x1424.jpg" } } ] },
+     { "type": "body"  , "parameters": [ { "type": "text", "text": "$nombre" },
+                                        { "type": "text", "text": "$sintoma" } ] },
+    { "type": "button", "sub_type": "url", "index":"1",
+      "parameters": [ { "type": "text", "text": "$url_de_pago" } ] } ] }
+    
+ }
+EOF

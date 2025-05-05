@@ -1,0 +1,59 @@
+#
+#Negocio es:  Alectrico
+#business_id="737782437638734"
+# PRoceso para poder enviar un mensaje usando waba
+# Con número de prueb
+# Cuenta comercial
+# 1055700415349334
+# Cuenta WhatsApp Business
+# alectrico
+# de Propiedad de Alectrico
+#122131484313420
+#alectrico
+#932000849
+waba_id_932="120509644476862"
+phone_id_932="122131484313420"
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+id_test="109431835110338"
+#Cuenta 962000921
+#de propiedad de Alectrico
+#107728605282500
+#alectrico
+#
+#962000921
+waba_id_962="107728605282500"
+phone_id_962="115409841173645"
+#945644889
+catalogo_945_id="862452141913088"
+phone_id_945="107728605282500"
+waba_id_945="150477064807758"
+
+
+
+#ono="56961537046"
+fono="56945644889"
+fono="56993951376"
+fono="56981370042"
+#ono="13462042204"
+token=EAAN6V6gyZCSMBO2VDWPMRN4tNVBzXHtX9tsvDtVZAawgZBagoaVACwFwd11eD5bwhgqMVAvNo1nrYZAa0tqiEKYZAJXXXt5IZBECZBuTuZA3xBcoaTSWhVA6bntPVOTjbZCCMUPTBofWDaYKbvCyi3DRvcCSpSMXBfPQTxhgba9xZADpM2KzzuHOXns7187hfIsRzRmZBqqMih4
+
+#Envía interactivamente un producto
+#a cada vez
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id_945/messages" \
+-H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+{
+ "messaging_product": "whatsapp",
+ "to": "$fono",
+ "recipient_type": "individual",
+ "type": "interactive",
+ "interactive":{
+    "type":"product",
+  "action":{"catalog_id": "$catalogo_945_id",
+   "product_retailer_id": "1"}
+ }
+}
+EOF

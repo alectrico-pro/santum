@@ -1,0 +1,81 @@
+#
+#Negocio es:  Alectrico
+#business_id="737782437638734"
+# PRoceso para poder enviar un mensaje usando waba
+# Con número de prueb
+# Cuenta comercial
+# 1055700415349334
+# Cuenta WhatsApp Business
+# alectrico
+# de Propiedad de Alectrico
+#122131484313420
+#alectrico
+#932000849
+waba_id_932="120509644476862"
+phone_id_932="122131484313420"
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+id_test="109431835110338"
+#Cuenta 962000921
+#de propiedad de Alectrico
+#107728605282500
+#alectrico
+#
+#962000921
+waba_id_962="107728605282500"
+phone_id_962="115409841173645"
+#945644889
+catalogo_945_id="862452141913088"
+waba_id_945="107728605282500"
+phone_id_945="150477064807758"
+
+
+
+#ono="56961537046"
+fono="56945644889"
+#fono="56993951376"
+fono="56993951576"
+#token=EAAMOsdbL40gBO2ntixaFKtqA55aC99BZCPsKkW3ZAdRa0y2r2jWIFAVprIZARZA6tZB81IqEk4JkFiCuX1LZBoXOr417ts40ZAbuSFx7kwdY9wU4Hy2Li0LvouZA5LPfSOgTi3HV3cgOmgcmJl4c53Li1GCHJXvZBzn0eJhZCAIOTj3GC9Kz2OeclFhEx8fvGUNm5BR74NHAFv
+
+#Envía interactivamente un producto
+#a cada vez
+#
+
+curl -X  POST \
+ "https://graph.facebook.com/v18.0/$phone_id_945/messages" \
+ -H "Authorization: Bearer $token" \
+ -H 'Content-Type: application/json' \
+--data @/dev/stdin<<EOF
+{
+ "messaging_product": "whatsapp",
+   "recipient_type": "individual",
+   "to": "$fono",
+   "type": "interactive",
+   "interactive": {
+     "type": "product_list",
+     "header":{
+       "type": "text",
+       "text": "Servicios Premium"
+     },
+     "body": {
+       "text": "Nuestros servicios Premium se ofrecen solo por esta vía y se benefician de las características de seguridad que ofrece Whatsapp"
+     },
+     "footer": {
+       "text": "alectrico®"
+     },
+     "action": {
+       "catalog_id": "$catalogo_945_id",
+       "sections": [
+         {
+           "title": "Servicios Premium",
+           "product_items": [
+             { "product_retailer_id": "3464" },
+             { "product_retailer_id": "3465" }
+           ]
+         }
+       ]
+     }
+   }
+ }
+EOF

@@ -1,0 +1,82 @@
+#
+#Negocio es:  Alectrico
+#business_id="737782437638734"
+# PRoceso para poder enviar un mensaje usando waba
+# Con número de prueb
+# Cuenta comercial
+# 1055700415349334
+# Cuenta WhatsApp Business
+# alectrico
+# de Propiedad de Alectrico
+#122131484313420
+#alectrico
+#932000849
+waba_id_932="120509644476862"
+phone_id_932="122131484313420"
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+id_test="109431835110338"
+#Cuenta 962000921
+#de propiedad de Alectrico
+#107728605282500
+#alectrico
+#
+#962000921
+waba_id_962="107728605282500"
+phone_id_962="115409841173645"
+#945644889
+catalogo_945_id="862452141913088"
+waba_id_945="107728605282500"
+phone_id_945="150477064807758"
+
+
+
+#ono="56961537046"
+fono="56945644889"
+token=EAAN6V6gyZCSMBO2VDWPMRN4tNVBzXHtX9tsvDtVZAawgZBagoaVACwFwd11eD5bwhgqMVAvNo1nrYZAa0tqiEKYZAJXXXt5IZBECZBuTuZA3xBcoaTSWhVA6bntPVOTjbZCCMUPTBofWDaYKbvCyi3DRvcCSpSMXBfPQTxhgba9xZADpM2KzzuHOXns7187hfIsRzRmZBqqMih4
+
+#primero hay que demotrar propiedad
+#ese hace enviando un sms
+#Envía interactivamente un producto
+#a cada vez
+
+#
+echo "\n------------ verifica propiedad de un numero ---\n"
+
+#{"error":{"message":"(#33) The requested phone number has been deleted.","type":"OAuthException","code":33,"fbtrace_id":"ApN0A8rVLXDaOYmZ9I_FrhX"}}\n------------ verifica propiedad de un numero ---\n
+
+
+
+#curl -X POST "https://graph.facebook.com/v18.0/$phone_id_945/request_code" \
+# -d 'code_method=SMS' \
+# -d 'language=en_US' \
+# -d "access_token=$token"
+
+
+
+#curl -X POST \
+#"https://graph.facebook.com/v18.0/$phone_id_945/verify_code" \
+#  -d 'code=894029' \
+#  -d "access_token=$token"
+
+#echo "\n-------------------------\n"
+
+#------------------
+#
+#Si lo intento registrar despues de haber demostrado mi propiedad
+#Sobre él, entonces dice que ya está registrado
+#Que hay que desconectarlo
+#Si lo desconecto, dice que el número está borrado
+#Si lo agrego y demuesro propiedad
+#vuerlvo a aqui
+#
+#curl "https://graph.facebook.com/v18.0/$phone_id_945/register" \
+#-H 'Content-Type: application/json' \
+#-H "Authorization: Bearer $token" \
+#-d '{ "messaging_product": "whatsapp", "pin": "610318"}'
+
+
+#"error":{"message":"Invalid parameter","type":"OAuthException","code":100,"error_subcode":2388001,"is_transient":false,"error_user_title":"No se puede crear el certificado","error_user_msg":"Este n\u00famero est\u00e1 registrado en una cuenta de WhatsApp que ya existe. Para usar este n\u00famero, descon\u00e9ctalo de la cuenta existente. Luego, regresa a esta p\u00e1gina y vuelve a introducir el n\u00famero. Nota: el n\u00famero puede tardar hasta 3\u00a0minutos en estar disponible.  M\u00e1s informaci\u00f3n","fbtrace_id":"ACrCEnwjkBFgGUE
+#
+#Tuve que quitarlo desde la app whatsapp business

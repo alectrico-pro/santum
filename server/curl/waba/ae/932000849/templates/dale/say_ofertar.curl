@@ -1,0 +1,31 @@
+#da error, reptir
+#(mensaje '  Parameters: {"object"=>"whatsapp_business_account", "entry"=>[{"id"=>"107728605282500", "changes"=>[{"value"=>{"messaging_product"=>"whatsapp", "metadata"=>{"display_phone_number"=>"56962000921", "phone_number_id"=>"115409841173645"}, "statuses"=>[{"id"=>"wamid.HBgLNTY5ODM1NTA4NTkVAgARGBIwNDk3MjExMjYxRjFENjIwMTEA", "status"=>"failed", "timestamp"=>"1660083572", "recipient_id"=>"56983550859", "errors"=>[{"code"=>131000, "title"=>"Failure due to an internal error. Please retry."}]}]}, "field"=>"messages"}]}], "presupuesto"=>{"object"=>"whatsapp_business_account", "entry"=>[{"id"=>"107728605282500", "changes"=>[{"value"=>{"messaging_product"=>"whatsapp", "metadata"=>{"display_phone_number"=>"56962000921", "phone_number_id"=>"115409841173645"}, "statuses"=>[{"id"=>"wamid.HBgLNTY5ODM1NTA4NTkVAgARGBIwNDk3MjExMjYxRjFENjIwMTEA", "status"=>"failed", "timestamp"=>"1660083572", "recipient_id"=>"56983550859", "errors"=>[{"code"=>131000, "title"=>"Failure due to an internal error. Please retry."}]}]}, "field"=>"messages"}]}]}}') )
+
+client_token=df87929c4686f654a361342033e3bd5f
+
+fono=56983550859
+fono=56993951576
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v14.0/115409841173645/messages -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "dale",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+     { "type": "image", "image": { "link": "https://alectrico.cl/assets/images/bornes-de-salida-con-etiquetas-1456x2592.jpg" } } ] },
+    { "type"          :   "body", "parameters" : [
+            { "type"          :   "text",
+              "text"          :   "colaborador.nombre.upcase_first"     } ,
+            { "type"          :   "text",
+              "text"          :   "comuna.upcase_first"    } ,
+            { "type"          :   "text",
+              "text"          :   "sintoma.upcase_first"     } ] }
+           ]}}
+EOF

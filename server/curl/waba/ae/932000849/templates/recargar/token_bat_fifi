@@ -1,0 +1,25 @@
+fono=56945644889
+fono=531953666
+
+mensaje="Alex"
+template_name=token_bat
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v14.0/115409841173645/messages -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "$template_name",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [
+    { "type": "image",
+     "image": {  "link": "https://www.alectrico.cl/img/holiday-christmas-architecture.png" } } ] },
+   ]}
+ }
+EOF
+

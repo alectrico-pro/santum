@@ -1,0 +1,29 @@
+#
+
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v14.0/115409841173645/messages -H "Authorization: Bearer \
+$token  \
+" \
+-d '{
+  "messaging_product": "whatsapp",
+  "to": "56983550859",
+  "type": "template",
+  "template": {
+    "name": "nuevo_servicio",
+    "language": {
+      "code": "es_AR"
+    },
+  "components": [ { "type": "header",  "parameters": [
+                                             { "type": "text",  "text": "PROVIDENCIA"  }
+                                                     ]  },
+                  { "type": "body",    "parameters": [
+                                             { "type": "text",  "text": "Alexander Espinosa"  } ,
+                                             { "type": "text",  "text": "Enchufe con Cable Suelto Haciendo Corte."  },
+                                             { "type": "text",  "text": "PROVIDENCIA."  }           ]  } ,
+                  { "type": "button",
+                 "sub_type": "url",
+                   "index":"0",
+              "parameters": [  { "type": "text", "text": "/electrico/presupuestos/2/aceptar_contrato_y_tomar_presupuesto" } ] }
+                ]
+   } }'
+

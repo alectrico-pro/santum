@@ -1,0 +1,76 @@
+#
+#Negocio es:  Alectrico
+#business_id="737782437638734"
+# PRoceso para poder enviar un mensaje usando waba
+# Con número de prueb
+# Cuenta comercial
+# 1055700415349334
+catalogo_932_id="276060775243326"
+# Cuenta WhatsApp Business
+# alectrico
+# de Propiedad de Alectrico
+#122131484313420
+#alectrico
+#932000849
+waba_id_932="120509644476862"
+phone_id_932="122131484313420"
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+id_test="109431835110338"
+#Cuenta 962000921
+#de propiedad de Alectrico
+#107728605282500
+#alectrico
+#
+#962000921
+waba_id_962="107728605282500"
+phone_id_962="115409841173645"
+#945644889
+waba_id_945="107728605282500"
+phone_id_945="150477064807758"
+
+marca="alectrico"
+
+
+fono="56945644889"
+fono="56981370042"
+
+#Envía interactivamente un producto
+#a cada vez
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id_932/messages" \
+-H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+{
+     "messaging_product": "whatsapp",
+       "recipient_type": "individual",
+       "to": "$fono",
+       "type": "interactive",
+       "interactive": {
+         "type": "product_list",
+         "header":{
+           "type": "text",
+           "text": "Servicios Premium"
+         },
+         "body": {
+           "text": "Nuestros servicios Premium se ofrecen solo por esta vía y se benefician de las características de seguridad que ofrece Whatsapp"
+         },
+         "footer": {
+           "text": "$marca"
+         },
+         "action": {
+           "catalog_id": "$catalogo_932_id",
+           "sections": [
+             {
+               "title": "Servicios Premium",
+               "product_items": [
+                 { "product_retailer_id": "gtin_visita" },
+                 { "product_retailer_id": "gtin_visita_sec" }
+               ]
+             }
+           ]
+         }
+       }
+     }
+EOF

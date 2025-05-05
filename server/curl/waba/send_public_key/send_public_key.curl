@@ -1,0 +1,29 @@
+#Envía una clave pública
+
+phone_id=122131484313420
+#fono=56945644889
+fono=56993951576
+#fono=56981370042
+#fono="531953666"
+
+waba_id=120509644476862
+nombre="Fifi"
+sintoma="corte"
+url_de_pago="https://www.alectrico.cl"
+
+
+BUSINESS_PUBLIC_KEY="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApj5WKd31iJzz89HdydgPYRiSKw+RFEtHmCGBg0u5al9PbigvcRhm8Wuf1udOa1U6oWmJEKofkPPrkqIPctIGHqUI62FH7iPMrVsnud3w+sn1RAZ0aNbJIyJmzPiB/UDQBDrKnlQdl09iCRACXpwoGtw8/Up8djv7Bu9hEaVu54w/PDB2hjiLfTc1MNy5Nj3ZAGM00u95qbmeuT9vN6Cqa4saHV5C4QwESAhS6XRcShWFYJL/juzFpgoVe+ukzpDj6gToHqeL7T1jeuq7ArtE2o/MBpc+uCOFzJ66SYh94bnxD4874dldNnFp2WaKeET7S45ZpBA6za263vtreAdRhQIDAQAB"
+
+curl -X POST \
+  "https://graph.facebook.com/v20.0/$waba_id/whatsapp_business_encryption" \
+  -H "Authorization: Bearer $token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  --data-urlencode "business_public_key=-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApj5WKd31iJzz89HdydgP
+YRiSKw+RFEtHmCGBg0u5al9PbigvcRhm8Wuf1udOa1U6oWmJEKofkPPrkqIPctIG
+HqUI62FH7iPMrVsnud3w+sn1RAZ0aNbJIyJmzPiB/UDQBDrKnlQdl09iCRACXpwo
+Gtw8/Up8djv7Bu9hEaVu54w/PDB2hjiLfTc1MNy5Nj3ZAGM00u95qbmeuT9vN6Cq
+a4saHV5C4QwESAhS6XRcShWFYJL/juzFpgoVe+ukzpDj6gToHqeL7T1jeuq7ArtE
+2o/MBpc+uCOFzJ66SYh94bnxD4874dldNnFp2WaKeET7S45ZpBA6za263vtreAdR
+hQIDAQAB
+-----END PUBLIC KEY-----"

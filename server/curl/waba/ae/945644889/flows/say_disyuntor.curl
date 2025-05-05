@@ -1,0 +1,59 @@
+#usado en say_disyuntor
+waba_id="150477064807758"
+
+nombre="pellejo"
+fono=56993951576
+#fono="13462042204"
+flow_id=417895687551113
+flow_id=2275989649409948
+#fono=56981370042
+#https://developers.facebook.com/apps/978941832789283/whatsapp-business/wa-dev-console/?business_id=737782437638734
+
+#curl -v -H "Content-Type: application/json" -i -X GET \
+#"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
+
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v14.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+{
+        "recipient_type": "individual",
+        "messaging_product": "whatsapp",
+        "to": "$fono",
+        "type": "interactive",
+        "interactive": {
+          "type": "flow",
+         "header": {
+            "type": "text",
+            "text": "Reserva de Servicio"
+          },
+          "body": {
+            "text": "hola"
+          },
+            "footer": {
+              "text": "alectrico®"
+            },
+            "action": {
+              "name": "flow",
+              "parameters": {
+                "flow_message_version": "3",
+                "flow_token": "308",
+                "flow_id": "$flow_id",
+                "flow_cta": "Reservar!",
+                "flow_action": "navigate",
+                "flow_action_payload": {
+                  "screen": "ESPECIFICACION",
+                  "data": {
+                    "modelo": "DX3",
+                    "In": "10 A",
+                    "marca": "Legrand",
+                    "precio": "100 CLP",
+                    "Ia": "1000 A",
+                    "poder_de_corte": "600 A",
+                    "referencia": "8980809"
+                  }
+                }
+              }
+            }
+          }
+        }
+EOF

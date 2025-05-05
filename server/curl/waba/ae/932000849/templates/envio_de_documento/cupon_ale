@@ -1,0 +1,29 @@
+#
+fono=56945704605
+nombre="Alex"
+url="https://www.alectrico.cl/electrico/presupuestos/2/download_pdf"
+#url="https://alectrico.cl/assets/files/Manual%20Usuario%20v1_01.pdf"
+#rafica="https://alectrico.cl/assets/images/wp-20160621-7-1456x2592-800x1424.jpg"
+titulo_de_documento="Su pasaje ya"
+colaborador="Adriana Espinosa"
+firma="Marketing"
+
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v14.0/115409841173645/messages -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+ {
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "template",
+  "template": {
+    "name": "envio_de_documento",
+    "language": {
+      "code": "es"
+    },
+  "components": [
+    { "type": "header", "parameters": [ { "type": "document", "document": { "link": "$url" }}]},
+    { "type": "body"  , "parameters": [ { "type": "text", "text": "$nombre" },
+                                        { "type": "text", "text": "$titulo_de_documento" },
+			                { "type": "text", "text": "$colaborador" },
+                                        { "type": "text", "text": "$firma" }] }]}}
+EOF

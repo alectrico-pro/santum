@@ -1,0 +1,53 @@
+#este es un call_to_action para enviar el flow template res2
+echo '{"META_TOKEN": "'"$token"'"}'
+
+fono="56993951576"
+fono=531953666
+
+#fono="13462042204"
+fono="13464827728"
+phone_id=122131484313420
+#ono=56945644889
+waba_id=120509644476862
+
+curl -v -H "Content-Type: application/json" -i -X POST \
+"https://graph.facebook.com/v16.0/$waba_id/messages" -H "Authorization: Bearer $token" \
+--data @/dev/stdin<<EOF
+{
+  "recipient_type": "individual",
+  "messaging_product": "whatsapp",
+  "to": "$fono",
+  "type": "interactive",
+  "interactive": {
+    "type": "flow",
+    "header": {
+      "type": "text",
+      "text": "Parole Con Diana®"
+    },
+    "body": {
+      "text": "Inscríbase al Parole desde su Device"
+    },
+    "footer": {
+      "text": "Este es un servicio legal de DIANA®"
+    },
+    "action": {
+      "name": "flow",
+      "parameters": {
+        "flow_message_version": "3",
+        "flow_token": "AQAAAAACS5FpgQ_cAAAAAD0QI3s.",
+        "flow_id": "699769862043819",
+        "flow_cta": "Inscripción al Parole!",
+        "flow_action": "navigate",
+        "flow_action_payload": {
+          "screen": "SIGN_UP",
+          "data": { 
+            "product_name": "name",
+            "product_description": "description",
+            "product_price": 100
+          }
+        }
+      }
+    }
+  }
+}
+EOF

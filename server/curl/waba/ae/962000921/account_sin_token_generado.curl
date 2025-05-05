@@ -1,0 +1,86 @@
+# PRoceso para poder enviar un mensaje usando waba
+# Con número de prueba
+
+#Test WhatsApp Business Account twaba
+ae_id="978941832789283"
+ae_secret="29815b7d5a3a9fe48076f35a262bb253"
+twaba_id="113481378034034"
+id_962="115409841173645"
+id_test="109431835110338"
+waba_id="107728605282500"
+business_id="737782437638734"
+
+access_token= EAAN6V6gyZCSMBO17V6HdaEIclpmQkMNk5ji0mUKjoj34Ei4QpPXxcVrgH2PY98bjbLorB7atx26HS6ZCEcSESO2UYAqC2sPqcj3mxmmT8T8uwNIvYEiZBZC5hUF7EDwJpthAZAiSfd2qfrmOPNuilXoCdm9VuYrOcBO2KZA7ZA6haylwb5yNBcFjVV3
+#access_token="EAAN6V6gyZCSMBADfprcxuLqmNCCu8Wx6zJVCYhPuqjHxLEgin26vfxoZCBZBSpFi9ga2kw22WQlO9EYhslETJg0u1OydXjnNj6HMNr88asIDI48yxKpSBhOsKOZCTIa8Tev26g579lpVY4yJ1NlhzxvhZBXuAoS9Ay0C3WuHrYQ0u6oZB74U5THSCZBv8tu6nRZAWyAepA8rkSiRQSxHowM6SrdRDAsBy6sZD"
+#r a https://developers.facebook.com/tools/explorer/?method=GET&path=me%3Ffields%3Did%2Cname&version=v14.0
+#Es el Explorador de la Api
+#A la derecha hay un botón Generate Access Token
+##l cual trabaja con dos pushdown que están debajo
+#En App de Meta
+#Seleccionar ae
+#En Usuario o página
+#Seleccionar Token del Usuario
+#Luego en permisos
+#En permisos agregar
+#whatsapp_business_managemente
+#whatsapp_business_messaging
+#public_profile 
+
+#Si recibo error 190 debo pedir otro access token
+#La clave secretad de la app hay que buscarala
+#En configuraciond e negocio
+#Applications
+#ae
+#Configuración Básisa
+#Mostrar Clave Secreta
+curl -X GET "https://graph.facebook.com/oauth/access_token?client_id=$ae-id&client_secret=$ae_secret&grant_type=client_credentials"
+
+#------------------------------- se muestran los números la cuenta WABA
+#waba. Los número de producción. En mi caso, solo tengo uno.
+#Informativo
+curl -i -X GET "https://graph.facebook.com/v14.0/$waba_id/phone_numbers?access_token=$access_token"
+
+echo "\n------------------------ se muestran los números de la cuenta TWABA"
+#waba. Los número de producción. En mi caso, solo tengo uno.
+#Informativo
+curl -i -X GET "https://graph.facebook.com/v14.0/$twaba_id/phone_numbers?access_token=$access_token"
+echo "\n------------------------------------------------"
+#---------------------------------------------------------
+#se solicita un código sms
+echo "\n Se solicita un código sms --------------------"
+
+curl -X POST \
+ 'https://graph.facebook.com/v13.0/$id_962/request_code' \
+ -H 'Authorization: Bearer $access_token' \
+ -F 'code_method=SMS' \
+ -F 'locale=en_US'    \
+ -F 'language=en_US'  
+
+echo "------------------------------------------------\n"
+
+#crea el número en WABA
+#curl -X  POST \
+# 'https://graph.facebook.com/v14.0/$id_962' \
+# -H 'Authorization: Bearer $access_token' \
+# -d '{ "pin" : "610318" }'
+
+
+echo "Revisar la cuenta WABA y sus números "
+echo "--------------------------------------"
+curl -i -X GET "https://graph.facebook.com/v14.0/$waba_id/phone_numbers?access_token=$access_token"
+
+echo "--------------------------------------"
+
+echo "Revisar la cuenta TWABA y sus números "
+echo "--------------------------------------"
+curl -i -X GET "https://graph.facebook.com/v14.0/$twaba_id/phone_numbers?access_token=$access_token"
+echo "--------------------------------------"
+
+
+#crea el número en TWABA
+curl -X  POST \
+ 'https://graph.facebook.com/v14.0/$id_test' \
+ -H 'Authorization: Bearer $access_token' \
+ -d '{ "pin" : "610318" }'
+
+

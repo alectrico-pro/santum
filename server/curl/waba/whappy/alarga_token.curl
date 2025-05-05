@@ -1,0 +1,20 @@
+#Se debe solicitar un nuevo token en developer.facebook en applicación ae
+#Solo hay que actualizar la página y se tendrá un nuevo token
+#Seleccionar token de acceso de usuario
+#actualizar META_TOKEN en la app
+
+
+client_token=df87929c4686f654a361342033e3bd5f
+whappy_id=978941832789283
+whappy_secret=29815b7d5a3a9fe48076f35a262bb253
+api_version=v18.0
+fono=56945704605
+taba_id=109431835110338
+waba_id=115409841173645
+
+url = "https://graph.facebook.com/$api_version/oauth/access_token?grant_type=fb_exchange_token&client_id=$ae_id&client_secret=$ae_secret&fb_exchange_token=$token"
+
+mensaje="Alx: The Best Oz"
+curl -v -H "Content-Type: application/json" GET  \
+"https://graph.facebook.com/$api_version/oauth/access_token?grant_type=fb_exchange_token&client_id=$whappy_id&client_secret=$whappy_secret&fb_exchange_token=$token"
+

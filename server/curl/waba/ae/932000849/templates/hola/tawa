@@ -1,0 +1,23 @@
+#hola tawa, solo se permite hacia el 962000921
+
+curl -H "Content-Type: application/json" -i -X POST \
+https://graph.facebook.com/v13.0/109431835110338/messages -H "Authorization: Bearer $token" \
+-d '{                                                      
+  "messaging_product": "whatsapp",                          
+  "to": "56962000921",                                      
+  "type": "template",                                      
+  "template": {                                            
+    "name": "hola",                                        
+    "language": {                                          
+      "code": "es_AR"                                      
+    },                                                     
+  "components": [ {                                        
+    "type": "body",                                        
+    "parameters": [ {                                      
+      "type": "text",                                      
+      "text": "customer"                                   
+     }                                                     
+     ]                                                     
+   } ] } }'
+
+ 
