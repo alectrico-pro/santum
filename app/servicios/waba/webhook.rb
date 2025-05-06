@@ -21,7 +21,7 @@ class Waba::Webhook
     linea.info params.inspect
     fact = ::Graph::Fact.new(params, nil, nil)
     linea.info fact.inspect
-    fact&.send(:monito, ::Graph::Redisfile.new)
+    #fact&.send(:monito, ::Graph::Redisfile.new)
 
     #Los mensajes llegan en diferents posiciones de la graph.api
     begin
