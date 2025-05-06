@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   root 'reportes#new'
 
 
+  #Este es el webhook de la app whappy en facebook
   get  'api/v1/electrico/presupuestos/webhook'
+  post 'api/v1/electrico/presupuestos/webhook'
+
 
 end
