@@ -1,6 +1,6 @@
 module Graph
   module Solicitud
-    class ::Graph::Solicitud::Image
+    class Image
       attr_accessor :link
       def initialize(link='')
         @link = link
