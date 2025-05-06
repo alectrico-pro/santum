@@ -9,6 +9,8 @@ class Waba::Webhook
 
   def initialize params
 
+    linea = ActiveSupport::Logger.new(STDOUT)
+
     linea.info "En initialize de Waba::Webhook"
     linea.info "Debe hacer lo que hace la accioń webhook en api/v1/electrico/presupuestos"
 
@@ -100,6 +102,10 @@ class Waba::Webhook
 
 
   def detecta_publico( fact )
+
+    linea = ActiveSupport::Logger.new(STDOUT)
+
+
     linea.info "En detecta_publico"
     #uso dos números waba, uno para los colaboradores y otro para los clietnes
     metadata         = fact.object.entry.first.changes.first.value.metadata
@@ -177,6 +183,9 @@ class Waba::Webhook
   end
 
   def envia_bienvenida( fact, publico)
+
+    linea = ActiveSupport::Logger.new(STDOUT)
+
     ::Waba::Transaccion.new( publico ).enviar_mensaje(fono, "¡Bienvenido a alectrico ®!")
     nombre = fact.object.entry.first.changes.first.value.contacts.first.profile.name
     begin
@@ -217,6 +226,10 @@ class Waba::Webhook
 
   #Intenta lograr que un colaborador tome un presupuesto
   def realizar_tomar mensaje, contexto
+
+    linea = ActiveSupport::Logger.new(STDOUT)
+
+
     colaborador = ::Colaborador.find_by(:fono => mensaje.from )
     llamada = ::Electrico::Llamada.find_by(:contenido => contexto&.id)
     fono    = mensaje&.from
@@ -253,6 +266,9 @@ class Waba::Webhook
   #Debe llamarse cuando se reciba un botón Entiendo desde el fono del gestor
   #en respuesta a un mensaje plantilla cualquiera que tenga el botón Entiendo
   def solicitar_gestor mensaje, contexto
+
+    linea = ActiveSupport::Logger.new(STDOUT)
+
     linea.info "Recibí un mensaje Ofertar"
     llamada = ::Electrico::Llamada.find_by(:contenido => contexto&.id)
     linea.info "id: #{contexto&.id} "
@@ -292,6 +308,10 @@ class Waba::Webhook
   end
 
   def enviar_presupuesto mensaje, contexto
+
+    linea = ActiveSupport::Logger.new(STDOUT)
+
+
     linea.info "Enviendo presupuesto, detalles al gestor"
     llamada = ::Electrico::Llamada.find_by(:contenido => contexto&.id)
     linea.info "id: #{contexto&.id} "
@@ -314,6 +334,9 @@ class Waba::Webhook
   end
 
   def realizar_ofertar mensaje, contexto
+
+    linea = ActiveSupport::Logger.new(STDOUT)
+
     linea.info "Recibí un mensaje Ofertar"
     llamada = ::Electrico::Llamada.find_by(:contenido => contexto&.id)
     linea.info "id: #{contexto&.id} "
@@ -367,6 +390,10 @@ class Waba::Webhook
 
 
   def procesa_mensaje mensaje, contexto
+
+    linea = ActiveSupport::Logger.new(STDOUT)
+
+
     linea.info "Recibí un mensaje <Button>"
 
     linea.info mensaje.inspect
@@ -400,6 +427,9 @@ class Waba::Webhook
   end
 
   def procesa_solicitud solicitud
+
+    linea = ActiveSupport::Logger.new(STDOUT)
+
     linea.info "Recibí un mensaje <Solicitud>"
     linea.info "No se deben procesar en webhook"
     linea.info "Se retornará true si están correctos"
