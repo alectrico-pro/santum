@@ -13,9 +13,9 @@ class Waba::Webhook
     linea.info "Debe hacer lo que hace la accioń webhook en api/v1/electrico/presupuestos"
 
    #performed? recordar que se puede usar para detectar si ya no se haya respondido en otro lado
-    unless AGENDA<<params
-      return
-    end
+    #unless AGENDA<<params
+    #  return
+    #end
     linea.info params.inspect
     fact = Graph::Fact.new(params, nil, nil)
     linea.info fact.inspect
