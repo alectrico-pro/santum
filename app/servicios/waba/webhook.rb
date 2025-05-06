@@ -7,7 +7,7 @@ class Waba::Webhook
   #extend ::Linea
   include ::CrearUsuario
 
-  def self.linea
+  def linea
     ActiveSupport::Logger.new(STDOUT)
   end
 
