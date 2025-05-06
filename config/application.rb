@@ -40,5 +40,7 @@ module Railsondocker
         g.orm             :pg
     end
 
+    config.autoload_paths << Rails.root.join('app/servicios')
+
   end
 end
