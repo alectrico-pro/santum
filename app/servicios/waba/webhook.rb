@@ -19,7 +19,7 @@ class Waba::Webhook
     #  return
     #end
     linea.info params.inspect
-    fact = Graph::Fact.new(params, nil, nil)
+    fact = ::Graph::Fact.new(params, nil, nil)
     linea.info fact.inspect
     fact&.send(:monito, ::Graph::Redisfile.new)
 
