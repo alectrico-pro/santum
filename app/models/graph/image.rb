@@ -1,5 +1,5 @@
 module Graph
-  class Image
+  class ::Graph::Image
 
     attr_accessor :caption
     attr_accessor :mime_type
