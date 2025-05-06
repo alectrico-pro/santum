@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   #oot 'bienvenido#index'
   root 'reportes#new'
 
+
+  get  'api/v1/electrico/presupuestos/webhook'
+
 end
