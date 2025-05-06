@@ -4,12 +4,8 @@
 class Waba::Webhook
 
   attr_accessor :mensajes
-  #extend ::Linea
+  extend ::Linea
   include ::CrearUsuario
-
-  def linea
-    ActiveSupport::Logger.new(STDOUT)
-  end
 
   def initialize params
 
