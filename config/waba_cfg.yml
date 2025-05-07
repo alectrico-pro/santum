@@ -64,7 +64,7 @@ default: &default
   #Debe serválido hasta 2027-lo instalé en 2023
   api_version:                      <%= ENV['API_WABA_VERSION'] ? ENV['API_WABA_VERSION'] : 'v18.0' %>
 
-  token_de_verificacion:            <%= ENV['TOKEN_DE_VERIFICACION_WABA'] ? ENV['TOKEN_DE_VERIFICACION_WABA']  : "1" %>
+  token_de_verificacion:            <%= ENV['TOKEN_DE_VERIFICACION_WABA'] ? ENV['TOKEN_DE_VERIFICACION_WABA']  : "toctoc" %>
 
   base_uri:                         https://graph.facebook.com
   #phone_id:                         115409841173645
