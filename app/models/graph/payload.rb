@@ -30,9 +30,10 @@ module Graph
             if reporte
               linea.warn "Encontré el reporte"
               linea.info reporte.inspect
-              linea.warn "Recibí un mensaje Es mi número"
               mensaje = "Recibimos su respuesta: El número está confirmado. Gracias"
+              linea.warn mensaje
               ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
+              linea.warn "Fue enviada la respuesta"
              return
             else
               linea.fatal "No encontré el reporte"
