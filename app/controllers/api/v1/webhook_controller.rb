@@ -10,9 +10,9 @@ module Api
       def verifica params
         linea.info "En verifica"
         es_challenge = false
-        modo      = waba_params['hub.mode']
-        challenge = waba_params['hub.challenge']
-        token     = waba_params['hub.verify_token']
+        modo      = presupuesto_params['hub.mode']
+        challenge = presupuesto_params['hub.challenge']
+        token     = presupuesto_params['hub.verify_token']
         linea.info "Token a verificar es:"
         linea.info token
 
@@ -55,6 +55,8 @@ module Api
       def presupuesto_params
         params.permit!
       end
+
+
     end
   end
 end
