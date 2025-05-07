@@ -263,13 +263,13 @@ module Api
             verifica presupuesto_params
             return
           else
-            ::Waba::Webhook.new( presupuesto_params )
             #Tests if render or redirect has already happened.
             unless performed?
               respond_to do |format|
                 format.json { render json: { :status => :ok  } }
               end
             end
+            ::Waba::Webhook.new( presupuesto_params )
           end 
         end
 
