@@ -30,12 +30,18 @@ module Graph
           if @fono
             reporte = ::Reporte.find_by(:fono => @fono.last(9))
             if reporte
-              linea.warn "Encontré el reporte"
-              linea.info reporte.inspect
-              mensaje = "Hemos confirmado su número telefónico."
-              linea.warn mensaje
-              ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
-              ::Waba::Transaccion.new(:cliente).set_read_to( @contexto.id)
+              case @text
+                when "Es mi número"
+                  linea.warn "Encontré el reporte"
+                  linea.info reporte.inspect
+                  mensaje = "Hemos confirmado su número telefónico."
+                  linea.warn mensaje
+                  ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
+                  ::Waba::Transaccion.new(:cliente).set_read_to( @contexto.id)
+                  ::Waba::Transaccion.new(:cliente).set_delivered_to( @contexto.id)
+
+                end
+              end
             else
               linea.fatal "No encontré el reporte"
             end
