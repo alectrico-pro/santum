@@ -343,5 +343,30 @@ class Waba::Transaccion
   end
 
 
+
+  def enviar_mensaje(fono, text)
+
+    fono= "#{fono}"
+    fono= C.fono_test if Rails.env.test?
+
+    linea.info "En Transaction enviar_mensaje"
+
+      body = {
+          "messaging_product" =>  "whatsapp",
+          "recipient_type"    =>  "individual",
+          "to"                =>  fono,
+          "type"              =>  "text",
+          "text"              =>  { "preview_url" => true,
+                                    "body" => text }
+          }
+
+    if send body
+      return true
+    else
+      return false
+    end
+  end
+
+
 end
 

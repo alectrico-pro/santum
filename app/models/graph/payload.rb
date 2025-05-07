@@ -36,11 +36,11 @@ module Graph
                   linea.info reporte.inspect
                   mensaje = "Hemos confirmado su número telefónico."
                   linea.warn mensaje
-                  ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
-                  ::Waba::Transaccion.new(:cliente).set_read_to( @contexto.id)
-                  ::Waba::Transaccion.new(:cliente).set_delivered_to( @contexto.id)
+  #                ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
+#                  ::Waba::Transaccion.new(:cliente).set_read_to( @contexto.id)
+ #                 ::Waba::Transaccion.new(:cliente).set_delivered_to( @contexto.id)
                   mensaje = "Ud. ha reportado #{eporte.contenido}"
-                  ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
+                  ::Waba::Transaccion.new(:cliente).enviar_mensaje( @fono, mensaje)
 
                   return
               end
