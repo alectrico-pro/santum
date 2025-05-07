@@ -34,8 +34,6 @@ module Api
 
       def webhook
         linea.warn "En webhook"
-        linea.info "waba_params es:"
-        linea.info waba_params.inspect
         if presupuesto_params['hub.mode'] == 'subscribe'
           verifica presupuesto_params
           return
