@@ -39,12 +39,6 @@ module Graph
                    ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
                    #mensaje = "Ud. ha reportado #{reporte.contenido}"
                    #::Waba::Transaccion.new(:cliente).enviar_mensaje( @fono, mensaje)
-           unless performed?
-            respond_to do |format|
-              format.json { render json: { :status => :ok  } }
-            end
-          end
-
                   return
               end
             else
