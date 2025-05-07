@@ -1,6 +1,6 @@
 module Api
   module V1
-    class WebhookController < Api::V1Controller
+    class WebhookController < V1Controller
 
       include Linea
       include Biblioteca::Mensajeria
