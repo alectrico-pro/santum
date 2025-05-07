@@ -256,6 +256,41 @@ class Waba::Transaccion
   end
 
 
+  #permite mostrarlo con un área en whatsapp
+  #que puede mover el feed hacia el mensaje que se haya respondido
+  def responder( fono, id_de_contexto, mensaje)
+    #Nota: Parece que id_de_contexto funcionará 
+    #como id de mensaje
+    fono= "#{fono}"
+    fono= C.fono_test if Rails.env.test?
+
+    linea.info "En Transaction responder"
+
+    linea.info "fono: "
+    linea.info  fono
+
+
+      body = {
+          "messaging_product" =>  "whatsapp",
+         "context": {
+           "message_id": id_de_contexto
+          },
+          "recipient_type"    =>  "individual",
+          "to"                =>  fono,
+          "type"              =>  "text",
+          "text"              =>  { "preview_url" => true,
+                                    "body" => mensaje }
+          }
+
+    if send body
+      return true
+    else
+      return false
+    end
+  end
+
+
+
   def send body
     linea.warn "__method__: #{__method__.to_s} "
     options = { headers: @headers, body: body.to_json }
