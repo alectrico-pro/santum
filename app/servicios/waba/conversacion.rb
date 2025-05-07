@@ -1,7 +1,7 @@
 class Waba::Conversacion
-  extend Linea
   extend Encuentra
   include CrearUsuario
+  include Linea
 
     def initialize( fact, publico=:cliente )
     fact       = fact
