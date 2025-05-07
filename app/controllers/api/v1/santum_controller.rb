@@ -12,9 +12,9 @@ module Api
       def verifica params
         linea.info "En verifica"
         es_challenge = false
-        modo      = santum_params['hub.mode']
-        challenge = santum_params['hub.challenge']
-        token     = santum_params['hub.verify_token']
+        modo      = verifica_params['hub.mode']
+        challenge = verifica_params['hub.challenge']
+        token     = verifica_params['hub.verify_token']
         linea.info "Token a verificar es:"
         linea.info token
 
@@ -47,7 +47,13 @@ module Api
       end
 
 
-      private
+    private
+
+      def verifica_params
+        if params.has_key?("hub.mode")
+          params.permit("hub.mode","hub.challenge", "hub.token", "hub.verify_token")
+        end
+      end
 
       def santum_params
         params.require(:santum).permit(entry: [changes: [value: [statuses: [:status], contacts: [profile: [:name]], metadata: [:display_phone_number], messages: [:text,:id,:timestamp,:from,:type, video: [:caption,:sha256,:id,:mime_type], image: [:caption,:sha256,:id,:mime_type], location: [:name,:address,:longitude,:latitude,:url], order: [:catalog_id, product_items: [:product_retailer_id,:quantity,:item_price,:currency]], context: [:id, :from], interactive: [:type, button_reply: [:id, :title]], button: [:payload,:text],text: [:body]]]]])
