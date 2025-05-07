@@ -6,6 +6,8 @@ module Graph
 
     include CrearUsuario
 
+    include Linea
+
     def initialize( response_json={}, body='Sent', name='flow')
       #El id se envía asociado al valor de title para poder diferenciarlo
       #Pues este id es el id del presupuesto al que quiero cambiarle el 

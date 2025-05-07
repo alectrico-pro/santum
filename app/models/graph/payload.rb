@@ -2,6 +2,7 @@ module Graph
   class Payload < Graph::Button
 
     attr_accessor :text
+    include Linea
 
     def initialize( text )
       @text = text
