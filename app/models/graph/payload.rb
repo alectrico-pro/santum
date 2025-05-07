@@ -59,7 +59,7 @@ module Graph
           linea.info "fono: #{@fono}"
           if @fono
             reporte = ::Reporte.find_by(:fono => @fono)
-            if reporte.exists?
+            if reporte
               #imprimir el reporte
               linea.info Reporte.inspect
             end
