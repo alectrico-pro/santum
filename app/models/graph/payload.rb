@@ -39,7 +39,7 @@ module Graph
   #                ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
 #                  ::Waba::Transaccion.new(:cliente).set_read_to( @contexto.id)
  #                 ::Waba::Transaccion.new(:cliente).set_delivered_to( @contexto.id)
-                  mensaje = "Ud. ha reportado #{eporte.contenido}"
+                  mensaje = "Ud. ha reportado #{reporte.contenido}"
                   ::Waba::Transaccion.new(:cliente).enviar_mensaje( @fono, mensaje)
 
                   return
