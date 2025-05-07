@@ -36,15 +36,10 @@ module Api
         linea.warn "En webhook"
         if presupuesto_params['hub.mode'] == 'subscribe'
           verifica presupuesto_params
-          return
         else
-          #Tests if render or redirect has already happened.
           ::Waba::Webhook.new( presupuesto_params )
           unless performed?
-            respond_to do |format|
-              format.json { render json: { :status => :ok  } }
-            end
-            return
+            render plain:  challenge , status: :ok
           end
         end 
       end
