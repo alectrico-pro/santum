@@ -50,7 +50,35 @@ module Graph
     #PAra que tomar funcione, los mayoristas son colaboradores
     def procesa( fono=nil, mensaje_id=nil, publico=nil )
       linea.info "Estoy en procesa de Graph::Payload"
-     
+    
+      if mensaje
+        if mensaje.context
+          @contexto = mensaje.context
+          #llamada = ::Electrico::Llamada.find_by(:contenido => @contexto&.id)
+          linea.info "id: #{@contexto&.id} "
+          @fono    =   mensaje.from
+          linea.info "fono: #{@fono}"
+          if llamada&.valid? and @fono
+            @colaborador = ::Colaborador.find_by(:fono => @fono )
+            unless @colaborador.present?
+              linea.error "No se encontró colaborador"
+              linea.info "Los colaboradores registrados son:"
+              ::Colaborador.all.each do |c|
+                linea.info c.name
+                linea.info c.fono
+              end
+            else
+              linea.info "Colaborador: #{@colaborador.name}"
+            end
+            #@presupuesto = llamada.presupuesto
+            #linea.info "Presupuesto: #{@presupuesto.id}"
+            #linea.info @presupuesto.descripcion
+          end
+        end
+      end
+      @gestor = ::Colaborador.find_by(:fono => C.fono_gestor )
+
+
       encuentra_el_reporte
 
       case @text
