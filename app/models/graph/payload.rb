@@ -58,7 +58,7 @@ module Graph
           linea.info "id: #{@contexto&.id} "
           @fono    =   mensaje.from
           linea.info "fono: #{@fono}"
-          if llamada&.valid? and @fono
+          if @fono
             @colaborador = ::Colaborador.find_by(:fono => @fono )
             unless @colaborador.present?
               linea.error "No se encontró colaborador"
