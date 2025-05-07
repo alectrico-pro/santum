@@ -37,11 +37,12 @@ class Waba::Conversacion
     end
     linea.info "Seteando los atributos"
     @fono        = fono
-    @presupuesto = ::Electrico::Presupuesto.find_by(:fono => @fono)
-    @presupuesto_electrico = ::Electrico::Presupuesto.find_by({:fono => @fono ,:es_electricidad => true})
+    @reporte     = ::Reporte.find_by(:fono => @fono.last(9)
+    #@presupuesto = ::Electrico::Presupuesto.find_by(:fono => @fono)
+    #@presupuesto_electrico = ::Electrico::Presupuesto.find_by({:fono => @fono ,:es_electricidad => true})
    #@presupuesto_comercial = ::Electrico::Presupuesto.find_by({:fono => @fono ,:es_comercio     => true})
 
-    @presupuesto_comercial = ::Encuentra.presupuesto( @fono )
+    #@presupuesto_comercial = ::Encuentra.presupuesto( @fono )
 
     @nombre      = nombre
     @contexto    = contexto
