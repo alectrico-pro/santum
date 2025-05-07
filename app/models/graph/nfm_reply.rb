@@ -101,7 +101,6 @@ module Graph
           :direccion => direccion,
           :comuna => comuna,
           :efimero => true,
-          :usuario => usuario,
           :fono => fono})
 
       if presupuesto_nuevo.present?
