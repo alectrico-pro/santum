@@ -1,6 +1,8 @@
+
+#E#ste controaldor interfacea a la app santa en developoer facebook
 module Api
   module V1
-    class WebhookController < V1Controller
+    class SantaController < V1Controller
 
       include Linea
       include Biblioteca::Mensajeria
@@ -32,7 +34,7 @@ module Api
         end
       end
 
-      def whappy
+      def webhook
         linea.warn "En webhook"
         if presupuesto_params['hub.mode'] == 'subscribe'
           verifica presupuesto_params
