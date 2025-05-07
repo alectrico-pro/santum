@@ -39,7 +39,7 @@ module Api
         else
           ::Waba::Webhook.new( presupuesto_params )
           unless performed?
-            render plain:  challenge , status: :ok
+            render plain:  "ok" , status: :ok
           end
         end 
       end
