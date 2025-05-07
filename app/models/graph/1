@@ -28,7 +28,7 @@ module Graph
           if @fono
             reporte = ::Reporte.find_by(:fono => @fono)
             if reporte
-              linea.warn "Encontré el reportet "
+              linea.warn "Encontré el reporte"
               #imprimir el reporte
               linea.info Reporte.inspect
             end
