@@ -290,7 +290,6 @@ class Waba::Transaccion
   end
 
 
-
   def send body
     linea.warn "__method__: #{__method__.to_s} "
     options = { headers: @headers, body: body.to_json }
@@ -298,6 +297,51 @@ class Waba::Transaccion
     request = ::HTTParty.post( url, options )
     linea.info request.inspect
   end
+
+
+  def set_read_to( wamid )
+
+    linea.info "En Transacción set_read_to de WABA"
+    linea.info "wamid #{wamid}"
+
+    url          = "#{@base_uri}/#{@api_version}/#{@waba_id}/messages/"
+    body = {
+      "messaging_product": "whatsapp",
+      "status": "read",
+      "message_id": wamid
+    }
+    options      = { headers: @headers, body: body.to_json }
+    response     = HTTParty.put( url, options )
+
+    if send body
+      return true
+    else
+      return false
+    end
+
+  end
+
+  def set_delivered_to( wamid )
+
+    linea.info "En Transacción set_delivered_to de WABA"
+    linea.info "wamid: #{wamid}"
+
+    url          = "#{@base_uri}/#{@api_version}/#{@waba_id}/messages/"
+
+    body = {
+      "messaging_product": "whatsapp",
+      "status": "delivered",
+      "message_id": wamid
+    }
+
+    if send body
+      return true
+    else
+      return false
+    end
+
+  end
+
 
 end
 

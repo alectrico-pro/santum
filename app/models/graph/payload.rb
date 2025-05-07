@@ -35,6 +35,7 @@ module Graph
               mensaje = "Hemos confirmado su número telefónico."
               linea.warn mensaje
               ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
+              ::Waba::Transaccion.new(:cliente).set_read_to( @contexto.id)
             else
               linea.fatal "No encontré el reporte"
             end
