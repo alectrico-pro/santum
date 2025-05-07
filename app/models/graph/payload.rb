@@ -39,6 +39,7 @@ module Graph
                   ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
                   ::Waba::Transaccion.new(:cliente).set_read_to( @contexto.id)
                   ::Waba::Transaccion.new(:cliente).set_delivered_to( @contexto.id)
+                  return
               end
             else
               linea.fatal "No encontré el reporte"
