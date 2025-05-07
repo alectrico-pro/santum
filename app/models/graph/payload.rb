@@ -22,6 +22,8 @@ module Graph
       if mensaje
         if mensaje.context
           @contexto = mensaje.context
+          ::Waba::Transaccion.new(:cliente).responder( @fono, mensaje.context.id, "hisaje")
+
           linea.info "id: #{@contexto&.id} "
           @fono    =   mensaje.from
           linea.info "fono: #{@fono}"
