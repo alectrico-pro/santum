@@ -10,6 +10,11 @@ module Graph
 
     #PAra que tomar funcione, los mayoristas son colaboradores
     def procesa( fono=nil, mensaje_id=nil, publico=nil )
+
+
+   end
+
+    def encuentra_el_presupuesto
       linea.info "Estoy en procesa de Graph::Payload"
       if mensaje
         if mensaje.context
@@ -37,6 +42,16 @@ module Graph
         end
       end
       @gestor = ::Colaborador.find_by(:fono => C.fono_gestor )
+    end
+
+    def encuentra_el_reporte
+    end
+
+    #PAra que tomar funcione, los mayoristas son colaboradores
+    def procesa( fono=nil, mensaje_id=nil, publico=nil )
+      linea.info "Estoy en procesa de Graph::Payload"
+     
+      encuentra_el_reporte
 
       case @text
 
