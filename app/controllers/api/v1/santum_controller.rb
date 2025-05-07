@@ -36,7 +36,7 @@ module Api
 
       def webhook
         linea.warn "En webhook"
-        if santum_params['hub.mode'] == 'subscribe'
+        if verifica_params['hub.mode'] == 'subscribe'
           verifica santum_params
         else
           ::Waba::Webhook.new( santum_params )
