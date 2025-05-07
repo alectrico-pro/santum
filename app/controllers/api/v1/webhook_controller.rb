@@ -9,7 +9,6 @@ module Api
 
       def verifica params
         linea.info "En verifica"
-        linea.info waba_params.inspect
         es_challenge = false
         modo      = waba_params['hub.mode']
         challenge = waba_params['hub.challenge']
