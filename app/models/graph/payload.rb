@@ -36,9 +36,9 @@ module Graph
                   linea.info reporte.inspect
                   mensaje = "Hemos confirmado su número telefónico."
                   linea.warn mensaje
-                   #::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
+                   ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
                    #mensaje = "Ud. ha reportado #{reporte.contenido}"
-                   ::Waba::Transaccion.new(:cliente).enviar_mensaje( @fono, mensaje)
+                   #::Waba::Transaccion.new(:cliente).enviar_mensaje( @fono, mensaje)
            unless performed?
             respond_to do |format|
               format.json { render json: { :status => :ok  } }
