@@ -6,9 +6,7 @@
 #a veces el mensaje dice la cuenta 120... no existe
 #lo que pasa es que no estás usando el token apropiado
 #Podría ser el de otra cuenta waba  o uno expirado:
-echo '{"META_TOKEN": "'"$token"'"}'
-
-
+export alec_token="EAAMOsdbL40gBO1nOMTLbd0kBIKhxRNgrGeLh0LZC7PwdHivdZB93reqKjSdDOjDQAYDctcB2Cqfye7FbVrVPeVZA2fDmXjYt8WrjoYNZAOlZBEBKPxtwrhL6Y2KJ16uIDAqZAsERqNcDV7pPK0IPRDZBUM3aFBzsQq2o4RPVytJNkRE4U08ig1cN7BZCczZAuP4vg3Vzc"
 (publico
   (waba_name alectrico.ai)
   (waba_id 220392254484102)
@@ -28,7 +26,7 @@ waba_id=220392254484102
 #"https://graph.facebook.com/v14.0/$waba_id/?fields=id&access_token=$token"
 
 curl -v -H "Content-Type: application/json" -i -X POST \
-"https://graph.facebook.com/v14.0/$phone_number_id/messages" -H "Authorization: Bearer $token" \
+"https://graph.facebook.com/v14.0/$phone_number_id/messages" -H "Authorization: Bearer $alec_token" \
 --data @/dev/stdin<<EOF
  {
   "messaging_product": "whatsapp",
