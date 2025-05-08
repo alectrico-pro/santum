@@ -13,7 +13,7 @@ class Reporte < ApplicationRecord
   after_save :confirmar_fono
   #after_save :reservar
 
-  def santize_fono
+  def sanitize_fono
     if len(self.fono)  == 9
       self.fono = "56" + self.fono
     end
