@@ -69,6 +69,6 @@ class ReportesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reporte_params
-      params.require(:reporte).permit(:nombre, :fono, :contenido, :"confirmado?")
+      params.require(:reporte).permit(:nombre, :fono, :contenido, :confirmado)
     end
 end
