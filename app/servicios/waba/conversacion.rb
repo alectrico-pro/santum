@@ -45,16 +45,16 @@ class Waba::Conversacion
 
     #@presupuesto_comercial = ::Encuentra.presupuesto( @fono )
 
-    #nombre      = nombre
-   # @contexto    = contexto
-    #@mensaje     = mensaje
-    #@publico     = publico
+    @nombre      = nombre
+    @contexto    = contexto
+    @mensaje     = mensaje
+    @publico     = publico
   end
 
 
     #Siempre atiende en cubano si el fono es cubano
   def procesa
-    @presupuesto = ::Electrico::Presupuesto.find_by(:fono => @fono)
+    @presupuesto = Reporte.find_by(:fono => @fono)
     case @publico
     when :colaborador
    #  mensaje = "#{@nombre}, hemos detectado que está accesando el canal colaborador."
