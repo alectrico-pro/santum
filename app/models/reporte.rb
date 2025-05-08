@@ -12,7 +12,7 @@ class Reporte < ApplicationRecord
 #  validates :fono, length: { in: 9..9}
 
   before_save :sanitize_fono
-  after_save :confirmar_fono unless self.confirmed
+  after_save :confirmar_fono unless self.confirmado
 
 
   def sanitize_fono
