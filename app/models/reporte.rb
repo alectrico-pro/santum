@@ -28,10 +28,9 @@ class Reporte < ApplicationRecord
     linea.info self.fono
   end
 
-
   def broadcast_partial
     linea.info "Estoy en broadcast_partial"
-    #Turbo::StreamsChannel.broadcast_replace_to model, target: "change-state_package_#{model.id}", partial: "packages/change_state_button", locals: { package: model }
+    Turbo::StreamsChannel.broadcast_replace_to self, target: "reporte_#{self.id}", partial: "reportes/reporte", locals: { reporte: self }
   end
 
   def confirmar_fono

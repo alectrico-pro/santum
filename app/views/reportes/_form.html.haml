@@ -8,7 +8,7 @@
           %li= error.full_message
 
 
-  #field
+  .field
     = form.label :contenido 
     = form.rich_text_area :contenido 
     %small Describa brevemente. También puede agregar videos, fotos pero ninguna dirección.
@@ -16,18 +16,26 @@
     %small Las imágenes desaparecen en minutos
 
 
-  #field
+  .field
     = form.label :fono
     = form.text_field :fono
     %small Recibirá un aviso en este WhatsApp
 
-  #field
+  .field
     = form.label :nombre
     = form.text_field :nombre
 
-  #field
+  #message_1.field
     = form.label :confirmado
     = form.checkbox :confirmado
+
+<turbo-stream action="replace" target="message_1">
+  <template>
+    <div id="message_1">
+      This div will replace the existing element with the DOM ID "message_1".
+    </div>
+  </template>
+</turbo-stream>
 
   %hr
   #actions
