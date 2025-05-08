@@ -14,7 +14,7 @@ class Reporte < ApplicationRecord
   #after_save :reservar
 
   def sanitize_fono
-    if len(self.fono)  == 9
+    if fono.length  == 9
       self.fono = "56" + self.fono
     end
   end
