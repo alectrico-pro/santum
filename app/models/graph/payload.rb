@@ -34,7 +34,7 @@ module Graph
                 when "Es mi número"
                   linea.warn "Encontré el reporte"
                   linea.info reporte.inspect
-                  reporte.update(:confirmed => true)
+                  reporte.update(:confirmado => true)
                   mensaje = "Hemos confirmado su número telefónico."
                   linea.warn mensaje
                   ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
