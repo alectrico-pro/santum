@@ -12,7 +12,7 @@ class Reporte < ApplicationRecord
 #  validates :fono, length: { in: 9..9}
 
   before_save :sanitize_fono
-  after_save :confirmar_fono unless self.confirmado
+  after_save :confirmar_fono 
 
 
   def sanitize_fono
@@ -28,7 +28,9 @@ class Reporte < ApplicationRecord
   end
 
   def confirmar_fono
-    ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono, self.nombre
+    unless self.confirmado
+      ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono, self.nombre
+    end
   end
 
   def reservar
