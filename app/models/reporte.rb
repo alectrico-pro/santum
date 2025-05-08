@@ -1,4 +1,5 @@
 class Reporte < ApplicationRecord
+  broadcasts_refreshes
   include Linea
 
   has_many :comentarios, dependent: :destroy
