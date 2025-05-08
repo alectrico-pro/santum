@@ -25,7 +25,7 @@ class ReportesController < ApplicationController
 
     respond_to do |format|
       if @reporte.save
-        format.html { redirect_to @reporte, notice: "El reporte ha sido creado." }
+        format.html { redirect_to edit_reporte_url(@reporte), notice: "El reporte ha sido creado." }
         #resultado = ::Waba::Transaccion.new(:cliente).confirmar_fono(@reporte)
         format.json { render :show, status: :created, location: @reporte }
       else
