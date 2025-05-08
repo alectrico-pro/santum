@@ -13,7 +13,8 @@ class Reporte < ApplicationRecord
 
   before_save :sanitize_fono
   after_save :confirmar_fono 
-
+ 
+  after_update_commit :broadcast_partial
 
   def sanitize_fono
     if fono.length  == 9
@@ -25,6 +26,12 @@ class Reporte < ApplicationRecord
     self.fono.gsub!(regex, '')
     linea.info "fono sanitizado"
     linea.info self.fono
+  end
+
+
+  def broadcast_partial
+    linea.info "Estoy en broadcast_partial"
+    #Turbo::StreamsChannel.broadcast_replace_to model, target: "change-state_package_#{model.id}", partial: "packages/change_state_button", locals: { package: model }
   end
 
   def confirmar_fono

@@ -38,8 +38,12 @@ module Graph
                   mensaje = "Hemos confirmado su número telefónico."
                   linea.warn mensaje
                   ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
-                  #mensaje = "Ud. ha reportado #{reporte.contenido}"
-                  #::Waba::Transaccion.new(:cliente).enviar_mensaje( @fono, mensaje)
+                  #urbo::StreamsChannel.broadcast_render_to([current_user, :payouts],
+                  #                       target: 'toast-container',
+                  #                       partial: 'shared/update_toast',
+                  #                       locals: { flash: flash_details })
+
+    redirect_to merchant_payouts_path(state: @state)
                   return
               end
             else
