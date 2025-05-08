@@ -10,28 +10,26 @@ class Reporte < ApplicationRecord
   validates_presence_of :fono
 #  validates :fono, length: { in: 9..9}
 
-  before_save :sanitize_fono_chile
-  before_save :sanitize_fono_usa
+  before_save :sanitize_fono
 
   after_save :confirmar_fono
 
 
-  def sanitize_fono_usa
-    regex = /^\+1|[^0-9]+/g;
-    self.fono.replace(regex, '')
-    linea.info "fono sanitizado USA"
-    linea.info self.fono
-  end
-
-  def sanitize_fono_chile
+  def sanitize_fono
     if fono.length  == 9
       self.fono = "56" + self.fono.strip
       linea.info "fono sanitizado Chile"
       linea.info self.fono
     end
+    regex = /\D*/
+    self.fono.gsub!(regex, '')
+    linea.info "fono sanitizado"
+    linea.info self.fono
   end
 
   def confirmar_fono
+    self.confirmed? = true
+    self.save
     ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono, self.nombre
   end
 
