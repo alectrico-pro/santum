@@ -45,9 +45,9 @@ class Waba::Conversacion
     #@presupuesto_comercial = ::Encuentra.presupuesto( @fono )
 
     #nombre      = nombre
-    @contexto    = contexto
-    @mensaje     = mensaje
-    @publico     = publico
+   # @contexto    = contexto
+    #@mensaje     = mensaje
+    #@publico     = publico
   end
 
 
