@@ -39,7 +39,7 @@ class ReportesController < ApplicationController
   def update
     respond_to do |format|
       if @reporte.update(reporte_params)
-        format.html { redirect_to @reporte, notice: "El Reporte ha sido actualizado." }
+        format.html { redirect_to edit_reporte_url(@reporte), notice: "El Reporte ha sido actualizado." }
         format.json { render :show, status: :ok, location: @reporte }
       else
         format.html { render :edit, status: :unprocessable_entity }

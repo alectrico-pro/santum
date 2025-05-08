@@ -386,3 +386,65 @@ Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-08 01:38:40 +0000
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
 Turbo::StreamsChannel is transmitting the subscription confirmation
 Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+Started GET "/reportes/2/edit" for 172.18.0.1 at 2025-05-08 01:41:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  [1m[36mActionText::RichText Load (6.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:13
+  Rendered reportes/_form.html.haml (Duration: 172.2ms | GC: 98.3ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 186.2ms | GC: 99.4ms)
+  Rendered layout layouts/application.html.haml (Duration: 196.7ms | GC: 100.9ms)
+Completed 200 OK in 305ms (Views: 195.9ms | ActiveRecord: 47.2ms (2 queries, 0 cached) | GC: 129.8ms)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6SSI=--57281a94cd040db3355fb782f385c09067226c1f544c122fa034a8b09abfd2f5"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+Started PATCH "/reportes/2" for 172.18.0.1 at 2025-05-08 01:41:51 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"<div>jjj</div>", "fono"=>"56981370042", "nombre"=>"kjj"}, "id"=>"2"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mActionText::RichText Load (5.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mReporte Update (1.6ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1, "fono" = $2 WHERE "reportes"."id" = $3[0m  [["updated_at", "2025-05-08 01:41:51.415739"], ["fono", "56981370042"], ["id", 2]]
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+Redirected to http://172.18.0.4:3000/reportes/2
+Completed 302 Found in 1144ms (ActiveRecord: 8.3ms (3 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/reportes/2" for 172.18.0.1 at 2025-05-08 01:41:52 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mReporte Load (2.0ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 2]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (2.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  Rendered /usr/local/bundle/gems/actiontext-8.0.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 6.0ms | GC: 0.0ms)
+  Rendered reportes/_reporte.html.haml (Duration: 35.6ms | GC: 0.0ms)
+  [1m[36mComentario Load (1.5ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 2]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered comentarios/_new.html.erb (Duration: 6.4ms | GC: 0.0ms)
+  Rendered reportes/_comentarios.html.haml (Duration: 14.6ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 62.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 63.2ms | GC: 0.0ms)
+Completed 200 OK in 69ms (Views: 57.6ms | ActiveRecord: 6.5ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+Finished "/cable" [WebSocket] for 172.18.0.1 at 2025-05-08 01:46:05 +0000
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
