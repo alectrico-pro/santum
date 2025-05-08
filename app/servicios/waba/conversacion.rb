@@ -3,7 +3,7 @@ class Waba::Conversacion
   include CrearUsuario
   include Linea
 
-    def initialize( fact, publico=:cliente )
+  def initialize( fact, publico=:cliente )
     fact       = fact
     nombre     = fact.object.entry.first.changes.first.value.contacts.first.profile.name
 
@@ -37,7 +37,8 @@ class Waba::Conversacion
     end
     linea.info "Seteando los atributos"
     @fono        = fono
-    @reporte     = ::Reporte.find_by(:fono => @fono.last(9)
+    @reporte     = ::Reporte.find_by(:fono => @fono)
+
     #@presupuesto = ::Electrico::Presupuesto.find_by(:fono => @fono)
     #@presupuesto_electrico = ::Electrico::Presupuesto.find_by({:fono => @fono ,:es_electricidad => true})
    #@presupuesto_comercial = ::Electrico::Presupuesto.find_by({:fono => @fono ,:es_comercio     => true})
