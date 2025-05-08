@@ -1,4 +1,6 @@
 class Reporte < ApplicationRecord
+  include Linea
+
   has_many :comentarios, dependent: :destroy
   has_rich_text :contenido
 
@@ -8,14 +10,24 @@ class Reporte < ApplicationRecord
   validates_presence_of :fono
 #  validates :fono, length: { in: 9..9}
 
-  before_save :sanitize_fono
+  before_save :sanitize_fono_chile
+  before_save :sanitize_fono_usa
 
   after_save :confirmar_fono
-  #after_save :reservar
 
-  def sanitize_fono
+
+  def sanitize_fono_usa
+    regex = /^\+1|[^0-9]+/g;
+    self.fono.replace(regex, '')
+    linea.info "fono sanitizado USA"
+    linea.info self.fono
+  end
+
+  def sanitize_fono_chile
     if fono.length  == 9
-      self.fono = "56" + self.fono
+      self.fono = "56" + self.fono.strip
+      linea.info "fono sanitizado Chile"
+      linea.info self.fono
     end
   end
 
