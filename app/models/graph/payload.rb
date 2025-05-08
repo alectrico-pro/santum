@@ -28,7 +28,7 @@ module Graph
           @fono    =   mensaje.from
           linea.info "fono: #{@fono}"
           if @fono
-            reporte = ::Reporte.find_by(:fono => @fono.last(9))
+            reporte = ::Reporte.find_by(:fono => @fono)
             if reporte
               case @text
                 when "Es mi número"

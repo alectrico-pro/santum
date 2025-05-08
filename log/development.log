@@ -8,3 +8,381 @@ DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and wi
 DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
 DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
 DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+  [1m[35mSQL (9.4ms)[0m  [1m[35mSET search_path TO public[0m
+  [1m[35m (2488.0ms)[0m  [1m[35mCREATE DATABASE "railsondocker_development" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog[0m
+  [1m[35m (18.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts" CASCADE[0m
+  [1m[35m (23.9ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comentarios" CASCADE[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "comentarios" ("id" bigserial primary key, "reporte_id" bigint NOT NULL, "contenido" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE INDEX "index_comentarios_on_reporte_id" ON "comentarios" ("reporte_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reportes" CASCADE[0m
+  [1m[35m (18.3ms)[0m  [1m[35mCREATE TABLE "reportes" ("id" bigserial primary key, "nombre" character varying, "contenido" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "fono" integer)[0m
+  [1m[35m (28.4ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "comentarios" ADD CONSTRAINT "fk_rails_ec75b7f0be"
+FOREIGN KEY ("reporte_id")
+  REFERENCES "reportes" ("id")
+[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250501065145)[0m
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250430121032),
+(20250430120309),
+(20211216184103),
+(20211216184102);[0m
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-08 01:22:15.279211', '2025-05-08 01:22:15.279217') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (6.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '0b1792040f3038251a37a60803f5a57c8ab6ddeb', '2025-05-08 01:22:15.289036', '2025-05-08 01:22:15.289042') RETURNING "key"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2956651786463190690)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2956651786463190690)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/" for 172.18.0.1 at 2025-05-08 01:30:44 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/new.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 787.9ms | GC: 110.0ms)
+  Rendered reportes/new.html.haml within layouts/application (Duration: 841.7ms | GC: 112.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 858.3ms | GC: 115.9ms)
+Completed 200 OK in 1271ms (Views: 898.8ms | ActiveRecord: 46.1ms (0 queries, 0 cached) | GC: 122.6ms)
+
+
+Started POST "/reportes" for 172.18.0.1 at 2025-05-08 01:30:55 +0000
+Processing by ReportesController#create as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"<div>jjjj</div>", "fono"=>"981370042", "nombre"=>"kkkk"}}
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mReporte Create (7.1ms)[0m  [1m[32mINSERT INTO "reportes" ("nombre", "created_at", "updated_at", "fono") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nombre", "kkkk"], ["created_at", "2025-05-08 01:30:55.030302"], ["updated_at", "2025-05-08 01:30:55.030302"], ["fono", 981370042]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActionText::RichText Create (1.9ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "contenido"], ["body", "<div>jjjj</div>"], ["record_type", "Reporte"], ["record_id", 1], ["created_at", "2025-05-08 01:30:55.143141"], ["updated_at", "2025-05-08 01:30:55.143141"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (3.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mReporte Update (2.0ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1 WHERE "reportes"."id" = $2[0m  [["updated_at", "2025-05-08 01:30:55.147644"], ["id", 1]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+Redirected to http://172.18.0.4:3000/reportes/1/edit
+Completed 302 Found in 1516ms (ActiveRecord: 16.6ms (4 queries, 0 cached) | GC: 2.9ms)
+
+
+Started GET "/reportes/1/edit" for 172.18.0.1 at 2025-05-08 01:30:56 +0000
+Processing by ReportesController#edit as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  [1m[36mActionText::RichText Load (2.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:13
+  Rendered reportes/_form.html.haml (Duration: 8.8ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 14.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 16.7ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 16.6ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/reportes/1" for 172.18.0.1 at 2025-05-08 01:31:04 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"<div>jjjj</div>", "fono"=>"56981370042", "nombre"=>"kkkk"}, "id"=>"1"}
+  [1m[36mReporte Load (1.6ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mActionText::RichText Load (6.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 6.6ms (2 queries, 0 cached) | GC: 25.7ms)
+
+
+  
+ActiveModel::RangeError (56981370042 is out of range for ActiveModel::Type::Integer with limit 4 bytes):
+  
+app/controllers/reportes_controller.rb:41:in `block in update'
+app/controllers/reportes_controller.rb:40:in `update'
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2956651786463190690)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFonoToReportes (20250501065145)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.1ms)[0m  [1m[35mALTER TABLE "reportes" DROP COLUMN "fono"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250501065145'[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2956651786463190690)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2956651786463190690)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddFonoToReportes (20250501065145)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "reportes" ADD "fono" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250501065145') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2956651786463190690)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.18.0.1 at 2025-05-08 01:33:11 +0000
+Processing by ReportesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/new.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 10.4ms | GC: 0.9ms)
+  Rendered reportes/new.html.haml within layouts/application (Duration: 15.2ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.haml (Duration: 22.9ms | GC: 1.5ms)
+Completed 200 OK in 37ms (Views: 24.3ms | ActiveRecord: 3.8ms (0 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/" for 172.18.0.1 at 2025-05-08 01:33:11 +0000
+Processing by ReportesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/new.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 3.7ms | GC: 0.0ms)
+  Rendered reportes/new.html.haml within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/reportes" for 172.18.0.1 at 2025-05-08 01:33:19 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportesController#create as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"<div>jjj</div>", "fono"=>"981370042", "nombre"=>"kjj"}}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mReporte Create (3.6ms)[0m  [1m[32mINSERT INTO "reportes" ("nombre", "created_at", "updated_at", "fono") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["nombre", "kjj"], ["created_at", "2025-05-08 01:33:19.760601"], ["updated_at", "2025-05-08 01:33:19.760601"], ["fono", "981370042"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActionText::RichText Create (3.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "contenido"], ["body", "<div>jjj</div>"], ["record_type", "Reporte"], ["record_id", 2], ["created_at", "2025-05-08 01:33:19.775985"], ["updated_at", "2025-05-08 01:33:19.775985"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (3.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mReporte Update (2.3ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1 WHERE "reportes"."id" = $2[0m  [["updated_at", "2025-05-08 01:33:19.785394"], ["id", 2]]
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:27:in `block in create'
+Redirected to http://172.18.0.4:3000/reportes/2/edit
+Completed 302 Found in 1215ms (ActiveRecord: 30.7ms (4 queries, 0 cached) | GC: 69.5ms)
+
+
+Started GET "/reportes/2/edit" for 172.18.0.1 at 2025-05-08 01:33:20 +0000
+Processing by ReportesController#edit as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mReporte Load (1.1ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  [1m[36mActionText::RichText Load (1.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:13
+  Rendered reportes/_form.html.haml (Duration: 20.8ms | GC: 1.9ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 67.5ms | GC: 32.1ms)
+  Rendered layout layouts/application.html.haml (Duration: 78.0ms | GC: 32.8ms)
+Completed 200 OK in 112ms (Views: 88.5ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 53.4ms)
+
+
+Started PATCH "/reportes/2" for 172.18.0.1 at 2025-05-08 01:33:25 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"<div>jjj</div>", "fono"=>"56981370042", "nombre"=>"kjj"}, "id"=>"2"}
+  [1m[36mReporte Load (2.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mActionText::RichText Load (5.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mReporte Update (1.7ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1, "fono" = $2 WHERE "reportes"."id" = $3[0m  [["updated_at", "2025-05-08 01:33:25.466643"], ["fono", "56981370042"], ["id", 2]]
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+Redirected to http://172.18.0.4:3000/reportes/2
+Completed 302 Found in 1240ms (ActiveRecord: 8.5ms (3 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/reportes/2" for 172.18.0.1 at 2025-05-08 01:33:26 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 2]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (1.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  Rendered /usr/local/bundle/gems/actiontext-8.0.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 9.7ms | GC: 0.0ms)
+  Rendered reportes/_reporte.html.haml (Duration: 75.8ms | GC: 0.0ms)
+  [1m[36mComentario Load (1.8ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 2]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered comentarios/_new.html.erb (Duration: 21.6ms | GC: 0.0ms)
+  Rendered reportes/_comentarios.html.haml (Duration: 32.3ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 219.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 220.2ms | GC: 0.0ms)
+Completed 200 OK in 242ms (Views: 213.8ms | ActiveRecord: 7.6ms (4 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/cable" for 172.18.0.1 at 2025-05-08 01:33:27 +0000
+Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-08 01:33:27 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+Started GET "/reportes/2/edit" for 172.18.0.1 at 2025-05-08 01:33:33 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  [1m[36mActionText::RichText Load (3.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:13
+  Rendered reportes/_form.html.haml (Duration: 10.7ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 11.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 12.4ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 11.4ms | ActiveRecord: 2.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6SSI=--57281a94cd040db3355fb782f385c09067226c1f544c122fa034a8b09abfd2f5"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+Started PATCH "/reportes/2" for 172.18.0.1 at 2025-05-08 01:35:55 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"<div>jjj</div>", "fono"=>"981370042", "nombre"=>"kjj"}, "id"=>"2"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mActionText::RichText Load (5.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mReporte Update (1.2ms)[0m  [1m[33mUPDATE "reportes" SET "updated_at" = $1, "fono" = $2 WHERE "reportes"."id" = $3[0m  [["updated_at", "2025-05-08 01:35:55.547113"], ["fono", "981370042"], ["id", 2]]
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+Redirected to http://172.18.0.4:3000/reportes/2
+Completed 302 Found in 988ms (ActiveRecord: 12.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/2" for 172.18.0.1 at 2025-05-08 01:35:56 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mReporte Load (1.4ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 2]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (1.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  Rendered /usr/local/bundle/gems/actiontext-8.0.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 4.8ms | GC: 0.0ms)
+  Rendered reportes/_reporte.html.haml (Duration: 30.5ms | GC: 0.0ms)
+  [1m[36mComentario Load (1.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 2]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of templates [0 times] (Duration: 0.1ms | GC: 0.0ms)
+  Rendered comentarios/_new.html.erb (Duration: 5.0ms | GC: 0.0ms)
+  Rendered reportes/_comentarios.html.haml (Duration: 13.0ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 51.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 60.2ms | GC: 0.0ms)
+Completed 200 OK in 66ms (Views: 56.7ms | ActiveRecord: 5.3ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+Started GET "/reportes/2/edit" for 172.18.0.1 at 2025-05-08 01:36:27 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  [1m[36mActionText::RichText Load (25.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:13
+  Rendered reportes/_form.html.haml (Duration: 40.1ms | GC: 23.9ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 45.1ms | GC: 23.9ms)
+  Rendered layout layouts/application.html.haml (Duration: 46.1ms | GC: 23.9ms)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 23.9ms)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"IloybGtPaTh2Y21GcGJITnZibVJ2WTJ0bGNpOVNaWEJ2Y25SbEx6SSI=--57281a94cd040db3355fb782f385c09067226c1f544c122fa034a8b09abfd2f5"}
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+Started PATCH "/reportes/2" for 172.18.0.1 at 2025-05-08 01:36:33 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"<div>jjj</div>", "fono"=>"981370042", "nombre"=>"kjj"}, "id"=>"2"}
+  [1m[36mReporte Load (1.0ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mActionText::RichText Load (3.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:41:in `block in update'
+Redirected to http://172.18.0.4:3000/reportes/2
+Completed 302 Found in 1179ms (ActiveRecord: 3.6ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/reportes/2" for 172.18.0.1 at 2025-05-08 01:36:34 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:64:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 2]]
+  ↳ app/views/reportes/_reporte.html.haml:12
+  [1m[36mActionText::RichText Load (1.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:16
+  Rendered /usr/local/bundle/gems/actiontext-8.0.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.9ms | GC: 0.0ms)
+  Rendered reportes/_reporte.html.haml (Duration: 12.8ms | GC: 0.0ms)
+  [1m[36mComentario Load (1.3ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 2]]
+  ↳ app/views/reportes/_comentarios.html.haml:4
+  Rendered collection of templates [0 times] (Duration: 0.0ms | GC: 0.0ms)
+  Rendered comentarios/_new.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered reportes/_comentarios.html.haml (Duration: 4.1ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 19.9ms | GC: 0.9ms)
+  Rendered layout layouts/application.html.haml (Duration: 22.2ms | GC: 1.6ms)
+Completed 200 OK in 26ms (Views: 21.5ms | ActiveRecord: 1.7ms (4 queries, 0 cached) | GC: 1.6ms)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/cable" for 172.18.0.1 at 2025-05-08 01:38:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-08 01:38:40 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vcmFpbHNvbmRvY2tlci9SZXBvcnRlLzI

@@ -6,7 +6,7 @@ class Reporte < ApplicationRecord
   validates :nombre, length: { in: 2..25}
 
   validates_presence_of :fono
-  validates :fono, length: { in: 9..9}
+#  validates :fono, length: { in: 9..9}
 
   after_save :confirmar_fono
   #after_save :reservar
