@@ -8,7 +8,7 @@
 
 %br
 
-%div
-  = link_to "Mostrar este reporte", @reporte 
+-#%div
+  = link_to "Mostrar este reporte", @reporte , data: {:turbo_frame => "_top" }
   |
   = link_to "Volver a reportes", reportes_path 

@@ -1,4 +1,3 @@
-= turbo_stream_from @reporte 
 
 %p#notice=notice
 
@@ -11,10 +10,10 @@
   -#render "reportes/comentarios", reporte: @reporte 
 
 
-%div
+-#::
   = link_to "Editar este reporte", edit_reporte_path(@reporte)
   | 
   = link_to "Volver a reportes", reportes_path 
-
+  |
   = button_to "Eliminar este reporte", reporte_path(@reporte), method: :delete, data: { turbo_confirm: "¿Está seguro?" } 
   %small Cualquiera puede eliminar este reporte

@@ -1,3 +1,4 @@
+
 %h1 Bienvenido
 -#= link_to "Electricista a Domicilio en Providencia. Chile.", reportes_path
 -#%small
@@ -9,7 +10,8 @@
   
 -#%h1 Nuevo reporte
 
-= render "form", reporte: @reporte 
+= turbo_frame_tag "new_reporte" do
+  =  render "form", reporte: @reporte 
 
 %br
 

@@ -26,6 +26,7 @@ class ReportesController < ApplicationController
     respond_to do |format|
       if @reporte.save
         format.html { redirect_to @reporte, notice: "El reporte ha sido creado." }
+        format.turbo_stream 
         #resultado = ::Waba::Transaccion.new(:cliente).confirmar_fono(@reporte)
         format.json { render :show, status: :created, location: @reporte }
       else
@@ -53,6 +54,7 @@ class ReportesController < ApplicationController
     @reporte.destroy
     respond_to do |format|
       format.html { redirect_to reportes_url, notice: "El reporte ha sido destruido." }
+      format.turbo_stream
       format.json { head :no_content }
     end
   end

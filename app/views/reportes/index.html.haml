@@ -4,17 +4,15 @@
 %p#notice=notice 
 
 
-<!-- HTML !-->
--#<button class="button-49" role="button">Button 49</button>
-
-
 %h1 Reportes
 
+= link_to "Nuevo reporte", 
+  new_reporte_path, 
+  data: { turbo_frame: dom_id( Reporte.new) }, 
+  class: "btn btn--primary" 
 
--#= tubo_stream_tag 'reportes', :src => "/reportes"
+= turbo_frame_tag Reporte.new 
+
 = turbo_frame_tag 'reportes' do
-  = render @reportes
+  = render @reportes.ordered
 
--#new reporte no lo estoy usando embebido todavía
--#así que no está en ningún turbo_frame_id
-= link_to "Nuevo reporte", new_reporte_path 
