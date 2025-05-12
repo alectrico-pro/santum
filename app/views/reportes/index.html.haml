@@ -1,3 +1,6 @@
+-##https://www.hotrails.dev/turbo-rails/turbo-streams
+= turbo_stream_from 'reportes'
+
 %p#notice=notice 
 
 
@@ -7,10 +10,11 @@
 
 %h1 Reportes
 
-= turbo_stream_from @reportes
 
 -#= tubo_stream_tag 'reportes', :src => "/reportes"
 = turbo_frame_tag 'reportes' do
   = render @reportes
 
+-#new reporte no lo estoy usando embebido todavía
+-#así que no está en ningún turbo_frame_id
 = link_to "Nuevo reporte", new_reporte_path 

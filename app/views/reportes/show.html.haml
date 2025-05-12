@@ -2,6 +2,10 @@
 
 %p#notice=notice
 
+-#este rubro frame debe ser el mismo para 
+-#edit y _reporte.html.haml
+-#para que se reemplacen mutuamente en una lista
+-#de reportes:
 = turbo_frame_tag dom_id(@reporte) do
   = render @reporte 
   -#render "reportes/comentarios", reporte: @reporte 

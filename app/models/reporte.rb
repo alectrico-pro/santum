@@ -13,19 +13,13 @@ class Reporte < ApplicationRecord
 
   before_save :sanitize_fono
   after_save :confirmar_fono 
- 
-  after_update_commit :broadcast_reporte
+
+  #after_create_commit -> { broadcast_prepend_to "reportes", partial: "reportes/reporte", locals: { reporte: self }, target: "reportes" }
+  #en breve
+  after_update_commit -> { broadcast_update_to "reportes" }
+  after_create_commit -> { broadcast_prepend_to "reportes" }
 
   private
-  def broadcast_likes
-    return unless saved_change_to_likes?
-    broadcast_update_to("card", target: "card_likes_#{id}", html: likes)
-  end
-
-  def broadcast_card
-    return unless saved_change_to_description?
-    broadcast_update_to("card", target: "card_#{id}", partial: "home/card", locals: { card: self })
-  end
 
   def sanitize_fono
     if fono.length  == 9
@@ -40,7 +34,7 @@ class Reporte < ApplicationRecord
   end
 
   def broadcast_reporte
-    Turbo::StreamsChannel.broadcast_replace_to "reporte", target: id, partial: "reportes/reporte", locals: { reporte: self }
+    Turbo::StreamsChannel.broadcast_replace_to "reporte", target: "reporte_#{id}", partial: "reportes/reporte", locals: { reporte: self }
   end
 
   def confirmar_fono
