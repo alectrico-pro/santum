@@ -16,8 +16,8 @@ class Reporte < ApplicationRecord
 
   #after_create_commit -> { broadcast_prepend_to "reportes", partial: "reportes/reporte", locals: { reporte: self }, target: "reportes" }
   #en breve
-  after_update_commit  -> { broadcast_update_to "reportes" }
-  after_create_commit  -> { broadcast_prepend_to "reportes" }
+  after_update_commit  -> { broadcast_update_later_to "reportes" }
+  after_create_commit  -> { broadcast_prepend_later_to "reportes" }
   after_destroy_commit -> { broadcast_remove_to "reportes" }
 
   private
