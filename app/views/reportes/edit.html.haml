@@ -1,6 +1,7 @@
 %h1 Editando reporte
 
-= render "form", reporte: @reporte 
+= turbo_frame_tag dom_id(@reporte) do
+  = render "form", reporte: @reporte 
 
 %br
 

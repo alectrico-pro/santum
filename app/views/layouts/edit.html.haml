@@ -9,10 +9,20 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload" 
     = stylesheet_link_tag "reportes", "data-turbo-track": "reload"
     = javascript_importmap_tags 
-    %script{ :href => "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" }
     -#no se bien en mi celular. TAmpoco el sitio simplecss.org se ve bien
     %link{ :rel => "stylesheet", :href => "https://cdn.simplecss.org/simple.min.css"}
 
   %body
-
     = yield 
+    %div
+  %p
+    = turbo_frame_tag "edit_#{dom_id(reporte)}" do
+      = button_to "Editar este contenido", edit_reporte_path(reporte), :method => 'get'
+
+  %p
+    = turbo_frame_tag "delete_#{dom_id(reporte)}" do
+      = button_to "Eliminar este reporte", reporte_path(reporte), method: :delete, data: { turbo_confirm: "¿Está seguro de eliminar el reporte #{dom_id(reporte)}?" }
+
+~
+~
+~

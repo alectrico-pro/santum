@@ -1,24 +1,39 @@
-%h1 Bienvenido
-= link_to "Electricista a Domicilio en Providencia. Chile.", reportes_path 
-%small
-  Siga este link para un llamado rápido de un electricista.
-  No es un sitio seguro, y es de uso colectivo.
-  Puede haber muchas personas interactuando.
-  Puede que le borren su solicitud.
-  Ud. puede borrar las de otros.
+.flex.items-center.justify-center.min-h-screen.bg-gray-100
+  .p-6.bg-white.rounded-lg.shadow-lg.w-96
+    <!--image-->
+    .flex.justify-center
+      <!--image here-->
+      = image_tag "icon-cable"
+    .wb-4.text-center
+      <!-- Description -->
+      %h1 Bienvenido
+  = link_to "Electricista a Domicilio en Providencia. Chile.", reportes_path 
+  %small
+    Siga este link para un llamado rápido de un electricista.
+    No es un sitio seguro, y es de uso colectivo.
+    Puede haber muchas personas interactuando.
+    Puede que le borren su solicitud.
+    Ud. puede borrar las de otros.
 
-%h2 ¿Cómo se llama UD.?
+  %h2 ¿Cómo se llama UD.?
 
 
-%div{:"data-controller" => "hello" }
-  %input{ :"data-hello-target" => "name", :type => "text"}
-  %button{ :"data-action" => "click->hello#greet"}
-    Hola
-  %span{ :"data-hello-target" => "output"}
-    
-= link_to "alectrico", "https://www.alectrico.cl/agendar"
-%small
-  alectrico.cl es un sitio SEGURO. 
+  %div{:"data-controller" => "hello" }
+    %input{ :"data-hello-target" => "name", :type => "text"}
+    %button{ :"data-action" => "click->hello#greet"}
+      Hola
+    %span{ :"data-hello-target" => "output"}
+      
+  = link_to "alectrico", "https://www.alectrico.cl/agendar"
+  %small
+    alectrico.cl es un sitio SEGURO. 
 
-<button class="button-49" role="button">Problema</button>
+  <button class="button-49" role="button">Problema</button>
+
+
+  -#turbo_frame_tag 'reportes', :src => "/reportes"
+
+
+  = turbo_frame_tag 'reportes' do
+    = button_to 'Reportes', reportes_path , :method => 'get'
 

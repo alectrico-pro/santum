@@ -1,21 +1,24 @@
-.scaffold_record{ :id => dom_id( reporte)}
-  %p
-    %strong Nombre:
-    = reporte.nombre 
-    %strong Fono:
-    = reporte.fono
-    %strong Confirmado:
-    = reporte.confirmado
+= turbo_frame_tag dom_id(reporte) do
+  .scaffold_record{ :id => dom_id( reporte)}
+    %p
+      %strong Id:
+      = reporte.id
+      %strong Nombre:
+      = reporte.nombre 
+      %strong Fono:
+      = reporte.fono
+      %strong Confirmado:
+      = reporte.confirmado
 
-  %p
-    Publicado en #{time_tag( reporte.created_at)}
+    %p
+      Publicado en #{time_tag( reporte.created_at)}
 
-  %p
-    %strong= pluralize reporte.comentarios.count, "comentarios"
+    %p
+      %strong= pluralize reporte.comentarios.count, "comentarios"
 
-  %p
-    %strong Contenido:
-    = reporte.contenido 
+    %p
+      %strong Contenido:
+      = reporte.contenido 
 
-  %p
-    = link_to "Ver este reporte", reporte 
+    %p
+      = link_to "Editar este reporte", edit_reporte_path( reporte )

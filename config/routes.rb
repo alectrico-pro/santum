@@ -17,8 +17,8 @@ Rails.application.routes.draw do
     resources :comentarios
   end
 
-  #oot 'bienvenido#index'
-  root 'reportes#new'
+  root 'bienvenido#index'
+  #root 'reportes#new'
 
 
   #Este es el webhook de la app whappy en facebook

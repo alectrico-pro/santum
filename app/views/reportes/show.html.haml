@@ -2,8 +2,10 @@
 
 %p#notice=notice
 
-= render @reporte 
-= render "reportes/comentarios", reporte: @reporte 
+= turbo_frame_tag dom_id(@reporte) do
+  = render @reporte 
+  -#render "reportes/comentarios", reporte: @reporte 
+
 
 %div
   = link_to "Editar este reporte", edit_reporte_path(@reporte)

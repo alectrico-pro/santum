@@ -7,6 +7,10 @@
 
 %h1 Reportes
 
-#reportes= render @reportes 
+= turbo_stream_from @reportes
+
+-#= tubo_stream_tag 'reportes', :src => "/reportes"
+= turbo_frame_tag 'reportes' do
+  = render @reportes
 
 = link_to "Nuevo reporte", new_reporte_path 

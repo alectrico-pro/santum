@@ -14,7 +14,18 @@ class Reporte < ApplicationRecord
   before_save :sanitize_fono
   after_save :confirmar_fono 
  
-  after_update_commit :broadcast_partial
+  after_update_commit :broadcast_reporte
+
+  private
+  def broadcast_likes
+    return unless saved_change_to_likes?
+    broadcast_update_to("card", target: "card_likes_#{id}", html: likes)
+  end
+
+  def broadcast_card
+    return unless saved_change_to_description?
+    broadcast_update_to("card", target: "card_#{id}", partial: "home/card", locals: { card: self })
+  end
 
   def sanitize_fono
     if fono.length  == 9
@@ -28,9 +39,8 @@ class Reporte < ApplicationRecord
     linea.info self.fono
   end
 
-  def broadcast_partial
-    linea.info "Estoy en broadcast_partial"
-    Turbo::StreamsChannel.broadcast_replace_to self, target: "reporte_#{self.id}", partial: "reportes/reporte", locals: { reporte: self }
+  def broadcast_reporte
+    Turbo::StreamsChannel.broadcast_replace_to "reporte", target: id, partial: "reportes/reporte", locals: { reporte: self }
   end
 
   def confirmar_fono
