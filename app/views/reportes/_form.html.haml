@@ -1,19 +1,24 @@
 -#%h2 ¿Cómo se llama UD.?
 = form_with(model: reporte, html: {data:  { turbo: C.turbo_enabled } }) do |form| 
   -if reporte.errors.any? 
-    .error_explanation
+    -#rror_explanation
       %h2=pluralize(reporte.errors.count, "error(es)")
       %ul
         -reporte.errors.each do |error| 
           %li= error.full_message
-
+    .error-message
+      %hr
+      %small Hubo los siguientes errores:
+      = reporte.errors.full_messages.to_sentence.capitalize 
+      %small Inténtelo nuevamente
+      %hr
 
   .field
     = form.label :contenido 
-    = form.rich_text_area :contenido 
-    %small Describa brevemente. También puede agregar videos, fotos pero ninguna dirección.
-    |
-    %small Las imágenes desaparecen en minutos
+    -#form.rich_text_area :contenido 
+    = form.text_field :contenido
+    -#%small Describa brevemente. También puede agregar videos, fotos pero ninguna dirección.
+    -#%small Las imágenes desaparecen en minutos
 
 
   .field

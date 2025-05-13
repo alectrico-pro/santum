@@ -3,7 +3,7 @@ class Reporte < ApplicationRecord
   include Linea
 
   has_many :comentarios, dependent: :destroy
-  has_rich_text :contenido
+  #has_rich_text :contenido
 
   validates_presence_of :nombre
   validates :nombre, length: { in: 2..25}

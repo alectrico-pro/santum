@@ -34241,3 +34241,365 @@ Processing by ReportesController#show as HTML
 Completed 200 OK in 49ms (Views: 41.4ms | ActiveRecord: 3.6ms (3 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/reportes/145/edit" for 172.18.0.1 at 2025-05-13 09:57:24 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (2.0ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  [1m[36mActionText::RichText Load (2.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:14
+  Rendered reportes/_form.html.haml (Duration: 16.8ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 20.9ms | GC: 0.0ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 21.5ms | GC: 0.0ms)
+Completed 200 OK in 64ms (Views: 21.1ms | ActiveRecord: 8.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 09:57:30 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mActionText::RichText Load (6.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 15.0ms | GC: 1.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 15.6ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 33.0ms | GC: 3.4ms)
+Completed 422 Unprocessable Content in 56ms (Views: 34.3ms | ActiveRecord: 6.2ms (2 queries, 0 cached) | GC: 4.4ms)
+
+
+Started GET "/reportes/145" for 172.18.0.1 at 2025-05-13 09:58:54 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (2.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 145]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  [1m[36mActionText::RichText Load (2.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:27
+  Rendered /usr/local/bundle/gems/actiontext-8.0.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.1ms | GC: 0.2ms)
+  Rendered reportes/_reporte.html.haml (Duration: 27.8ms | GC: 0.8ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 34.6ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.haml (Duration: 44.1ms | GC: 1.8ms)
+Completed 200 OK in 93ms (Views: 43.0ms | ActiveRecord: 11.4ms (3 queries, 0 cached) | GC: 3.6ms)
+
+
+Started GET "/reportes/145/edit" for 172.18.0.1 at 2025-05-13 09:58:58 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  Rendered reportes/_form.html.haml (Duration: 5.0ms | GC: 0.4ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 9.7ms | GC: 0.6ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 10.0ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+  
+ActionView::Template::Error (Invalid tag: "% Hubo los siguientes errores:".)
+Caused by: Haml::SyntaxError (Invalid tag: "% Hubo los siguientes errores:".)
+
+Information for: ActionView::Template::Error (Invalid tag: "% Hubo los siguientes errores:".):
+     8:           %li= error.full_message
+     9:     .error-message
+    10:       % Hubo los siguientes errores:
+    11:       = reporte.errors.full_messages.to_sentence.capitalize 
+    12: 
+    13:   .field
+    14:     = form.label :contenido 
+  
+app/views/reportes/_form.html.haml:11
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+
+Information for cause: Haml::SyntaxError (Invalid tag: "% Hubo los siguientes errores:".):
+  
+app/views/reportes/_form.html.haml:11
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+Started GET "/reportes/145/edit" for 172.18.0.1 at 2025-05-13 09:59:12 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (1.0ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  [1m[36mActionText::RichText Load (1.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:15
+  Rendered reportes/_form.html.haml (Duration: 15.3ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 20.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 27.5ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 28.5ms | ActiveRecord: 8.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 09:59:16 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mActionText::RichText Load (4.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 9.6ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 10.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 11.3ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 34ms (Views: 11.7ms | ActiveRecord: 3.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/145" for 172.18.0.1 at 2025-05-13 09:59:37 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (5.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 145]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  [1m[36mActionText::RichText Load (2.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_reporte.html.haml:27
+  Rendered /usr/local/bundle/gems/actiontext-8.0.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 4.0ms | GC: 0.2ms)
+  Rendered reportes/_reporte.html.haml (Duration: 29.7ms | GC: 1.3ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 35.0ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.haml (Duration: 44.5ms | GC: 2.2ms)
+Completed 200 OK in 91ms (Views: 43.2ms | ActiveRecord: 17.5ms (3 queries, 0 cached) | GC: 2.9ms)
+
+
+Started GET "/reportes/145/edit" for 172.18.0.1 at 2025-05-13 09:59:44 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  [1m[36mActionText::RichText Load (1.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/views/reportes/_form.html.haml:16
+  Rendered reportes/_form.html.haml (Duration: 21.7ms | GC: 1.2ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 28.3ms | GC: 1.2ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 28.9ms | GC: 1.2ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 1.7ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 09:59:48 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (2.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mActionText::RichText Load (6.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 8.9ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 9.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 10.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 30ms (Views: 11.5ms | ActiveRecord: 10.5ms (2 queries, 0 cached) | GC: 1.2ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 10:00:20 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (1.4ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mActionText::RichText Load (3.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 29.3ms | GC: 11.2ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 33.3ms | GC: 11.2ms)
+  Rendered layout layouts/application.html.haml (Duration: 55.3ms | GC: 23.3ms)
+Completed 422 Unprocessable Content in 93ms (Views: 57.3ms | ActiveRecord: 11.1ms (2 queries, 0 cached) | GC: 24.2ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 10:01:24 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (1.1ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mActionText::RichText Load (11.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 145], ["record_type", "Reporte"], ["name", "contenido"], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered /usr/local/bundle/gems/actiontext-8.0.2/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 5.0ms | GC: 0.5ms)
+  Rendered reportes/_form.html.haml (Duration: 26.8ms | GC: 2.7ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 31.2ms | GC: 3.3ms)
+  Rendered layout layouts/application.html.haml (Duration: 42.8ms | GC: 4.2ms)
+Completed 422 Unprocessable Content in 89ms (Views: 44.6ms | ActiveRecord: 17.9ms (2 queries, 0 cached) | GC: 11.2ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 10:01:50 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"<div class='trix-content'></div>", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (2.8ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 17.3ms | GC: 3.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 24.0ms | GC: 5.7ms)
+  Rendered layout layouts/application.html.haml (Duration: 35.3ms | GC: 7.0ms)
+Completed 422 Unprocessable Content in 72ms (Views: 39.4ms | ActiveRecord: 5.1ms (1 query, 0 cached) | GC: 18.5ms)
+
+
+Started GET "/reportes/145" for 172.18.0.1 at 2025-05-13 10:01:58 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (1.8ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 145]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 23.5ms | GC: 1.1ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 29.9ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.haml (Duration: 31.4ms | GC: 1.1ms)
+Completed 200 OK in 38ms (Views: 28.3ms | ActiveRecord: 4.7ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/reportes/145/edit" for 172.18.0.1 at 2025-05-13 10:02:01 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (1.0ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  Rendered reportes/_form.html.haml (Duration: 2.1ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes" for 172.18.0.1 at 2025-05-13 10:02:19 +0000
+Processing by ReportesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+  [1m[36mReporte Load (1.5ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" ORDER BY "reportes"."id" DESC[0m
+  ↳ app/views/reportes/index.html.haml:17
+  [1m[36mComentario Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 145]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  [1m[36mComentario Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 139]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  [1m[36mComentario Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  [1m[36mComentario Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 130]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered collection of reportes/_reporte.html.haml [4 times] (Duration: 27.3ms | GC: 0.4ms)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 36.5ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.haml (Duration: 37.4ms | GC: 0.6ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 3.0ms (5 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/cable" for 172.18.0.1 at 2025-05-13 10:02:19 +0000
+Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 10:02:19 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from reportes
+Started GET "/reportes/145/edit" for 172.18.0.1 at 2025-05-13 10:02:22 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (1.5ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  Rendered reportes/_form.html.haml (Duration: 2.9ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Finished "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 10:02:39 +0000
+Turbo::StreamsChannel stopped streaming from reportes
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 10:02:39 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (1.6ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 4.9ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 6.7ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 14ms (Views: 7.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 2.0ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 10:02:44 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (1.6ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 6.0ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 8.6ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 16ms (Views: 9.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 10:03:43 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"", "fono"=>"", "nombre"=>"", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 15.0ms | GC: 0.9ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 20.1ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.haml (Duration: 29.3ms | GC: 1.6ms)
+Completed 422 Unprocessable Content in 53ms (Views: 32.2ms | ActiveRecord: 5.9ms (1 query, 0 cached) | GC: 1.9ms)
+
+
+Started PATCH "/reportes/145" for 172.18.0.1 at 2025-05-13 10:04:01 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"88", "fono"=>"88", "nombre"=>"88", "confirmado"=>"0"}, "id"=>"145"}
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mReporte Update (7.0ms)[0m  [1m[33mUPDATE "reportes" SET "nombre" = $1, "contenido" = $2, "updated_at" = $3, "fono" = $4 WHERE "reportes"."id" = $5[0m  [["nombre", "88"], ["contenido", "88"], ["updated_at", "2025-05-13 10:04:01.456688"], ["fono", "88"], ["id", 145]]
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+Redirected to http://172.18.0.4:3000/reportes/145
+Completed 302 Found in 469ms (ActiveRecord: 7.3ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/reportes/145" for 172.18.0.1 at 2025-05-13 10:04:01 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"145"}
+  [1m[36mReporte Load (1.0ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 145], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 145]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 20.8ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 26.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 27.1ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 22.3ms | ActiveRecord: 5.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
