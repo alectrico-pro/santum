@@ -28,9 +28,12 @@
 
     %p
       = link_to "Ver", reporte_path( reporte ), data: { turbo_frame: "_top" }, :method => :get
+      |
+      = link_to "Editar", edit_reporte_path( reporte ), :method => :get
+      |
+      = link_to "Cancelar", reportes_path, data: { turbo_frame: "_top"}
       = button_to "Borrar", reporte_path( reporte ),
         :method => :delete,   
         data: { turbo_confirm: "¿Está seguro?" }
 
-      = link_to "Editar", edit_reporte_path( reporte ), :method => :get
 
