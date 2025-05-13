@@ -1,0 +1,5 @@
+default: &default
+  turbo_enabled: false
+
+alectrico:
+        <<: *default

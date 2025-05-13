@@ -1,5 +1,5 @@
 -#%h2 ¿Cómo se llama UD.?
-= form_with(model: reporte) do |form| 
+= form_with(model: reporte, html: {data:  { turbo: C.turbo_enabled } }) do |form| 
   -if reporte.errors.any? 
     .error_explanation
       %h2=pluralize(reporte.errors.count, "error(es)")

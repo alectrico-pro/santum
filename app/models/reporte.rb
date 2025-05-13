@@ -14,16 +14,7 @@ class Reporte < ApplicationRecord
   before_save :sanitize_fono
   after_save :confirmar_fono 
 
-  #after_create_commit -> { broadcast_prepend_to "reportes", partial: "reportes/reporte", locals: { reporte: self }, target: "reportes" }
-  #en breve
-## after_update_commit  -> { broadcast_update_later_to "reportes" }
-# after_create_commit  -> { broadcast_prepend_later_to "reportes" }
-# after_destroy_commit -> { broadcast_remove_to "reportes" }
- 
-  #los tres anteriores se resumen en:
-  #https://www.hotrails.dev/turbo-rails/turbo-streams
   broadcasts_to ->(reporte) { "reportes" }, inserts_by: :prepend if C.turbo_enabled
-
 
   scope :ordered, -> { order(id: :desc) }
 
@@ -48,6 +39,7 @@ class Reporte < ApplicationRecord
   def confirmar_fono
     unless self.confirmado
       ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono, self.nombre
+     # Turbo.visit("/reportes/id", { action: "replace" })
     end
   end
 
