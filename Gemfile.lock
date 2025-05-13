@@ -312,6 +312,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
       logger
@@ -386,6 +389,7 @@ DEPENDENCIES
   rubocop-rspec
   sassc-rails (~> 2.1)
   selenium-webdriver
+  simple_form (~> 5.1.0)
   sprockets-rails
   stimulus-rails
   turbo-rails

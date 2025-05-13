@@ -35026,3 +35026,661 @@ Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 10:24:30 +0000
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
 Turbo::StreamsChannel is transmitting the subscription confirmation
 Turbo::StreamsChannel is streaming from reportes
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Finished "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 12:12:24 +0000
+Turbo::StreamsChannel stopped streaming from reportes
+Started GET "/reportes" for 172.18.0.1 at 2025-05-13 12:12:24 +0000
+Processing by ReportesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+  [1m[36mReporte Load (32.4ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" ORDER BY "reportes"."id" DESC[0m
+  ↳ app/views/reportes/index.html.haml:17
+  [1m[36mComentario Count (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 139]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  [1m[36mComentario Count (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  [1m[36mComentario Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 130]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered collection of reportes/_reporte.html.haml [3 times] (Duration: 56.6ms | GC: 0.0ms)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 883.3ms | GC: 2.6ms)
+  Rendered layout layouts/application.html.haml (Duration: 892.3ms | GC: 2.6ms)
+Completed 200 OK in 3935ms (Views: 691.0ms | ActiveRecord: 212.5ms (4 queries, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/cable" for 172.18.0.1 at 2025-05-13 12:12:29 +0000
+Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 12:12:29 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from reportes
+Finished "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 12:13:19 +0000
+Turbo::StreamsChannel stopped streaming from reportes
+Started DELETE "/reportes/139" for 172.18.0.1 at 2025-05-13 12:13:19 +0000
+Processing by ReportesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"139"}
+  [1m[36mReporte Load (2.1ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 139], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:54:in `destroy'
+  [1m[36mComentario Load (1.9ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 139]]
+  ↳ app/controllers/reportes_controller.rb:54:in `destroy'
+  [1m[36mReporte Destroy (1.6ms)[0m  [1m[31mDELETE FROM "reportes" WHERE "reportes"."id" = $1[0m  [["id", 139]]
+  ↳ app/controllers/reportes_controller.rb:54:in `destroy'
+  [1m[36mTRANSACTION (32.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:54:in `destroy'
+Redirected to http://172.18.0.4:3000/reportes
+Completed 302 Found in 3211ms (ActiveRecord: 47.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes" for 172.18.0.1 at 2025-05-13 12:13:22 +0000
+Processing by ReportesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/index.html.haml within layouts/application
+  [1m[36mReporte Load (2.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" ORDER BY "reportes"."id" DESC[0m
+  ↳ app/views/reportes/index.html.haml:17
+  [1m[36mComentario Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  [1m[36mComentario Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 130]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered collection of reportes/_reporte.html.haml [2 times] (Duration: 20.6ms | GC: 1.5ms)
+  Rendered reportes/index.html.haml within layouts/application (Duration: 42.3ms | GC: 9.4ms)
+  Rendered layout layouts/application.html.haml (Duration: 50.5ms | GC: 9.8ms)
+Completed 200 OK in 3054ms (Views: 49.7ms | ActiveRecord: 2.7ms (3 queries, 0 cached) | GC: 9.8ms)
+
+
+Started GET "/cable" for 172.18.0.1 at 2025-05-13 12:13:26 +0000
+Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 12:13:26 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from reportes
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 12:13:30 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.8ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  Rendered reportes/_form.html.haml (Duration: 11.6ms | GC: 0.4ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 34.6ms | GC: 0.6ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 35.7ms | GC: 0.6ms)
+Completed 200 OK in 3070ms (Views: 44.9ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Finished "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 12:13:38 +0000
+Turbo::StreamsChannel stopped streaming from reportes
+Started PATCH "/reportes/138" for 172.18.0.1 at 2025-05-13 12:13:38 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"070987", "fono"=>"0987098", "nombre"=>"yyyy", "confirmado"=>"0"}, "id"=>"138"}
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mReporte Update (32.6ms)[0m  [1m[33mUPDATE "reportes" SET "contenido" = $1, "updated_at" = $2, "fono" = $3 WHERE "reportes"."id" = $4[0m  [["contenido", "070987"], ["updated_at", "2025-05-13 12:13:41.611272"], ["fono", "0987098"], ["id", 138]]
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reportes_controller.rb:42:in `block in update'
+Redirected to http://172.18.0.4:3000/reportes/138
+Completed 302 Found in 3724ms (ActiveRecord: 28.2ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/reportes/138" for 172.18.0.1 at 2025-05-13 12:13:42 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"138"}
+Started GET "/cable" for 172.18.0.1 at 2025-05-13 12:13:44 +0000
+Started GET "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 12:13:44 +0000
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from reportes
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 14.5ms | GC: 0.6ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 21.9ms | GC: 0.8ms)
+  Rendered layout layouts/application.html.haml (Duration: 22.9ms | GC: 0.8ms)
+Completed 200 OK in 3029ms (Views: 22.9ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Finished "/cable" [WebSocket] for 172.18.0.1 at 2025-05-13 12:13:45 +0000
+Turbo::StreamsChannel stopped streaming from reportes
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/reportes/138" for 172.18.0.1 at 2025-05-13 13:04:06 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (36.6ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 5.5ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 8.2ms | GC: 0.0ms)
+Completed 200 OK in 3048ms (Views: 7.7ms | ActiveRecord: 44.7ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:04:12 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  Rendered reportes/_form.html.haml (Duration: 3.3ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.5ms | GC: 0.0ms)
+Completed 200 OK in 3010ms (Views: 5.2ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/reportes/138" for 172.18.0.1 at 2025-05-13 13:04:32 +0000
+Processing by ReportesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"contenido"=>"070987", "fono"=>"0987098", "nombre"=>"yyyy", "confirmado"=>"0"}, "id"=>"138"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+Redirected to http://172.18.0.4:3000/reportes/138
+Completed 302 Found in 3575ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138" for 172.18.0.1 at 2025-05-13 13:04:36 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 6.7ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 8.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 10.2ms | GC: 0.0ms)
+Completed 200 OK in 3016ms (Views: 10.4ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138" for 172.18.0.1 at 2025-05-13 13:04:44 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (2.4ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 5.5ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 3015ms (Views: 8.6ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138" for 172.18.0.1 at 2025-05-13 13:07:43 +0000
+Processing by ReportesController#show as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.5ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/show.html.haml within layouts/application
+  [1m[36mComentario Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 48.6ms | GC: 1.6ms)
+  Rendered reportes/show.html.haml within layouts/application (Duration: 64.2ms | GC: 10.2ms)
+  Rendered layout layouts/application.html.haml (Duration: 73.3ms | GC: 10.6ms)
+Completed 200 OK in 3109ms (Views: 73.6ms | ActiveRecord: 6.6ms (2 queries, 0 cached) | GC: 10.6ms)
+
+
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:07:49 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  Rendered reportes/_form.html.haml (Duration: 3.2ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 8.0ms | GC: 0.2ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 8.3ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 3015ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.)
+Caused by: Haml::SyntaxError (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.)
+
+Information for: ActionView::Template::Error (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+    2:   -if quote.errors.any? 
+    3:     .error-message
+    4:       = quote.errors.full_messages.to_sentence.capitalize 
+    5:    = f.input :name, input_html: { autofocus: true } 
+    6:    = f.submit class: "btn btn--secondary" 
+  
+app/views/reportes/_form.html.haml:5
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+
+Information for cause: Haml::SyntaxError (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+  
+app/views/reportes/_form.html.haml:5
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:08:26 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 4.3ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 8.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 8.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3038ms (ActiveRecord: 8.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.)
+Caused by: Haml::SyntaxError (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.)
+
+Information for: ActionView::Template::Error (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+    2:   -if quote.errors.any? 
+    3:     .error-message
+    4:       = quote.errors.full_messages.to_sentence.capitalize 
+    5:    = f.input :nombre, input_html: { autofocus: true } 
+    6:    .btn.btn--secondary= f.submit 
+  
+app/views/reportes/_form.html.haml:5
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+
+Information for cause: Haml::SyntaxError (Inconsistent indentation: 3 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+  
+app/views/reportes/_form.html.haml:5
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:08:48 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 4.3ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 9.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 10.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3036ms (ActiveRecord: 6.7ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+  -if quote.errors.any? 
+    .error-message
+      = quote.errors.full_messages.to_sentence.capitalize 
+  = f.input :nombre, input_html: { autofocus: true } 
+    .btn.btn--secondary= f.submit 
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/usr/src/app/app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+  -if quote.errors.any? 
+    .error-message
+      = quote.errors.full_messages.to_sentence.capitalize 
+  = f.input :nombre, input_html: { autofocus: true } 
+    .btn.btn--secondary= f.submit 
+
+):
+1:    = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+2:      -if quote.errors.any? 
+3:        .error-message
+4:          = quote.errors.full_messages.to_sentence.capitalize 
+5:      = f.input :nombre, input_html: { autofocus: true } 
+6:        .btn.btn--secondary= f.submit 
+  
+app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/usr/src/app/app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:09:11 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:09:12 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 4.8ms | GC: 0.1ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 10.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.haml (Duration: 10.8ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 3032ms (ActiveRecord: 6.2ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+  -if reporte.errors.any? 
+    .error-message
+      = reporte.errors.full_messages.to_sentence.capitalize 
+  = f.input :nombre, input_html: { autofocus: true } 
+    .btn.btn--secondary= f.submit 
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/usr/src/app/app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+  -if reporte.errors.any? 
+    .error-message
+      = reporte.errors.full_messages.to_sentence.capitalize 
+  = f.input :nombre, input_html: { autofocus: true } 
+    .btn.btn--secondary= f.submit 
+
+):
+1:    = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+2:      -if reporte.errors.any? 
+3:        .error-message
+4:          = reporte.errors.full_messages.to_sentence.capitalize 
+5:      = f.input :nombre, input_html: { autofocus: true } 
+6:        .btn.btn--secondary= f.submit 
+  
+app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/usr/src/app/app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+  [1m[36mReporte Load (1.8ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 5.4ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 9.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 9.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3050ms (ActiveRecord: 8.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+  -if reporte.errors.any? 
+    .error-message
+      = reporte.errors.full_messages.to_sentence.capitalize 
+  = f.input :nombre, input_html: { autofocus: true } 
+    .btn.btn--secondary= f.submit 
+
+)
+Caused by: ActiveSupport::SyntaxErrorProxy (/usr/src/app/app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+          end
+          ^~~
+)
+
+Information for: ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+  -if reporte.errors.any? 
+    .error-message
+      = reporte.errors.full_messages.to_sentence.capitalize 
+  = f.input :nombre, input_html: { autofocus: true } 
+    .btn.btn--secondary= f.submit 
+
+):
+1:    = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+2:      -if reporte.errors.any? 
+3:        .error-message
+4:          = reporte.errors.full_messages.to_sentence.capitalize 
+5:      = f.input :nombre, input_html: { autofocus: true } 
+6:        .btn.btn--secondary= f.submit 
+  
+app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+
+Information for cause: ActiveSupport::SyntaxErrorProxy (/usr/src/app/app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+          end
+          ^~~
+):
+  
+app/views/reportes/_form.html.haml:8: syntax error, unexpected `end'
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:10:11 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 5.5ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 9.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 9.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 3050ms (ActiveRecord: 7.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for an instance of #<Class:0x00007f5ac0079f78>)
+Caused by: NoMethodError (undefined method `simple_form_for' for an instance of #<Class:0x00007f5ac0079f78>)
+
+Information for: ActionView::Template::Error (undefined method `simple_form_for' for an instance of #<Class:0x00007f5ac0079f78>):
+    1: = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+    2:   - if reporte.errors.any? 
+    3:     .error-message
+    4:       = reporte.errors.full_messages.to_sentence.capitalize 
+  
+app/views/reportes/_form.html.haml:1
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+
+Information for cause: NoMethodError (undefined method `simple_form_for' for an instance of #<Class:0x00007f5ac0079f78>):
+  
+app/views/reportes/_form.html.haml:1
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:13:13 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.2ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 3.8ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 7.6ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.haml (Duration: 7.9ms | GC: 0.1ms)
+Completed 500 Internal Server Error in 3027ms (ActiveRecord: 5.6ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for an instance of #<Class:0x00007f5a73115330>)
+Caused by: NoMethodError (undefined method `simple_form_for' for an instance of #<Class:0x00007f5a73115330>)
+
+Information for: ActionView::Template::Error (undefined method `simple_form_for' for an instance of #<Class:0x00007f5a73115330>):
+    1: = simple_form_for reporte, html: { class: "reporte form" } do |f| 
+    2:   - if reporte.errors.any? 
+    3:     .error-message
+    4:       = reporte.errors.full_messages.to_sentence.capitalize 
+  
+app/views/reportes/_form.html.haml:1
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+
+Information for cause: NoMethodError (undefined method `simple_form_for' for an instance of #<Class:0x00007f5a73115330>):
+  
+app/views/reportes/_form.html.haml:1
+app/views/reportes/edit.html.haml:7
+app/views/reportes/edit.html.haml:6
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:14:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.8ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 283.2ms | GC: 29.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 294.1ms | GC: 29.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 305.6ms | GC: 29.6ms)
+Completed 200 OK in 3529ms (Views: 311.9ms | ActiveRecord: 40.3ms (1 query, 0 cached) | GC: 29.6ms)
+
+
+Started PATCH "/reportes/138" for 172.18.0.1 at 2025-05-13 13:14:18 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"nombre"=>"yyyy"}, "commit"=>"Actualizar Reporte", "id"=>"138"}
+  [1m[36mReporte Load (1.8ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+Redirected to http://172.18.0.4:3000/reportes/138
+Completed 302 Found in 3568ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138" for 172.18.0.1 at 2025-05-13 13:14:21 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/show.html.haml within layouts/turbo_rails/frame
+  [1m[36mComentario Count (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 164.0ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/turbo_rails/frame (Duration: 206.9ms | GC: 0.0ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 208.1ms | GC: 0.0ms)
+Completed 200 OK in 3215ms (Views: 203.2ms | ActiveRecord: 7.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:14:31 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  Rendered reportes/_form.html.haml (Duration: 3.8ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 3011ms (Views: 5.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/reportes/138" for 172.18.0.1 at 2025-05-13 13:14:35 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"nombre"=>"yyyy"}, "commit"=>"Actualizar Reporte", "id"=>"138"}
+  [1m[36mReporte Load (1.7ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+Redirected to http://172.18.0.4:3000/reportes/138
+Completed 302 Found in 3394ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138" for 172.18.0.1 at 2025-05-13 13:14:39 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.3ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/show.html.haml within layouts/turbo_rails/frame
+  [1m[36mComentario Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 4.9ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/turbo_rails/frame (Duration: 6.3ms | GC: 0.0ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 3013ms (Views: 7.0ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:14:48 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:14:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.8ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 4.8ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 3013ms (Views: 8.0ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mReporte Load (2.5ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/edit.html.haml within layouts/turbo_rails/frame
+  Rendered reportes/_form.html.haml (Duration: 80.9ms | GC: 33.4ms)
+  Rendered reportes/edit.html.haml within layouts/turbo_rails/frame (Duration: 96.8ms | GC: 33.4ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 98.3ms | GC: 33.8ms)
+Completed 200 OK in 3197ms (Views: 104.6ms | ActiveRecord: 56.3ms (1 query, 0 cached) | GC: 33.8ms)
+
+
+Started PATCH "/reportes/138" for 172.18.0.1 at 2025-05-13 13:14:54 +0000
+Processing by ReportesController#update as TURBO_STREAM
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reporte"=>{"nombre"=>"yyyy"}, "commit"=>"Actualizar Reporte", "id"=>"138"}
+  [1m[36mReporte Load (1.9ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+Redirected to http://172.18.0.4:3000/reportes/138
+Completed 302 Found in 3468ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138" for 172.18.0.1 at 2025-05-13 13:14:57 +0000
+Processing by ReportesController#show as TURBO_STREAM
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (1.8ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering reportes/show.html.haml within layouts/turbo_rails/frame
+  [1m[36mComentario Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comentarios" WHERE "comentarios"."reporte_id" = $1[0m  [["reporte_id", 138]]
+  ↳ app/views/reportes/_reporte.html.haml:23
+  Rendered reportes/_reporte.html.haml (Duration: 6.9ms | GC: 0.0ms)
+  Rendered reportes/show.html.haml within layouts/turbo_rails/frame (Duration: 8.7ms | GC: 0.0ms)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 3014ms (Views: 8.8ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:44:39 +0000
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (24.6ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 2.4ms | GC: 0.0ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.haml (Duration: 12.0ms | GC: 0.4ms)
+Completed 200 OK in 3040ms (Views: 13.1ms | ActiveRecord: 29.2ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+DEPRECATION WARNING: The config.web_console.whitelisted_ips is deprecated and will be ignored in future release of web_console. Please use config.web_console.allowed_ips instead. (called from <main> at /usr/src/app/config/environment.rb:7)
+DEPRECATION WARNING: `to_time` will always preserve the receiver timezone rather than system local time in Rails 8.1. To opt in to the new behavior, set `config.active_support.to_time_preserves_timezone = :zone`. (called from <main> at /usr/src/app/config/environment.rb:7)
+Started GET "/reportes/138/edit" for 172.18.0.1 at 2025-05-13 13:45:15 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReportesController#edit as HTML
+  Parameters: {"id"=>"138"}
+  [1m[36mReporte Load (2.4ms)[0m  [1m[34mSELECT "reportes".* FROM "reportes" WHERE "reportes"."id" = $1 LIMIT $2[0m  [["id", 138], ["LIMIT", 1]]
+  ↳ app/controllers/reportes_controller.rb:66:in `set_reporte'
+  Rendering layout layouts/application.html.haml
+  Rendering reportes/edit.html.haml within layouts/application
+  Rendered reportes/_form.html.haml (Duration: 54.6ms | GC: 24.7ms)
+  Rendered reportes/edit.html.haml within layouts/application (Duration: 66.8ms | GC: 24.7ms)
+  Rendered layout layouts/application.html.haml (Duration: 75.9ms | GC: 26.0ms)
+Completed 200 OK in 3170ms (Views: 80.0ms | ActiveRecord: 50.1ms (1 query, 0 cached) | GC: 26.0ms)
+
+
