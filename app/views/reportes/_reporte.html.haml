@@ -31,7 +31,7 @@
       |
       = link_to "Editar", edit_reporte_path( reporte ), :method => :get
       |
-      = link_to "Cancelar", reportes_path, data: { turbo_frame: "_top"}
+      = link_to "Listar", reportes_path, data: { turbo_frame: "_top"}
       = button_to "Borrar", reporte_path( reporte ),
         :method => :delete,   
         data: { turbo_confirm: "¿Está seguro?" }
