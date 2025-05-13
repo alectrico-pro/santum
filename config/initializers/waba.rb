@@ -11,11 +11,5 @@ WabaCfg = Cfg.new('waba_cfg.yml', 'live')
 TOKEN = ENV['META_USER_TOKEN'] ? ENV['META_USER_TOKEN'] : '' 
 
 
-#La agenda debe borrarse de vez en cuando con AGENDA.reset
-#Igual se borra con cada nuevo deployment
-#Se podría quere borrar diariament con un scheduler
-#De momento está en experimentación
-#Esta limitada a AGENDA_TOP elementos
-
 
 end

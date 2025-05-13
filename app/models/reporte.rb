@@ -1,5 +1,5 @@
 class Reporte < ApplicationRecord
-  broadcasts_refreshes
+  broadcasts_refreshes if C.turbo_enabled
   include Linea
 
   has_many :comentarios, dependent: :destroy
@@ -22,7 +22,7 @@ class Reporte < ApplicationRecord
  
   #los tres anteriores se resumen en:
   #https://www.hotrails.dev/turbo-rails/turbo-streams
-  broadcasts_to ->(reporte) { "reportes" }, inserts_by: :prepend
+  broadcasts_to ->(reporte) { "reportes" }, inserts_by: :prepend if C.turbo_enabled
 
 
   scope :ordered, -> { order(id: :desc) }
@@ -41,9 +41,9 @@ class Reporte < ApplicationRecord
     linea.info self.fono
   end
 
-  def broadcast_reporte
-    Turbo::StreamsChannel.broadcast_replace_to "reporte", target: "reporte_#{id}", partial: "reportes/reporte", locals: { reporte: self }
-  end
+  #ef broadcast_reporte
+  # Turbo::StreamsChannel.broadcast_replace_to "reporte", target: "reporte_#{id}", partial: "reportes/reporte", locals: { reporte: self }
+ #end
 
   def confirmar_fono
     unless self.confirmado
