@@ -3,4 +3,6 @@
     .error-message
       = reporte.errors.full_messages.to_sentence.capitalize 
   = f.input :nombre, input_html: { autofocus: true } 
+  = f.input :fono
+  = f.input :contenido
   .btn.btn--secondary=f.submit 
