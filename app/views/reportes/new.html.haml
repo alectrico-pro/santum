@@ -8,12 +8,9 @@
   Puede que le borren su solicitud.
   Ud. puede borrar las de otros.
   
--#%h1 Nuevo reporte
-
-= turbo_frame_tag "new_reporte" do
-  =  render "form", reporte: @reporte 
-
-%br
-
-%div
-  = link_to "Volver a reportes", reportes_path
+.container
+  = link_to sanitize("&larr; Volver a reportes"), reportes_path 
+  .header
+    %h1 Nuevo reporte
+  = turbo_frame_tag "new_reporte" do
+    =  render "form", reporte: @reporte 

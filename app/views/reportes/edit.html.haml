@@ -1,14 +1,8 @@
-%h1 Editando reporte
+.container
+  = link_to sanitize("&larr; Volver a Reporte"), reporte_path(@reporte)
+  .header
 
--#este turbo frame tag_dom_id(@reporte) debe ser igual
--#en _reporte_html.haml, porque será llamado desde alĺá
--#y este código reemplazará al que está allá
-= turbo_frame_tag dom_id(@reporte) do
-  = render "form", reporte: @reporte 
+    %h1 Editando reporte
 
-%br
-
--#%div
-  = link_to "Mostrar este reporte", @reporte , data: {:turbo_frame => "_top" }
-  |
-  = link_to "Volver a reportes", reportes_path 
+  = turbo_frame_tag dom_id(@reporte) do
+    = render "form", reporte: @reporte 

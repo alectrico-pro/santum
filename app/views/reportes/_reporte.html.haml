@@ -5,40 +5,22 @@
 -#por eso en edit.html.haml
 -#también debe haber un turbo_frame_tag dom_id(reporte) do
 = turbo_frame_tag dom_id(reporte) do
-  .scaffold_record{ :id => dom_id( reporte)}
-    %p
-      %strong Id:
-      = reporte.id
-      %strong Nombre:
-      = reporte.nombre 
-      %strong Fono:
-      = reporte.fono
-      %strong Confirmado:
-      = reporte.confirmado
-
-    %p
-      Publicado en #{time_tag( reporte.created_at)}
-
-    %p
-      %strong= pluralize reporte.comentarios.count, "comentarios"
-
-    %p
-      %strong Contenido:
-      = reporte.contenido 
-
-    %p
-      = link_to "Ver", reporte_path( reporte ),
+  .reporte{ :id => dom_id( reporte)}
+    = link_to reporte.nombre,
+      reporte_path(reporte),
+      data: { turbo_frame: "_top"}
+    .reporte__actions
+      -#.btn.btn--light= link_to "Ver", reporte_path( reporte ),
         data: { turbo_frame: "_top", turbo: C.turbo_enabled },
-        :method => :get
-      |
-      = link_to "Editar", 
-        edit_reporte_path( reporte ), 
-        :method => :get
-      |
-      = link_to "Listar", reportes_path,
+        :method => :get     
+      -#= link_to "Listar", reportes_path,
         data: { turbo_frame: "_top", turbo: C.turbo_enabled }
-      = button_to "Borrar", reporte_path( reporte ),
+      .btn.btn--light= button_to "Borrar", reporte_path( reporte ),
         :method => :delete,   
         data: { turbo_confirm: "¿Está seguro?", turbo: C.turbo_enabled }
+      .btn.btn--light= link_to "Editar",
+        edit_reporte_path( reporte ),
+        :method => :get
+
 
 

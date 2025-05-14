@@ -7,12 +7,16 @@
     = csp_meta_tag 
 
     = stylesheet_link_tag "application", "data-turbo-track": "reload" 
-    = stylesheet_link_tag "reportes", "data-turbo-track": "reload"
+    -#= stylesheet_link_tag "plataforma", "data-turbo-track": "reload"
+
+
     = javascript_importmap_tags 
     %script{ :href => "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" }
     -#no se bien en mi celular. TAmpoco el sitio simplecss.org se ve bien
-    -#    %link{ :rel => "stylesheet", :href => "https://cdn.simplecss.org/simple.min.css"}
+    -#ink{ :rel => "stylesheet", :href => "https://cdn.simplecss.org/simple.min.css"}
 
   %body
-
+    = render "layouts/navbar"
+    .flash
+      = render "layouts/flash"
     = yield 

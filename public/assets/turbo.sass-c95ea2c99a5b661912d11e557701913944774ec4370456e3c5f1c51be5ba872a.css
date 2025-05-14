@@ -1,4 +1,0 @@
-/* line 1, app/assets/stylesheets/components/turbo_progress_bar.css */
-.turbo-progress-bar {
-  background: linear-gradiente(to right, var(--color-primary), var(--color-primary-rotate));
-}

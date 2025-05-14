@@ -1,0 +1,3 @@
+-flash.each do |flash_type, message| 
+  %div.flash__message{"data-controllers" => "removals",  "data-action" => "animationend->removals#remove"}
+    = message 

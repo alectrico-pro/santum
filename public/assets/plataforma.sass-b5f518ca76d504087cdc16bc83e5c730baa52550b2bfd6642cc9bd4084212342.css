@@ -207,6 +207,103 @@ a:hover, a:focus, a:active {
   border-radius: var(--border-radius);
 }
 
+/* line 1, app/assets/stylesheets/components/_flash.scss */
+.flash {
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-s);
+  max-width: 100%;
+  width: max-content;
+  padding: 0 var(--space-m);
+}
+
+/* line 16, app/assets/stylesheets/components/_flash.scss */
+.flash__message {
+  font-size: var(--font-size-s);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-m);
+  background-color: var(--color-dark);
+  animation: appear-then-fade 4s both;
+  border-radius: 999px;
+}
+
+@keyframes appear-then-fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  5%, 60% {
+    opacity: 1;
+  }
+}
+
+/* line 1, app/assets/stylesheets/components/_navbar.scss */
+.navbar {
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-large);
+  padding: var(--space-xs) var(--space-m);
+  margin-bottom: var(--space-xxl);
+  background-color: var(--color-white);
+}
+
+/* line 9, app/assets/stylesheets/components/_navbar.scss */
+.navbar__brand {
+  font-weight: bold;
+  font-size: var(--font-size-xl);
+  color: var(--color-text-header);
+}
+
+/* line 15, app/assets/stylesheets/components/_navbar.scss */
+.navbar__name {
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: var(--space-s);
+  color: var(--color-text-header);
+}
+
+/* line 22, app/assets/stylesheets/components/_navbar.scss */
+.navbar__right {
+  margin-left: auto;
+}
+
+/* line 1, app/assets/stylesheets/components/turbo_progress_bar.css */
+.turbo-progress-bar {
+  background: linear-gradiente(to right, var(--color-primary), var(--color-primary-rotate));
+}
+
+/* line 3, app/assets/stylesheets/components/_reporte.scss */
+.reporte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-small);
+  margin-bottom: var(--space-m);
+  padding: var(--space-xs);
+}
+
+@media (min-width: 50rem) {
+  /* line 3, app/assets/stylesheets/components/_reporte.scss */
+  .reporte {
+    padding: var(--space-xs) var(--space-m);
+  }
+}
+
+/* line 20, app/assets/stylesheets/components/_reporte.scss */
+.reporte__actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  gap: var(--space-xs);
+}
+
 /* line 1, app/assets/stylesheets/components/_form.scss */
 .form {
   display: flex;
@@ -254,35 +351,7 @@ a:hover, a:focus, a:active {
   border: 0 !important;
 }
 
-/* line 1, app/assets/stylesheets/components/_reporte.scss */
-.reporte {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-s);
-  background-color: var(--color-white);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-small);
-  margin-bottom: var(--space-m);
-  padding: var(--space-xs);
-}
-
-@media (min-width: 50rem) {
-  /* line 1, app/assets/stylesheets/components/_reporte.scss */
-  .reporte {
-    padding: var(--space-xs) var(--space-m);
-  }
-}
-
-/* line 17, app/assets/stylesheets/components/_reporte.scss */
-.reporte__actions {
-  display: flex;
-  flex: 0 0 auto;
-  align-self: flex-start;
-  gap: var(--space-xs);
-}
-
-/* line 1, app/assets/stylesheets/layouts/_container.scss */
+/* line 3, app/assets/stylesheets/layouts/_container.scss */
 .container {
   width: 100%;
   padding-right: var(--space-xs);
@@ -292,7 +361,7 @@ a:hover, a:focus, a:active {
 }
 
 @media (min-width: 50rem) {
-  /* line 1, app/assets/stylesheets/layouts/_container.scss */
+  /* line 3, app/assets/stylesheets/layouts/_container.scss */
   .container {
     padding-right: var(--space-m);
     padding-left: var(--space-m);
@@ -300,7 +369,7 @@ a:hover, a:focus, a:active {
   }
 }
 
-/* line 1, app/assets/stylesheets/layouts/_header.scss */
+/* line 4, app/assets/stylesheets/layouts/_header.scss */
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -311,7 +380,7 @@ a:hover, a:focus, a:active {
 }
 
 @media (min-width: 50rem) {
-  /* line 1, app/assets/stylesheets/layouts/_header.scss */
+  /* line 4, app/assets/stylesheets/layouts/_header.scss */
   .header {
     margin-bottom: var(--space-xl);
   }

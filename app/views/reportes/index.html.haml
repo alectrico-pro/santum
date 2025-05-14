@@ -1,18 +1,17 @@
 -##https://www.hotrails.dev/turbo-rails/turbo-streams
 = turbo_stream_from 'reportes'
 
-%p#notice=notice 
+.container
+  .header
+    %h1 Reportes
 
+    = link_to "Nuevo reporte", 
+      new_reporte_path, 
+      data: { turbo_frame: dom_id( Reporte.new), turbo: C.turbo_enabled }, 
+      class: "btn btn--primary" 
 
-%h1 Reportes
+    = turbo_frame_tag Reporte.new 
 
-= link_to "Nuevo reporte", 
-  new_reporte_path, 
-  data: { turbo_frame: dom_id( Reporte.new), turbo: C.turbo_enabled }, 
-  class: "btn btn--primary" 
-
-= turbo_frame_tag Reporte.new 
-
-= turbo_frame_tag 'reportes' do
-  = render @reportes.ordered
+  = turbo_frame_tag 'reportes' do
+    = render @reportes.ordered
 
