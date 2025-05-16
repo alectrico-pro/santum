@@ -12,6 +12,10 @@
 
     = turbo_frame_tag Reporte.new 
 
+  = turbo_frame_tag Reporte.new do
+    -if @reportes.none?
+      = render "reportes/empty_state"
+
   = turbo_frame_tag 'reportes' do
     = render @reportes.ordered
 
