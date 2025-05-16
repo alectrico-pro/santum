@@ -294,7 +294,11 @@ class Waba::Transaccion
     linea.warn "__method__: #{__method__.to_s} "
     options = { headers: @headers, body: body.to_json }
     url     = "#{@base_uri}/#{@api_version}/#{@waba_id}/messages"
-    request = ::HTTParty.post( url, options )
+    begin
+      request = ::HTTParty.post( url, options )
+    rescue
+     # TurboStream.
+    end
     linea.info request.inspect
   end
 

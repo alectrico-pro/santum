@@ -53,8 +53,8 @@ class ReportesController < ApplicationController
   def destroy
     @reporte.destroy
     respond_to do |format|
-      format.html { redirect_to reportes_url, notice: "El reporte ha sido destruido." }
-      format.turbo_stream
+      format.html { redirect_to reportes_url, notice: "El reporte ha sido destruído." }
+      format.turbo_stream { flash.now[:notice] = "El reporte ha sido destruído."}
       format.json { head :no_content }
     end
   end

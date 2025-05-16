@@ -1,5 +1,5 @@
 default: &default
-  turbo_enabled: false
+  turbo_enabled: true
 
 alectrico:
         <<: *default
