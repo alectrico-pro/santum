@@ -26,7 +26,7 @@ class ReportesController < ApplicationController
     respond_to do |format|
       if @reporte.save
         format.html { redirect_to @reporte, notice: "El reporte ha sido creado." }
-        format.turbo_stream 
+        format.turbo_stream { flash.now[:notice] = "El reporte ha sido creado."}
         #resultado = ::Waba::Transaccion.new(:cliente).confirmar_fono(@reporte)
         format.json { render :show, status: :created, location: @reporte }
       else
@@ -41,6 +41,7 @@ class ReportesController < ApplicationController
     respond_to do |format|
       if @reporte.update(reporte_params)
         format.html { redirect_to @reporte, notice: "El Reporte ha sido actualizado." }
+        format.turbo_stream { flash.now[:notice] = "El reporte ha sido actualizado."}
         format.json { render :show, status: :ok, location: @reporte }
       else
         format.html { render :edit, status: :unprocessable_entity }

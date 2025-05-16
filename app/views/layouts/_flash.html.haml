@@ -1,4 +1,8 @@
-%p flash
--flash.each do |flash_type, message|
-  %div.flash__message{"data-controller" => "removals",  "data-action" => "animationend->removals#remove"}
-    = message 
+-#=turbo_stream_from 'flash'
+= turbo_frame_tag 'flash' do
+  -flash.each do |flash_type, message|
+    %div.flash__message{"data-controller" => "removals",  "data-action" => "animationend->removals#remove"}
+      = message 
+
+-#{"data-controller" => "removals",  "data-action" => "animationend->removals#remove"}
+
