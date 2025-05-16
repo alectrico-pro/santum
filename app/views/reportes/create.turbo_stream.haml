@@ -2,5 +2,4 @@
   = render partial: "reportes/reporte", locals: { reporte: @reporte } 
 
 = turbo_stream.update Reporte.new, "" 
-= turbo_stream.prepend "flash", partial: "layouts/flash"
-
+= render_turbo_stream_flash_messages
