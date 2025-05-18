@@ -7,6 +7,7 @@
 
 = turbo_frame_tag dom_id(reporte) do
   .reporte{ :id => dom_id( reporte)}
+    = reporte.confirmado
     = link_to reporte.nombre,
       reporte_path(reporte),
       data: { turbo_frame: "_top"}
