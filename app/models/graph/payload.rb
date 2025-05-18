@@ -34,7 +34,7 @@ module Graph
                 when "Es mi número"
                   linea.warn "Encontré el reporte"
                   linea.info reporte.inspect
-                  #porte.update(:confirmado => true)
+                  reporte.update(:confirmado => true)
                   ::Reporte.where(:fono => @fono).update_all(:confirmado => true)
                   mensaje = "Hemos confirmado su número telefónico."
                   linea.warn mensaje
