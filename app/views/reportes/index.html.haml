@@ -16,6 +16,6 @@
       = render "reportes/empty_state"
 
   = turbo_frame_tag 'reportes' do
-    -#= render "reportes/empty_state"
+    = render "reportes/empty_state"
     = render @reportes.ordered
 
