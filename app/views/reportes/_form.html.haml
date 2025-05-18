@@ -2,7 +2,15 @@
   - if reporte.errors.any? 
     .error-message
       = reporte.errors.full_messages.to_sentence.capitalize 
-  = f.input :nombre, input_html: { autofocus: true } 
-  = f.input :fono
-  = f.input :contenido
-  .btn.btn--secondary=f.submit 
+  .container
+    %br
+    %p Nombre
+    = f.input :nombre, input_html: { autofocus: true } 
+    %br
+    %p Teléfono
+    = f.input :fono
+    %br
+    %p Contenido
+    = f.input :contenido
+    %br
+    .btn.btn--secondary=f.submit 

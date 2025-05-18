@@ -1,6 +1,5 @@
 -##https://www.hotrails.dev/turbo-rails/turbo-streams
 = turbo_stream_from 'reportes'
-
 .container
   .header
     %h1 Reportes
@@ -11,9 +10,7 @@
       class: "btn btn--primary" 
 
 
-  = turbo_frame_tag Reporte.new do
-    -#if @reportes.none?
-      = render "reportes/empty_state"
+  = turbo_frame_tag Reporte.new 
 
   = turbo_frame_tag 'reportes' do
     = render "reportes/empty_state"

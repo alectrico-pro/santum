@@ -4,6 +4,7 @@
 -#eso es lo que queremos
 -#por eso en edit.html.haml
 -#también debe haber un turbo_frame_tag dom_id(reporte) do
+
 = turbo_frame_tag dom_id(reporte) do
   .reporte{ :id => dom_id( reporte)}
     = link_to reporte.nombre,
@@ -15,12 +16,14 @@
         :method => :get     
       -#= link_to "Listar", reportes_path,
         data: { turbo_frame: "_top", turbo: C.turbo_enabled }
-      .btn.btn--light= button_to "Borrar", reporte_path( reporte ),
-        :method => :delete,   
-        data: { turbo_confirm: "¿Está seguro?", turbo: C.turbo_enabled }
       .btn.btn--light= link_to "Editar",
         edit_reporte_path( reporte ),
-        :method => :get
+        :method => :get 
 
+      .btn.btn--light= button_to "X", reporte_path( reporte ),
+      :method => :delete,  
+      data: { turbo_confirm: "¿Está seguro?", turbo: C.turbo_enabled } 
 
-
+      -if reporte.confirmado
+        %svg{ :width => "24", :height => "24", :viewBox => "0 0 24 24", :fill => "stroke", :xmlns => "http://www.w3.org/2000/svg"}
+          %path{:d => "M14.7404 9.00464L14.3942 18.0046M9.60577 18.0046L9.25962 9.00464M19.2276 5.79521C19.5696 5.84685 19.9104 5.90211 20.25 5.96093M19.2276 5.79521L18.1598 19.6772C18.0696 20.8494 17.0921 21.7546 15.9164 21.7546H8.08357C6.90786 21.7546 5.93037 20.8494 5.8402 19.6772L4.77235 5.79521M19.2276 5.79521C18.0812 5.62208 16.9215 5.48949 15.75 5.39896M3.75 5.96093C4.08957 5.90211 4.43037 5.84685 4.77235 5.79521M4.77235 5.79521C5.91878 5.62208 7.07849 5.48949 8.25 5.39896M15.75 5.39896V4.48283C15.75 3.30346 14.8393 2.31887 13.6606 2.28116C13.1092 2.26352 12.5556 2.25464 12 2.25464C11.4444 2.25464 10.8908 2.26352 10.3394 2.28116C9.16065 2.31887 8.25 3.30346 8.25 4.48283V5.39896M15.75 5.39896C14.5126 5.30334 13.262 5.25464 12 5.25464C10.738 5.25464 9.48744 5.30334 8.25 5.39896", :stroke => "#0F172A", :stroke-width => "1.5", :stroke-linecap => "round", :stroke-linejoin => "round"}
