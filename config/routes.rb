@@ -17,7 +17,8 @@ Rails.application.routes.draw do
     resources :comentarios
   end
 
-  root 'bienvenido#index'
+  #root 'bienvenido#index'
+  root 'reportes#index'
   #root 'reportes#new'
 
 
