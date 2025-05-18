@@ -2,4 +2,9 @@
   %p.empty-state__text
     Ud. aún no tiene reportes!
 
+  = link_to "Nuevo reporte",
+              new_reporte_path,
+              class: "btn btn--primary",
+              data: { turbo_frame: dom_id(Reporte.new), turbo: C.turbo_enabled  } 
+
   -#.btn.btn--light= link_to "Agregar un reporte", new_reporte_path

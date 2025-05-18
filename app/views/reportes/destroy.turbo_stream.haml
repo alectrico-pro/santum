@@ -1,6 +1,6 @@
 = turbo_stream.remove @reporte
 = render_turbo_stream_flash_messages
 
--unless Reporte.any?
+-#unless Reporte.any?
   = turbo_stream.update Reporte.new do
     = render "reportes/empty_state"
