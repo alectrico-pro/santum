@@ -41,6 +41,8 @@ module Railsondocker
     end
 
     config.autoload_paths << Rails.root.join('app/servicios')
+    #https://stackoverflow.com/questions/71368547/how-can-i-fix-this-sasscsyntaxerror-error-file-to-import-not-found-or-unrea
+    config.assets.css_compressor = nil
 
   end
 end
