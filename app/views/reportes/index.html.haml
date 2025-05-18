@@ -10,9 +10,8 @@
       data: { turbo_frame: dom_id( Reporte.new), turbo: C.turbo_enabled }, 
       class: "btn btn--primary" 
 
-  = turbo_frame_tag Reporte.new 
 
-  -#= turbo_frame_tag Reporte.new do
+  = turbo_frame_tag Reporte.new do
     -if @reportes.none?
       = render "reportes/empty_state"
 
