@@ -18,6 +18,11 @@ class Reporte < ApplicationRecord
 
   scope :ordered, -> { order(id: :desc) }
 
+  def actualiza
+    broadcast_update_to( self, :confirmado, target: "reporte_#{self.id}", html: "<p> #{self.confirmado} </p>")
+  end
+
+
   private
 
   def sanitize_fono

@@ -35,8 +35,7 @@ module Graph
                   linea.warn "Encontré el reporte"
                   linea.info reporte.inspect
                   reporte.update(:confirmado => true)
-                  binding.break
-                  broadcast_update_to(reporte, :confirmado, target: "reportes", html: "<p> #{reporte.confirmado} </p>")
+                  #reporte.actualiza
                   #::Reporte.where(:fono => @fono).update_all(:confirmado => true)
                   mensaje = "Hemos confirmado su número telefónico."
                   linea.warn mensaje
