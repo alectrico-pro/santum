@@ -1,5 +1,8 @@
 default: &default
   turbo_enabled: true
+  CUBA_CODE:                        53
+  CHILE_CODE:                       56
+  USA_CODE:                         1
 
 alectrico:
         <<: *default
