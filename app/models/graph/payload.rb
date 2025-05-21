@@ -28,14 +28,14 @@ module Graph
           @fono    =   mensaje.from
           linea.info "fono: #{@fono}"
           if @fono
-            reporte = ::Reporte.find_by(:fono => @fono, :confirmado => false)
+            reporte = ::Reporte.find_by(:fono => @fono, :confirmado => nil)
             if reporte
               case @text
                 when "Es mi número"
                   linea.warn "Encontré el reporte"
                   linea.info reporte.inspect
                   reporte.update(:confirmado => true)
-                  ::Reporte.where(:fono => @fono).update_all(:confirmado => true)
+                  #::Reporte.where(:fono => @fono).update_all(:confirmado => true)
                   mensaje = "Hemos confirmado su número telefónico."
                   linea.warn mensaje
                   ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)

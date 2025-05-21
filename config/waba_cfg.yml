@@ -366,10 +366,16 @@ alectricos: &alectricos
   imagen_url_feliz_navidad:         https://www.alectricos.cl/img/holiday-christmas-architecture.png
   imagen_url_token_bat:             https://www.alectricos.cl/assets/token_bat-88197239ab01073207b1ec7143b2e9e5ae90c5c5d0e12a72df7250bef599fa24.jpg
 
+santum: &santum
+  <<: *default
+  imagen_enviar_confirmar_fono_url: https://www.santa.capital/assets/farol.jpg
+
+
+
 
 
 live:
-  <<: *alectrico
+  <<: *santum
  
 sandbox:
   <<: *default

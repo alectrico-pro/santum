@@ -184,7 +184,8 @@ class Waba::Transaccion
     fono   = C.fono_test if Rails.env.test?
 
     linea.info "En Transaction confirmar_fono"
-
+    linea.info "Imagen es:"
+    linea.info WabaCfg.imagen_enviar_confirmar_fono_url 
     body= {
         "messaging_product" => "whatsapp",
         "to"                => fono,
