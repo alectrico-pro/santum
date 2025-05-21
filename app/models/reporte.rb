@@ -1,5 +1,5 @@
 class Reporte < ApplicationRecord
-  broadcasts_refreshes if C.turbo_enabled
+  #broadcasts_refreshes if C.turbo_enabled
   include Linea
 
   has_many :comentarios, dependent: :destroy
@@ -18,9 +18,9 @@ class Reporte < ApplicationRecord
 
   scope :ordered, -> { order(id: :desc) }
  
-  after_update :actualiza
+  after_commit :show_confirmado
 
-  def actualiza
+  def show_confirmado
     broadcast_update_to( self, :confirmado, target: "reporte_#{self.id}", html: "<p> #{self.confirmado} </p>")
   end
 
