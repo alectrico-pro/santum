@@ -17,6 +17,8 @@ class Reporte < ApplicationRecord
   broadcasts_to ->(reporte) { "reportes" }, inserts_by: :prepend if C.turbo_enabled
 
   scope :ordered, -> { order(id: :desc) }
+ 
+  after_update :actualiza
 
   def actualiza
     broadcast_update_to( self, :confirmado, target: "reporte_#{self.id}", html: "<p> #{self.confirmado} </p>")
