@@ -35,7 +35,9 @@ module Graph
                   linea.warn "Encontré el reporte"
                   linea.info reporte.inspect
                   reporte.update(:confirmado => true)
-                  ::Reporte.where(:fono => @fono).where(:confirmado => nil).update_all(:confirmado => true)
+                  #::Reporte.where(:fono => @fono).where(:confirmado => nil).update_all(:confirmado => true)
+                  #no disapara callbacks, es rápido y no actualiza update_on
+                  ::Reporte.where(:fono => @fono).where(:confirmado => nil).update(:confirmado => true)
                   mensaje = "Hemos confirmado su número telefónico."
                   linea.warn mensaje
                   ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
