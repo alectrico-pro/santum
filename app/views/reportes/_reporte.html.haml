@@ -7,9 +7,7 @@
 
 = turbo_frame_tag dom_id(reporte) do
   .reporte{ :id => dom_id( reporte)}
-    = reporte.id
-    = reporte.confirmado
-    = link_to reporte.nombre,
+    = link_to reporte.contenido,
       reporte_path(reporte),
       data: { turbo_frame: "_top"}
     .reporte__actions
@@ -24,8 +22,8 @@
         :method => :get 
 
       .btn.btn--light= button_to "X", reporte_path( reporte ),
-      :method => :delete,  
-      data: { turbo_confirm: "¿Está seguro?", turbo: C.turbo_enabled } 
+      :method => :delete #,  
+      -#data: { turbo_confirm: "¿Está seguro?", turbo: C.turbo_enabled } 
 
       -if reporte.confirmado
         %svg{ :width => "24", :height => "24", :viewBox => "0 0 24 24", :fill => "stroke", :xmlns => "http://www.w3.org/2000/svg"}

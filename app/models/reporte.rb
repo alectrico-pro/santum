@@ -14,16 +14,11 @@ class Reporte < ApplicationRecord
   before_save :sanitize_fono
   after_save :confirmar_fono 
 
-  broadcasts_to ->(reporte) { "reportes" }, inserts_by: :prepend if C.turbo_enabled
+  broadcasts_to ->(reporte) { [ reporte.fono, "reportes" ] }, inserts_by: :prepend if C.turbo_enabled
 
   scope :ordered, -> { order(id: :desc) }
- 
-  after_commit :show_confirmado
 
-  def show_confirmado
-    broadcast_update_to( self, :confirmado, target: "reporte_#{self.id}", html: "<p> #{self.confirmado} </p>")
-  end
-
+  scope :current_user, -> { where(fono: :current_user)} 
 
   private
 

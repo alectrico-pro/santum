@@ -25,8 +25,9 @@ class ReportesController < ApplicationController
 
     respond_to do |format|
       if @reporte.save
-        format.html { redirect_to @reporte, notice: "El reporte ha sido creado." }
-        format.turbo_stream { flash.now[:notice] = "El reporte ha sido creado."}
+        set_cooky
+        format.html { redirect_to @reporte, notice: "Revise su whatsapp para confirmar." }
+        format.turbo_stream { flash.now[:notice] = "Revise su Whatsapp para confirmar."}
         format.json { render :show, status: :created, location: @reporte }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,6 +40,7 @@ class ReportesController < ApplicationController
   def update
     respond_to do |format|
       if @reporte.update(reporte_params)
+        set_cooky
         format.html { redirect_to @reporte, notice: "El Reporte ha sido actualizado." }
         format.turbo_stream { flash.now[:notice] = "El reporte ha sido actualizado."}
         format.json { render :show, status: :ok, location: @reporte }
@@ -60,6 +62,11 @@ class ReportesController < ApplicationController
   end
 
   private
+    #Método muy simple para organizar la sessión de usuario
+    def set_cooky
+      cookies.encrypted[:user_id] = @reporte.fono if @reporte.confirmado
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_reporte
       begin

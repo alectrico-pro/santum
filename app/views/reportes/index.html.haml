@@ -1,5 +1,6 @@
 -##https://www.hotrails.dev/turbo-rails/turbo-streams
-= turbo_stream_from 'reportes'
+%p=current_user
+= turbo_stream_from current_user, 'reportes'
 .container
   .header
     %h1 Reportes
@@ -14,5 +15,5 @@
 
   = turbo_frame_tag 'reportes' do
     = render "reportes/empty_state"
-    = render @reportes.ordered
+    = render @reportes.ordered.current_user
 
