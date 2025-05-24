@@ -1,9 +1,27 @@
 class ReportesController < ApplicationController
   include Linea
 
-  before_action :set_reporte, only: %i[ show edit update destroy ]
-  after_action :set_current_fono, only: %i[ show edit update destroy ]
+  #before_filter :restrict_use
+  #def restrict_user
+  #  unless current_user.allowed?
+  #   redirect_to root_path
+  # end
+  #end
 
+  before_action :set_reporte, only: %i[ show edit update destroy avisar  ]
+  after_action  :set_current_fono, only: %i[ show edit update destroy avisar ]
+
+
+  # GET /reporte
+  def avisar
+    respond_to do |format|
+      if @reporte.reservar
+        format.html { redirect_to reportes_url, notice: "Se ha avisado a los colaboradores." }
+        format.turbo_stream { flash.now[:notice] = "Se ha avisado a los colaboradores."}
+        format.json { render :avisar, status: :ok, location: @reporte }
+      end
+    end
+  end
 
   # GET /reportes or /reportes.json
   def index

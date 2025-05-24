@@ -36,7 +36,7 @@
       -if not reporte.confirmado
         .btn.btn--light= link_to image_tag( '/assets/svg/identification' ) + "Editar", edit_reporte_path( reporte ), :method => :get, :alt => "Editar"
       -else
-        .btn.btn--light=link_to image_tag( '/assets/svg/touch') + "Avisar", reporte_path( reporte ), data: {turbo_method: :delete, turbo_confirm: '¿Está Seguro?'}, :alt => "Borrar"
+        .btn.btn--light=link_to image_tag( '/assets/svg/touch') + "Avisar", avisar_reporte_path( reporte) , data: {turbo_method: :get, turbo_confirm: '¿Está Seguro?'}, :alt => "Avisar"
       .btn.btn--light=link_to image_tag( '/assets/svg/borrar') + "Borrar", reporte_path( reporte ), data: {turbo_method: :delete, turbo_confirm: '¿Está Seguro?'}, :alt => "Borrar"
 
       -#if reporte.confirmado

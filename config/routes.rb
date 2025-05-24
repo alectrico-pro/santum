@@ -14,11 +14,15 @@ Rails.application.routes.draw do
   get 'bienvenido/index'
 
   resources :reportes do
+    member do
+      get :avisar
+    end
     resources :comentarios
   end
 
   #root 'bienvenido#index'
   root 'reportes#index'
+
   #root 'reportes#new'
 
 

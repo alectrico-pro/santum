@@ -37,7 +37,7 @@ module Railsondocker
        g.template_engine :haml
        # you can also specify a different test framework or ORM here
         g.test_framework  :rspec
-        g.orm             :pg
+       # g.orm             :pg
     end
 
     config.autoload_paths << Rails.root.join('app/servicios')

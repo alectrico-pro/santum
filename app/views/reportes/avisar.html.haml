@@ -1,0 +1,8 @@
+.container
+  = link_to sanitize("&larr; Volver a Reporte"), reporte_path(@reporte)
+  .header
+
+    %h1 Avisando reporte
+
+  = turbo_frame_tag dom_id(@reporte) do
+    = render "form", reporte: @reporte 

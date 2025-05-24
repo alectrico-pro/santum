@@ -373,5 +373,78 @@ class Waba::Transaccion
   end
 
 
+  def say_toma( colaborador, reporte)
+
+    fono    = colaborador.fono
+    nombre  = colaborador.nombre
+    sintoma = reporte.contenido
+    comuna  = "Providencia"
+    fono = C.fono_test if Rails.env.test?
+
+    body = { "messaging_product" =>  "whatsapp",
+          "to"                   =>  fono,
+          "type"                 =>  "template",
+          "template"             => { "name" => "tomar", "language" => { "code" => "es" },
+          "components"           => [  { "type" =>   "body",
+          "parameters" => [
+            { "type"             =>   "text", "text" => "#{nombre}"     } ,
+            { "type"             =>   "text", "text" => "#{sintoma}"     } ,
+            { "type"             =>   "text", "text" => "#{comuna}"     }
+            ] } ] }}
+
+
+    if send 
+      return true
+    else
+      return false
+    end
+
+  end
+
+
+
+ def say_oferta( colaborador, reporte)
+
+      linea.info "En Waba::Transaction.say_oferta de Waba"
+
+      nombre  = colaborador.nombre
+      fono    = colaborador.fono
+      sintoma = reporte.contenido
+      comuna  = "Providencia"
+      fono= C.fono_test if Rails.env.test?
+
+
+      WabaCfg.image_url_say_ofertar
+      body = { "messaging_product" =>  "whatsapp",
+          "to"                =>  fono,
+          "recipient_type"    =>  "individual",
+          "type"              =>  "template",
+          "template"          => { "name": "dale",
+                                   "language": { "code": "es",
+                                                 "policy": "deterministic" },
+          "components"         => [
+            { "type"   => "header", "parameters": [
+            { "type"   => "image",
+              "image"  => { "link": WabaCfg.image_url_say_ofertar } } ] },
+            { "type"   =>   "body",
+          "parameters" => [
+            { "type"   => "text", "text": "#{nombre}"     } ,
+            { "type"   => "text", "text": "#{comuna}"     } ,
+            { "type"   => "text", "text": "#{sintoma}"    }
+            ] } ] }}
+
+      if send body
+        linea.info "Exito waba say_oferta"
+        return true
+      else
+        linea.info "Falla en waba say_oferta"
+        return false
+
+      end
+
+  end
+
+
+
 end
 

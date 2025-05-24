@@ -23,10 +23,13 @@ class Reporte < ApplicationRecord
   after_save  :enviar_confirmar_fono 
 
   #Broadcasts
+  #broadcast personalizado, es diferente para cada fono
   broadcasts_to    -> ( reporte ) { [ reporte.fono, "reportes" ] }, inserts_by: :prepend if C.turbo_enabled
-#  broadcasts_to    -> ( reporte ) { "reportes" }, inserts_by: :prepend if C.turbo_enabled
+  #brodadcast no personalizado, es el mismo para todos
+  # broadcasts_to    -> ( reporte ) { "reportes" }, inserts_by: :prepend if C.turbo_enabled
   
   #broadcast con callback
+  #
   after_commit -> ( reporte) { broadcast_replace_to "iconos", partial: "reportes/fonos", locals: { reporte: self }, target: "fonos" }
 
 
@@ -34,11 +37,16 @@ class Reporte < ApplicationRecord
   scope :ordered,  ->           { order(id: :desc) }
   scope :del_fono, -> ( fono )  { where(:fono => fono) }
 
-  
-  after_commit -> { broadcast_replace_to "iconos", partial: "reportes/fonos", locals: { reporte: self }, target: "fonos" }
+  def avisar
+    ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono, self.nombre
+  end
+
+  #envía un formulario whatsapp por el canal colaborador de facebook waba, no  funciona
+  def reservar
+    ::Waba::Transaccion.new(:colaborador).say_flow_reservar self.fono, self.nombre
+  end
 
   private
-
   def sanitiza_fono
     if fono.length  == 9
       self.fono = "56" + self.fono.strip
@@ -51,18 +59,11 @@ class Reporte < ApplicationRecord
     linea.info self.fono
   end
 
-
   #envia un mensaje de "Este es mi número" al Whatsapp del cliente. Usando el canal :client de facebook Waba
   def enviar_confirmar_fono
     unless self.confirmado
       ::Waba::Transaccion.new(:cliente).confirmar_fono self.fono, self.nombre
-     # Turbo.visit("/reportes/id", { action: "replace" })
     end
-  end
-
-  #envía un formulario whatsapp por el canal colaborador de facebook waba, no  funciona
-  def reservar
-    ::Waba::Transaccion.new(:colaborador).say_flow_reservar self.fono, self.nombre
   end
 
 end
