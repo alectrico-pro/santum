@@ -14,7 +14,7 @@ class Reporte < ApplicationRecord
   validates :nombre, length: { in: 2..25}
 
   #El teléfono será validado en enviar_confirmar_fono
-  validates_presence_of :fono
+  validates :fono , presence: true, format: { with: VALID_FONO_REGEX}
 
   #validates :fono, length: { in: 9..9}
 
