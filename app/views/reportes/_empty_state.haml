@@ -1,8 +1,35 @@
 .empty-state.empty-state--only-child
-  %p.empty-state__text
-    Ud. aún no tiene reportes!
+  %h3 Algoritmo alectrico®
+  %p="Llenar Solicitud, Confirmar en WhatsApp, Avisar a los Colaboradores"
+  %small="Alectrico spa solo pone en contacto al solicitante con un colaborador"
+  .reporte
+    .reporte__actions
+      = image_tag '/assets/svg/tick-document'
+      = image_tag '/assets/svg/chat-con-letras-ello'
+      = image_tag '/assets/svg/touch'
+  %h3 Algoritmo Colaborador
+  %p Match, Acuerdo, Visita, Trabajo, Fin
+  %small="Alectrico spa no es responsable de esta parte"
+  .reporte
+    .reporte__actions
+      = image_tag '/assets/svg/perfil'
+      = image_tag '/assets/svg/chat-entre-dos'
+      = image_tag '/assets/svg/camion'
+      = image_tag '/assets/svg/trabajando'
+      = image_tag '/assets/svg/tick'
+  %h3 Algoritmo Solicitante
+  %small="Alectrico spa no es responsable de esta parte"
+  %p Identificación del Colaborador, Pago, Recepción Conforme
+  .reporte
+    .reporte__actions
+      = image_tag '/assets/svg/identification'
+      = image_tag '/assets/svg/dollar'
+      = image_tag '/assets/svg/tick-escudo'
 
-  = link_to "Nuevo reporte",
+  %p.empty-state__text
+    Ud. aún no ha solicitado trabajos en #{C.marca}
+
+  = link_to "Ingresar una Solicitud",
               new_reporte_path,
               class: "btn btn--primary",
               data: { turbo_frame: dom_id(Reporte.new), turbo: C.turbo_enabled  } 

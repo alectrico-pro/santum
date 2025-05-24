@@ -1,5 +1,9 @@
 class ReportesController < ApplicationController
+  include Linea
+
   before_action :set_reporte, only: %i[ show edit update destroy ]
+  after_action :set_current_fono, only: %i[ show edit update destroy ]
+
 
   # GET /reportes or /reportes.json
   def index
@@ -25,7 +29,6 @@ class ReportesController < ApplicationController
 
     respond_to do |format|
       if @reporte.save
-        set_cooky
         format.html { redirect_to @reporte, notice: "Revise su whatsapp para confirmar." }
         format.turbo_stream { flash.now[:notice] = "Revise su Whatsapp para confirmar."}
         format.json { render :show, status: :created, location: @reporte }
@@ -40,7 +43,6 @@ class ReportesController < ApplicationController
   def update
     respond_to do |format|
       if @reporte.update(reporte_params)
-        set_cooky
         format.html { redirect_to @reporte, notice: "El Reporte ha sido actualizado." }
         format.turbo_stream { flash.now[:notice] = "El reporte ha sido actualizado."}
         format.json { render :show, status: :ok, location: @reporte }
@@ -63,8 +65,9 @@ class ReportesController < ApplicationController
 
   private
     #Método muy simple para organizar la sessión de usuario
-    def set_cooky
-      cookies.encrypted[:user_id] = @reporte.fono if @reporte.confirmado
+    def set_current_fono
+      linea.info "Seteando current_fono en el controlado reportes"
+      cookies.encrypted[:current_fono] = @reporte.fono #if @reporte.confirmado
     end
 
     # Use callbacks to share common setup or constraints between actions.

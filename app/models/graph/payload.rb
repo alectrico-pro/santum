@@ -38,7 +38,7 @@ module Graph
                   #::Reporte.where(:fono => @fono).where(:confirmado => nil).update_all(:confirmado => true)
                   #no disapara callbacks, es rápido y no actualiza update_on
                   ::Reporte.where(:fono => @fono).where(:confirmado => nil).update(:confirmado => true)
-                  mensaje = "Hemos confirmado su número telefónico."
+                  mensaje = "Hemos confirmado su número telefónico. Puede volver a #{WabaCfg.direccion_de_retorno_url}"
                   linea.warn mensaje
                   ::Waba::Transaccion.new(:cliente).responder( @fono, @contexto.id, mensaje)
                   return

@@ -369,6 +369,7 @@ alectricos: &alectricos
 santum: &santum
   <<: *default
   imagen_enviar_confirmar_fono_url: https://www.santa.capital/assets/farol.jpg
+  direccion_de_retorno_url:         https://www.santa.capital
 
 
 

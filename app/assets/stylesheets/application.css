@@ -33,6 +33,7 @@
 @import "components/form";
 @import "components/visually_hidden";
 @import "components/empty_state";
+@import "components/no_confirmado_state";
 
 
 // Layouts

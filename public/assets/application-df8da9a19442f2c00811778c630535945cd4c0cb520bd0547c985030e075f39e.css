@@ -1,0 +1,477 @@
+@keyframes appear-then-fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  5%, 60% {
+    opacity: 1;
+  }
+}
+/* line 1, app/assets/stylesheets/components/_btn.scss */
+.btn {
+  display: inline-block;
+  padding: var(--space-xxs) var(--space-m);
+  border-radius: var(--border-radius);
+  background-origin: border-box;
+  background-color: transparent;
+  border: solid 2px transparent;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  transition: filter 400ms, color 200ms;
+}
+
+/* line 14, app/assets/stylesheets/components/_btn.scss */
+.btn:hover, .btn:focus, .btn:focus-within, .btn:active {
+  transition: filter 250ms, color 200ms;
+}
+
+/* line 21, app/assets/stylesheets/components/_btn.scss */
+.btn--primary {
+  color: var(--color-white);
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-rotate));
+}
+
+/* line 25, app/assets/stylesheets/components/_btn.scss */
+.btn--primary:hover, .btn--primary:focus, .btn--primary:focus-within, .btn--primary:active {
+  color: var(--color-white);
+  filter: saturate(1.4) brightness(115%);
+}
+
+/* line 34, app/assets/stylesheets/components/_btn.scss */
+.btn--secondary {
+  color: var(--color-white);
+  background-image: linear-gradient(to right, var(--color-secondary), var(--color-secondary-rotate));
+}
+
+/* line 38, app/assets/stylesheets/components/_btn.scss */
+.btn--secondary:hover, .btn--secondary:focus, .btn--secondary:focus-within, .btn--secondary:active {
+  color: var(--color-white);
+  filter: saturate(1.2) brightness(110%);
+}
+
+/* line 47, app/assets/stylesheets/components/_btn.scss */
+.btn--light {
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+/* line 51, app/assets/stylesheets/components/_btn.scss */
+.btn--light:hover, .btn--light:focus, .btn--light:focus-within, .btn--light:active {
+  color: var(--color-dark);
+  filter: brightness(92%);
+}
+
+/* line 60, app/assets/stylesheets/components/_btn.scss */
+.btn--dark {
+  color: var(--color-white);
+  border-color: var(--color-dark);
+  background-color: var(--color-dark);
+}
+
+/* line 65, app/assets/stylesheets/components/_btn.scss */
+.btn--dark:hover, .btn--dark:focus, .btn--dark:focus-within, .btn--dark:active {
+  color: var(--color-white);
+}
+/* line 1, app/assets/stylesheets/components/_empty_state.scss */
+.empty-state {
+  padding: var(--space-m);
+  border: var(--border);
+  border-style: dashed;
+  text-align: center;
+}
+
+/* line 7, app/assets/stylesheets/components/_empty_state.scss */
+.empty-state__text {
+  font-size: var(--font-size-l);
+  color: var(--color-text-header);
+  margin-bottom: var(--space-l);
+  font-weight: bold;
+}
+
+/* line 14, app/assets/stylesheets/components/_empty_state.scss */
+.empty-state--only-child {
+  display: none;
+}
+
+/* line 17, app/assets/stylesheets/components/_empty_state.scss */
+.empty-state--only-child:only-child {
+  display: revert;
+}
+/* line 1, app/assets/stylesheets/components/_error_message.scss */
+.error-message {
+  width: 100%;
+  color: var(--color-primary);
+  background-color: var(--color-primary-bg);
+  padding: var(--space-xs);
+  border-radius: var(--border-radius);
+}
+/* line 1, app/assets/stylesheets/components/_flash.scss */
+.flash {
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-s);
+  max-width: 100%;
+  width: max-content;
+  padding: 0 var(--space-m);
+}
+
+/* line 16, app/assets/stylesheets/components/_flash.scss */
+.flash__message {
+  font-size: var(--font-size-s);
+  color: var(--color-white);
+  padding: var(--space-xs) var(--space-m);
+  background-color: var(--color-dark);
+  animation: appear-then-fade 4s both;
+  border-radius: 999px;
+}
+/* line 1, app/assets/stylesheets/components/_form.scss */
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* line 6, app/assets/stylesheets/components/_form.scss */
+.form__group {
+  flex: 1;
+}
+
+/* line 10, app/assets/stylesheets/components/_form.scss */
+.form__input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: var(--space-xxs) var(--space-xs);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  outline: none;
+  transition: box-shadow 250ms;
+}
+
+/* line 20, app/assets/stylesheets/components/_form.scss */
+.form__input:focus {
+  box-shadow: 0 0 0 2px var(--color-glint);
+}
+
+/* line 24, app/assets/stylesheets/components/_form.scss */
+.form__input--invalid {
+  border-color: var(--color-primary);
+}
+/* line 1, app/assets/stylesheets/components/_navbar.scss */
+.navbar {
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-large);
+  padding: var(--space-xs) var(--space-m);
+  margin-bottom: var(--space-xxl);
+  background-color: var(--color-white);
+}
+
+/* line 9, app/assets/stylesheets/components/_navbar.scss */
+.navbar__brand {
+  font-weight: bold;
+  font-size: var(--font-size-xl);
+  color: var(--color-text-header);
+}
+
+/* line 15, app/assets/stylesheets/components/_navbar.scss */
+.navbar__name {
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: var(--space-s);
+  color: var(--color-text-header);
+}
+
+/* line 22, app/assets/stylesheets/components/_navbar.scss */
+.navbar__right {
+  margin-left: auto;
+}
+/* line 1, app/assets/stylesheets/components/_no_confirmado_state.scss */
+.empty-state {
+  padding: var(--space-m);
+  border: var(--border);
+  border-style: dashed;
+  text-align: center;
+}
+
+/* line 7, app/assets/stylesheets/components/_no_confirmado_state.scss */
+.empty-state__text {
+  font-size: var(--font-size-l);
+  color: var(--color-text-header);
+  margin-bottom: var(--space-l);
+  font-weight: bold;
+}
+
+/* line 14, app/assets/stylesheets/components/_no_confirmado_state.scss */
+.empty-state--only-child {
+  display: none;
+}
+
+/* line 17, app/assets/stylesheets/components/_no_confirmado_state.scss */
+.empty-state--only-child:only-child {
+  display: revert;
+}
+/* line 3, app/assets/stylesheets/components/_reporte.scss */
+.reporte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-small);
+  margin-bottom: var(--space-m);
+  padding: var(--space-xs);
+}
+
+@media (min-width: 50rem) {
+  /* line 3, app/assets/stylesheets/components/_reporte.scss */
+  .reporte {
+    padding: var(--space-xs) var(--space-m);
+  }
+}
+
+/* line 20, app/assets/stylesheets/components/_reporte.scss */
+.reporte__actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  gap: var(--space-xs);
+}
+/* line 1, app/assets/stylesheets/components/_turbo_progress_bar.scss */
+.turbo-progress-bar {
+  background: linear-gradiente(to right, var(--color-primary), var(--color-primary-rotate));
+}
+/* line 1, app/assets/stylesheets/components/_visually_hidden.scss */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+@keyframes appear-then-fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  5%, 60% {
+    opacity: 1;
+  }
+}
+/* line 1, app/assets/stylesheets/config/_reset.scss */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* line 7, app/assets/stylesheets/config/_reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 12, app/assets/stylesheets/config/_reset.scss */
+html {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* line 17, app/assets/stylesheets/config/_reset.scss */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: var(--color-background);
+  color: var(--color-text-body);
+  line-height: var(--line-height-body);
+  font-family: var(--font-family-sans);
+}
+
+/* line 28, app/assets/stylesheets/config/_reset.scss */
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* line 35, app/assets/stylesheets/config/_reset.scss */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* line 42, app/assets/stylesheets/config/_reset.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-header);
+  line-height: var(--line-height-headers);
+}
+
+/* line 52, app/assets/stylesheets/config/_reset.scss */
+h1 {
+  font-size: var(--font-size-xxxl);
+}
+
+/* line 56, app/assets/stylesheets/config/_reset.scss */
+h2 {
+  font-size: var(--font-size-xxl);
+}
+
+/* line 60, app/assets/stylesheets/config/_reset.scss */
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+/* line 64, app/assets/stylesheets/config/_reset.scss */
+h4 {
+  font-size: var(--font-size-l);
+}
+
+/* line 68, app/assets/stylesheets/config/_reset.scss */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+/* line 73, app/assets/stylesheets/config/_reset.scss */
+a:hover, a:focus, a:active {
+  color: var(--color-primary-rotate);
+}
+/* line 1, app/assets/stylesheets/config/_variables.scss */
+:root {
+  --font-family-sans: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --line-height-headers: 1.1;
+  --line-height-body:    1.5;
+  --font-size-xs: 0.75rem;
+  --font-size-s: 0.875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-xxxl: 2rem;
+  --font-size-xxxxl: 2.5rem;
+  --color-text-header: hsl(0, 1%, 16%);
+  --color-text-body:   hsl(0, 5%, 25%);
+  --color-text-muted:  hsl(0, 1%, 44%);
+  --space-xxxs: 0.25rem;
+  --space-xxs: 0.375rem;
+  --space-xs: 0.5rem;
+  --space-s: 0.75rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 2.5rem;
+  --space-xxxl: 3rem;
+  --space-xxxxl: 4rem;
+  --color-primary:          hsl(350, 67%, 50%);
+  --color-primary-rotate:   hsl(10, 73%, 54%);
+  --color-primary-bg:       hsl(0, 85%, 96%);
+  --color-secondary:        hsl(101, 45%, 56%);
+  --color-secondary-rotate: hsl(120, 45%, 56%);
+  --color-tertiary:         hsl(49, 89%, 64%);
+  --color-glint:            hsl(210, 100%, 82%);
+  --color-white:      hsl(0, 0%, 100%);
+  --color-background: hsl(30, 50%, 98%);
+  --color-light:      hsl(0, 6%, 93%);
+  --color-dark:       var(--color-text-header);
+  --border-radius: 0.375rem;
+  --border: solid 2px var(--color-light);
+  --shadow-large:  2px 4px 10px hsl(0 0% 0% / 0.1);
+  --shadow-small:  1px 3px 6px hsl(0 0% 0% / 0.1);
+}
+/* line 3, app/assets/stylesheets/layouts/_container.scss */
+.container {
+  width: 100%;
+  padding-right: var(--space-xs);
+  padding-left: var(--space-xs);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 50rem) {
+  /* line 3, app/assets/stylesheets/layouts/_container.scss */
+  .container {
+    padding-right: var(--space-m);
+    padding-left: var(--space-m);
+    max-width: 60rem;
+  }
+}
+/* line 4, app/assets/stylesheets/layouts/_header.scss */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  justify-content: space-between;
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-l);
+}
+
+@media (min-width: 50rem) {
+  /* line 4, app/assets/stylesheets/layouts/_header.scss */
+  .header {
+    margin-bottom: var(--space-xl);
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+// Mixins
+@import "mixins/media";
+
+// Configuration
+@import "config/variables";
+@import "config/reset";
+
+// Components
+@import "components/btn";
+@import "components/error_message";
+@import "components/flash";
+@import "components/animations";
+@import "components/navbar";
+@import "components/turbo_progress_bar";
+@import "components/reporte";
+@import "components/form";
+@import "components/visually_hidden";
+@import "components/empty_state";
+@import "components/no_confirmado_state";
+
+
+// Layouts
+@import "layouts/container";
+@import "layouts/header";
+
+
+

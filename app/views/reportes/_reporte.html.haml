@@ -5,26 +5,77 @@
 -#por eso en edit.html.haml
 -#también debe haber un turbo_frame_tag dom_id(reporte) do
 
+-#= image_tag '/assets/svg/chat-con-letras-ello'
+-#= image_tag '/assets/svg/admiracion-escudo'
+-#= image_tag '/assets/svg/hand-stop'
+
+
 = turbo_frame_tag dom_id(reporte) do
+  .container
+    %small="Solicitud #{reporte.id}"
+    .reporte
+      = image_tag( '/assets/svg/tick-document' ) + "Solicitud Válida"
+      %svg{:width => "60", :height => "60", :viewBox => "0 0 60 60", :fill => "blue", :xmlns => "http://www.w3.org/2000/svg"}
+        %path{:d => "M21 32.2637L27.75 39.0137L39 23.2637M57 30.0137C57 33.8185 55.1112 37.1822 52.22 39.2182C52.8242 42.7018 51.7813 46.4154 49.0912 49.1055C46.4011 51.7955 42.6877 52.8385 39.204 52.2343C37.168 55.1251 33.8046 57.0137 30 57.0137C26.1956 57.0137 22.8322 55.1252 20.7961 52.2346C17.312 52.8394 13.5977 51.7966 10.9071 49.1061C8.21659 46.4155 7.17374 42.7013 7.77858 39.2172C4.88822 37.1811 3 33.8179 3 30.0137C3 26.2093 4.88838 22.846 7.77893 20.8099C7.17441 17.3261 8.21731 13.6122 10.9076 10.9219C13.598 8.23154 17.3119 7.18865 20.7958 7.79323C22.8318 4.90232 26.1954 3.01367 30 3.01367C33.8045 3.01367 37.1679 4.90217 39.2039 7.79287C42.6881 7.18801 46.4023 8.23084 49.0929 10.9214C51.7834 13.6119 52.8262 17.3261 52.2214 20.8102C55.1118 22.8463 57 26.2095 57 30.0137Z", :stroke => "#0F172A", :stroke-width => "4.5", :stroke-linecap => "round", :stroke-linejoin => "round"}
+
+    -if not reporte.confirmado
+      %p="Revise  el WhatsApp en  #{reporte.fono}"
+    -else
+      .reporte
+        = image_tag( '/assets/svg/chat-con-letras-ello' ) + "Número Confirmado"
+        %svg{:width => "60", :height => "60", :viewBox => "0 0 60 60", :fill => "green", :xmlns => "http://www.w3.org/2000/svg"}
+          %path{:d => "M21 32.2637L27.75 39.0137L39 23.2637M57 30.0137C57 33.8185 55.1112 37.1822 52.22 39.2182C52.8242 42.7018 51.7813 46.4154 49.0912 49.1055C46.4011 51.7955 42.6877 52.8385 39.204 52.2343C37.168 55.1251 33.8046 57.0137 30 57.0137C26.1956 57.0137 22.8322 55.1252 20.7961 52.2346C17.312 52.8394 13.5977 51.7966 10.9071 49.1061C8.21659 46.4155 7.17374 42.7013 7.77858 39.2172C4.88822 37.1811 3 33.8179 3 30.0137C3 26.2093 4.88838 22.846 7.77893 20.8099C7.17441 17.3261 8.21731 13.6122 10.9076 10.9219C13.598 8.23154 17.3119 7.18865 20.7958 7.79323C22.8318 4.90232 26.1954 3.01367 30 3.01367C33.8045 3.01367 37.1679 4.90217 39.2039 7.79287C42.6881 7.18801 46.4023 8.23084 49.0929 10.9214C51.7834 13.6119 52.8262 17.3261 52.2214 20.8102C55.1118 22.8463 57 26.2095 57 30.0137Z", :stroke => "#0F172A", :stroke-width => "4.5", :stroke-linecap => "round", :stroke-linejoin => "round"}
   .reporte{ :id => dom_id( reporte)}
-    = link_to reporte.contenido,
+    -#= link_to reporte.contenido,
       reporte_path(reporte),
       data: { turbo_frame: "_top"}
+    -#%small=reporte.fono
+
+    %h3= reporte.contenido.truncate(30)
     .reporte__actions
+      -if not reporte.confirmado
+        .btn.btn--light= link_to image_tag( '/assets/svg/identification' ) + "Editar", edit_reporte_path( reporte ), :method => :get, :alt => "Editar"
+      -else
+        .btn.btn--light=link_to image_tag( '/assets/svg/touch') + "Avisar", reporte_path( reporte ), data: {turbo_method: :delete, turbo_confirm: '¿Está Seguro?'}, :alt => "Borrar"
+      .btn.btn--light=link_to image_tag( '/assets/svg/borrar') + "Borrar", reporte_path( reporte ), data: {turbo_method: :delete, turbo_confirm: '¿Está Seguro?'}, :alt => "Borrar"
+
+      -#if reporte.confirmado
+        = image_tag '/assets/svg/tick-document'
+        -#%svg{:width => "72", :height => "73", :viewBox => "0 0 72 73", :fill => "green", :xmlns => "http://www.w3.org/2000/svg"}
+          %path{ :fill-rule => "evenodd", :clip-rule => "evenodd", :d => "M6.75 36.0137C6.75 19.8593 19.8457 6.76367 36 6.76367C52.1543 6.76367 65.25 19.8593 65.25 36.0137C65.25 52.168 52.1543 65.2637 36 65.2637C19.8457 65.2637 6.75 52.168 6.75 36.0137ZM46.8309 30.5715C47.5532 29.5603 47.319 28.155 46.3078 27.4328C45.2966 26.7105 43.8914 26.9447 43.1691 27.9559L33.4629 41.5446L28.591 36.6727C27.7123 35.794 26.2877 35.794 25.409 36.6727C24.5303 37.5514 24.5303 38.976 25.409 39.8547L32.159 46.6047C32.6267 47.0723 33.2764 47.3106 33.9356 47.256C34.5947 47.2015 35.1965 46.8597 35.5809 46.3215L46.8309 30.5715Z", :fill => "#0F172A"}
+
+      -#= image_tag '/assets/svg/perfil'
+      -#= image_tag '/assets/svg/touch'
+      -#.btn.btn--light= link_to image_tag( '/assets/svg/identification' ), edit_reporte_path( reporte ), :method => :get
+      -#tn.btn--light= link_to image_tag( '/assets/svg/borrar' ), reporte_path( reporte ), data: { turbo_frame: "_top", turbo: C.turbo_enabled }, :method => :delete
+      -#.btn.btn--light=link_to image_tag( '/assets/svg/borrar'), reporte_path( reporte ), data: {turbo_method: :delete, turbo_confirm: '¿Está Seguro?'}
+      -#= image_tag '/assets/svg/tick-nube'
+      -#= image_tag '/assets/svg/trabajando'
+      -#= image_tag '/assets/svg/camion'
+      -#= image_tag '/assets/svg/check-circle'
+      -#= image_tag '/assets/svg/fono-in'
+      -#= image_tag '/assets/svg/tick-document'
+      -#= image_tag '/assets/svg/tick'
+
       -#.btn.btn--light= link_to "Ver", reporte_path( reporte ),
         data: { turbo_frame: "_top", turbo: C.turbo_enabled },
         :method => :get     
       -#= link_to "Listar", reportes_path,
         data: { turbo_frame: "_top", turbo: C.turbo_enabled }
 
-      .btn.btn--light= link_to "Editar",
+      -#tn.btn--light= link_to "Editar",
         edit_reporte_path( reporte ),
         :method => :get 
 
-      .btn.btn--light= button_to "X", reporte_path( reporte ),
-      :method => :delete #,  
-      -#data: { turbo_confirm: "¿Está seguro?", turbo: C.turbo_enabled } 
+      -#.btn.btn--light= button_to "X", reporte_path( reporte ),
+      -#:method => :delete #,  
+      -##data: { turbo_confirm: "¿Está seguro?", turbo: C.turbo_enabled } 
 
-      -if reporte.confirmado
-        %svg{ :width => "24", :height => "24", :viewBox => "0 0 24 24", :fill => "stroke", :xmlns => "http://www.w3.org/2000/svg"}
-          %path{:d => "M14.7404 9.00464L14.3942 18.0046M9.60577 18.0046L9.25962 9.00464M19.2276 5.79521C19.5696 5.84685 19.9104 5.90211 20.25 5.96093M19.2276 5.79521L18.1598 19.6772C18.0696 20.8494 17.0921 21.7546 15.9164 21.7546H8.08357C6.90786 21.7546 5.93037 20.8494 5.8402 19.6772L4.77235 5.79521M19.2276 5.79521C18.0812 5.62208 16.9215 5.48949 15.75 5.39896M3.75 5.96093C4.08957 5.90211 4.43037 5.84685 4.77235 5.79521M4.77235 5.79521C5.91878 5.62208 7.07849 5.48949 8.25 5.39896M15.75 5.39896V4.48283C15.75 3.30346 14.8393 2.31887 13.6606 2.28116C13.1092 2.26352 12.5556 2.25464 12 2.25464C11.4444 2.25464 10.8908 2.26352 10.3394 2.28116C9.16065 2.31887 8.25 3.30346 8.25 4.48283V5.39896M15.75 5.39896C14.5126 5.30334 13.262 5.25464 12 5.25464C10.738 5.25464 9.48744 5.30334 8.25 5.39896", :stroke => "#0F172A", :stroke-width => "1.5", :stroke-linecap => "round", :stroke-linejoin => "round"}
+
+      -#if reporte.confirmado
+        -#.btn.btn--light= link_to image_tag("/assets/svg/touch") + "Ver" , reporte_path( reporte ),
+        -#data: { turbo_frame: "_top", turbo: C.turbo_enabled },
+        :method => :get, :alt => "Ver"
+        = image_tag( '/assets/svg/tick-document' )# + "Confirmado"
+        %svg{:width => "60", :height => "60", :viewBox => "0 0 60 60", :fill => "blue", :xmlns => "http://www.w3.org/2000/svg"}
+          %path{:d => "M21 32.2637L27.75 39.0137L39 23.2637M57 30.0137C57 33.8185 55.1112 37.1822 52.22 39.2182C52.8242 42.7018 51.7813 46.4154 49.0912 49.1055C46.4011 51.7955 42.6877 52.8385 39.204 52.2343C37.168 55.1251 33.8046 57.0137 30 57.0137C26.1956 57.0137 22.8322 55.1252 20.7961 52.2346C17.312 52.8394 13.5977 51.7966 10.9071 49.1061C8.21659 46.4155 7.17374 42.7013 7.77858 39.2172C4.88822 37.1811 3 33.8179 3 30.0137C3 26.2093 4.88838 22.846 7.77893 20.8099C7.17441 17.3261 8.21731 13.6122 10.9076 10.9219C13.598 8.23154 17.3119 7.18865 20.7958 7.79323C22.8318 4.90232 26.1954 3.01367 30 3.01367C33.8045 3.01367 37.1679 4.90217 39.2039 7.79287C42.6881 7.18801 46.4023 8.23084 49.0929 10.9214C51.7834 13.6119 52.8262 17.3261 52.2214 20.8102C55.1118 22.8463 57 26.2095 57 30.0137Z", :stroke => "#0F172A", :stroke-width => "4.5", :stroke-linecap => "round", :stroke-linejoin => "round"}

@@ -1,19 +1,24 @@
 -##https://www.hotrails.dev/turbo-rails/turbo-streams
-%p=current_user
-= turbo_stream_from current_user, 'reportes'
+
+= turbo_stream_from 'iconos'
+.container
+  = turbo_frame_tag 'fonos' do
+    %p
+
+
+
+= turbo_stream_from current_fono, 'reportes'
 .container
   .header
-    %h1 Reportes
-
-    = link_to "Nuevo reporte", 
+    -#%h3 Solicitud
+    -# = link_to "Nuevo reporte", 
       new_reporte_path, 
       data: { turbo_frame: dom_id( Reporte.new), turbo: C.turbo_enabled }, 
       class: "btn btn--primary" 
 
-
   = turbo_frame_tag Reporte.new 
+
 
   = turbo_frame_tag 'reportes' do
     = render "reportes/empty_state"
-    = render @reportes.ordered.current_user
-
+    = render @reportes.ordered.del_fono( current_fono )
